@@ -28,9 +28,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onRestart() {
-        super.onRestart();
-        Log.i(TAG, "onRestart: ");
+    protected void onStop() {
+        super.onStop();
+        Log.i(TAG, "onStop: ");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.i(TAG, "onPause: ");
     }
 
     @Override
@@ -40,11 +46,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onStop() {
-        super.onStop();
-        Log.i(TAG, "onStop: ");
+    protected void onRestart() {
+        super.onRestart();
+        Log.i(TAG, "onRestart: ");
     }
-
-
-
 }
