@@ -3,6 +3,8 @@ package com.example.mad_059;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
 public class addsubmissison extends AppCompatActivity {
 
@@ -10,5 +12,6 @@ public class addsubmissison extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addsubmissison);
+
     }
 }

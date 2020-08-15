@@ -31,19 +31,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
-    <ImageView
-        android:id="@+id/imageView20"
-        android:layout_width="162dp"
-        android:layout_height="325dp"
-        android:contentDescription="@string/img"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.618"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        tools:srcCompat="@drawable/fees" />
-
     <TextView
         android:id="@+id/textView58"
         android:layout_width="wrap_content"
@@ -112,14 +99,14 @@
 
     <ImageView
         android:id="@+id/imageView21"
-        android:layout_width="141dp"
-        android:layout_height="162dp"
+        android:layout_width="309dp"
+        android:layout_height="160dp"
         android:contentDescription="@string/img"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.643"
-        tools:srcCompat="@drawable/circle_cropped" />
+        app:layout_constraintVertical_bias="0.619"
+        app:srcCompat="@drawable/campus_info" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

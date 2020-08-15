@@ -121,19 +121,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.52"
-        tools:srcCompat="@drawable/fees" />
+        app:srcCompat="@drawable/fees" />
 
     <ImageView
         android:id="@+id/imageView29"
-        android:layout_width="157dp"
-        android:layout_height="161dp"
+        android:layout_width="170dp"
+        android:layout_height="166dp"
         android:contentDescription="@string/img"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.925"
+        app:layout_constraintHorizontal_bias="0.933"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.171"
+        app:layout_constraintVertical_bias="0.146"
         app:srcCompat="@drawable/sports" />
 
     <ImageView
@@ -146,7 +146,7 @@
         app:layout_constraintHorizontal_bias="0.926"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.971"
+        app:layout_constraintVertical_bias="0.946"
         app:srcCompat="@drawable/courses" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
