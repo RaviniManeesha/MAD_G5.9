@@ -1,5 +1,133 @@
 <resources>
-    <string name="app_name">UsingStrings</string>
-    <string name="Msg1">Here,I am the text message 1</string>
-    <string name="Msg2">Here,I am the text message 2</string>
+    <!--app name-->
+    <string name="app_name">UniStudiac</string>
+
+    <!--start-->
+    <string name="register">Register</string>
+    <string name="login">Login</string>
+
+    <!--register 1-->
+    <string name="regname">Register</string>
+    <string name="uname">Registration Number</string>
+    <string name="pwd">Password</string>
+    <string name="pwd2">Re-enter Password</string>
+    <string name="str">Strength:-</string>
+    <string name="regbutton">Next</string>
+
+    <!--background img 2-->
+    <string name="img">img</string>
+
+    <!--register 2-->
+    <string name="endreg">Register</string>
+    <string name="stname">Student Name</string>
+    <string name="email">SLIIT Email</string>
+    <string name="phone">Phone Number</string>
+    <string name="stdetails">Student Details</string>
+    <string name="date">Date of Admission</string>
+
+    <!--profile-->
+    <string name="modules">Modules</string>
+    <string name="sub">Submissions</string>
+    <string name="atte">Attendance</string>
+    <string name="fees">Fees</string>
+    <string name="lib">Library</string>
+    <string name="info">Information</string>
+    <string name="loout">Logout</string>
+    <string name="wel">Welcome!</string>
+    <string name="regnum">Registration Number</string>
+    <string name="buttonimg">img</string>
+
+    <!--view profile-->
+    <string name="edit">Edit</string>
+    <string name="profile">Profile</string>
+    <string name="back"> Back</string>
+
+
+    <!--edit student details-->
+    <string name="editdetails">Edit Student Details</string>
+    <string name="oldpwd">Old Password</string>
+    <string name="newpwd">New Password</string>
+    <string name="done">Done</string>
+
+    <!--login-->
+    <string name="logintext">Login</string>
+    <string name="forgotpwd">Forgot Password?</string>
+    <string name="resetpwd">Reset Password</string>
+    <string name="send">Send Instructions</string>
+
+    <!--view submissions-->
+    <string name="submissions">Submissions</string>
+    <string name="today">Today</string>
+    <string name="scheduled">Scheduled</string>
+    <string name="all">All</string>
+    <string name="module1">Module 1</string>
+    <string name="module2">Module 2</string>
+    <string name="delete">Delete</string>
+    <string name="addm">Add Module</string>
+    <string name="mym">My Modules</string>
+    <string name="search">Search</string>
+
+    <!--add module-->
+    <string name="newm">New Module</string>
+    <string name="cancel">Cancel</string>
+    <string name="mname">Module Name</string>
+    <string name="color">Color</string>
+
+    <!--view module-->
+    <string name="sub1">Submission 1</string>
+    <string name="sub2">Submission 2</string>
+    <string name="sub3">Submission 3</string>
+    <string name="oldsub">Older Submissions</string>
+    <string name="addsub">Add New Submission</string>
+
+    <!--add submission-->
+    <string name="subdetails">Submission Details</string>
+    <string name="rday">Remind Me On A Day</string>
+    <string name="rtime">Remind Me On A Time</string>
+    <string name="pro">Priority</string>
+    <string name="subname">Submission Name</string>
+    <string name="note">Note</string>
+
+    <!-- edit submission-->
+    <string name="editsub">Edit Submission Details</string>
+
+    <!--today-->
+
+
+    <!--scheduled-->
+    <string name="tomo">Tomorrow</string>
+    <string name="date1">Date</string>
+
+    <!--all-->
+    <string name="sub4">Submission 4</string>
+    <string name="module3">Module 3</string>
+
+    <!--information-->
+    <string name="eduinfo">Education Info</string>
+    <string name="campusinfo">Campus Info</string>
+
+    <!--eduinfo-->
+    <string name="sands">Societies and Sports</string>
+    <string name="fee">Course Fees and Exam Fees</string>
+    <string name="cando">Courses and Overses Education</string>
+
+    <!--sports-->
+    <string name="sports">Sports</string>
+    <string name="socities">Societies and Clubs</string>
+
+    <!--fees-->
+    <string name="cfees">Course Fees</string>
+    <string name="efees">Exam Fees</string>
+    <string name="regfee">Registration Fee:-</string>
+    <string name="rfee">Repeat Exam Fee:-</string>
+    <string name="pfees">Pro-rata Fee:-</string>
+
+    <!--courses-->
+    <string name="courses">Courses</string>
+    <string name="c1">Course 1</string>
+    <string name="c2">Course 2</string>
+    <string name="c3">Course 3</string>
+    <string name="c4">Course 4</string>
+    <string name="odu">Overses Education</string>
+    <string name="details">Details</string>
 </resources>
