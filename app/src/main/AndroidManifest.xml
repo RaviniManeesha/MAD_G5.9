@@ -9,16 +9,53 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".YourModules"></activity>
-        <activity android:name=".AddModules2">
+        <activity android:name=".GPACalculation">
+
+        </activity>
+
+        <activity android:name=".FinalMarks">
+
+        </activity>
+
+
+        <activity android:name=".CAMarksCalculation">
+
+        </activity>
+        <activity android:name=".FinalHome">
+
+        </activity>
+        <activity android:name=".CaMarksHome">
+
+        </activity>
+
+        <activity android:name=".DisplayDescription"/>
+
+        <activity android:name=".ModuleDescription" >
+
+        </activity>
+        <activity android:name=".EditYourModules">
+
+        </activity>
+        <activity android:name=".AddModules2" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AddModules1" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".YourModules" >
+
+        </activity>
+        <activity android:name=".AddModules1">
+
+        </activity>
+        <activity android:name=".MainActivity" >
+
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

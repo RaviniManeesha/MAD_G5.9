@@ -32,7 +32,7 @@ public class AddModules1 extends AppCompatActivity{
         facultyAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         faculty.setAdapter(facultyAdapter);
 
-        Spinner year = (Spinner) findViewById(R.id.spinner2);
+        Spinner year = (Spinner) findViewById(R.id.spinner5);
 
         ArrayAdapter<String> yearAdapter = new ArrayAdapter<String>(AddModules1.this,
                 android.R.layout.simple_list_item_1,
@@ -40,7 +40,7 @@ public class AddModules1 extends AppCompatActivity{
         yearAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         year.setAdapter(yearAdapter);
 
-        Spinner sem = (Spinner) findViewById(R.id.spinner3);
+        Spinner sem = (Spinner) findViewById(R.id.spinner6);
 
         ArrayAdapter<String> semAdapter = new ArrayAdapter<String>(AddModules1.this,
                 android.R.layout.simple_list_item_1,
@@ -48,7 +48,7 @@ public class AddModules1 extends AppCompatActivity{
         semAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sem.setAdapter(semAdapter);
 
-        Spinner co = (Spinner) findViewById(R.id.spinner4);
+        Spinner co = (Spinner) findViewById(R.id.spinner8);
 
         ArrayAdapter<String> coAdapter = new ArrayAdapter<String>(AddModules1.this,
                 android.R.layout.simple_list_item_1,
@@ -57,6 +57,5 @@ public class AddModules1 extends AppCompatActivity{
         co.setAdapter(coAdapter);
 
     }
-
 
 }

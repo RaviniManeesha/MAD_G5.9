@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">UniStudiac</string>
+    <string name="app_name">Modules</string>
     <string-array name="dropdown">
         <item>Modules</item>
         <item>Submissions</item>
@@ -44,5 +44,6 @@
     <string name="moduleno">Module Number</string>
     <string name="add">Add Modules</string>
     <string name="your">Your Modules</string>
+    <string name="finalM">Final Marks</string>
 
 </resources>
