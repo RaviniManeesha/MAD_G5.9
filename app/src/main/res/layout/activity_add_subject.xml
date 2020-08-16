@@ -14,12 +14,26 @@
             android:minHeight="?attr/actionBarSize"
             android:theme="?attr/actionBarTheme" />
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="end|bottom"
+        android:layout_marginStart="-6dp"
+        android:layout_marginTop="-6dp"
+        android:layout_marginEnd="356dp"
+        android:layout_marginBottom="604dp"
+        android:src="@drawable/ic_menu"
+        android:tint="#FFFFFF"
+        app:backgroundTint="@color/colorPrimary"
+        app:elevation="6dp"
+        app:fabSize="normal"
+        app:rippleColor="#F3EBEB" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="43dp"
-        android:layout_height="62dp"
-        app:srcCompat="@drawable/ic_menu" />
 
     <TextView
         android:id="@+id/textView3"
@@ -72,7 +86,7 @@
         android:background="#d9d6cc"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Subject 1" />
+        android:text="@string/sub11" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/check_btn"
@@ -104,7 +118,6 @@
         android:layout_alignParentBottom="true"
         android:layout_gravity="end|bottom"
         android:layout_marginStart="287dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginTop="3dp"
         android:layout_marginEnd="71dp"
         android:layout_marginBottom="603dp"
@@ -127,7 +140,6 @@
         android:layout_marginStart="344dp"
         android:layout_marginTop="3dp"
         android:layout_marginEnd="13dp"
-        android:layout_marginRight="10dp"
         android:layout_marginBottom="602dp"
         android:src="@drawable/ic_add"
         android:tint="#FFFFFF"
@@ -151,6 +163,6 @@
         android:background="#d9d6cc"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Subject 2" />
+        android:text="@string/sub12" />
 
 </RelativeLayout>

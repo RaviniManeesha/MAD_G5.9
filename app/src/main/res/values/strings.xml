@@ -50,4 +50,8 @@
     <string name="menu3">Module 4</string>
     <string name="cal">Module 1 Calander</string>
     <string name="des">image1</string>
+    <string name="timetable">Add Timetable</string>
+    <string name="sub11">Subject 1</string>
+    <string name="sub12">Subject 2</string>
+
 </resources>
