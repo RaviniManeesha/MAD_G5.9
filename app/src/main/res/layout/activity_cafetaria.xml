@@ -17,11 +17,15 @@
         android:theme="?attr/actionBarTheme" />
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="43dp"
-        android:layout_height="62dp"
-        app:srcCompat="@drawable/ic_menu" />
-
+        android:contentDescription="@string/des"
+        android:id="@+id/imageView2"
+        android:layout_width="42dp"
+        android:layout_height="45dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="365dp"
+        android:layout_marginBottom="608dp"
+        android:src="@drawable/ic_menu" />
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
@@ -43,6 +47,7 @@
 
     <ImageView
         android:id="@+id/imageView18"
+        android:contentDescription="@string/des"
         android:layout_width="315dp"
         android:layout_height="292dp"
         android:layout_alignParentStart="true"
@@ -80,6 +85,6 @@
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="143dp"
         android:layout_marginBottom="37dp"
-        android:text="Back"
+        android:text="BACK"
         android:textSize="24sp" />
 </RelativeLayout>

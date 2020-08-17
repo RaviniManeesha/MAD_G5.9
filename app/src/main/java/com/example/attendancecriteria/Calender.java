@@ -11,7 +11,7 @@ import android.widget.ImageView;
 public class Calender extends AppCompatActivity {
 
     Button button8;
-    ImageView imageView;
+    ImageView imageView2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,8 +33,8 @@ public class Calender extends AppCompatActivity {
                 }
         );
 
-        imageView = (ImageView) findViewById(R.id.imageView);
-        imageView.setOnClickListener(
+        imageView2 = (ImageView) findViewById(R.id.imageView2);
+        imageView2.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {

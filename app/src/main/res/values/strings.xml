@@ -53,5 +53,6 @@
     <string name="timetable">Add Timetable</string>
     <string name="sub11">Subject 1</string>
     <string name="sub12">Subject 2</string>
+    <string name="back">BACK</string>
 
 </resources>
