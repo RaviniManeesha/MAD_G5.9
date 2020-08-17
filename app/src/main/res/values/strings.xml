@@ -48,11 +48,16 @@
     <string name="menu1">Module 2</string>
     <string name="menu2">Module 3</string>
     <string name="menu3">Module 4</string>
-    <string name="cal">Module 1 Calander</string>
+    <string name="cal">Module 1 Calender</string>
     <string name="des">image1</string>
     <string name="timetable">Add Timetable</string>
     <string name="sub11">Subject 1</string>
     <string name="sub12">Subject 2</string>
     <string name="back">BACK</string>
+    <string name="home">HOME</string>
+    <string name="Atten">ATTENDANCE</string>
+    <string name="submi">SUBMISSION</string>
+    <string name="Infoma">INFORMATION</string>
+    <string name="Help">HELP</string>
 
 </resources>

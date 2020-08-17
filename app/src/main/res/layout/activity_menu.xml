@@ -38,7 +38,7 @@
         android:layout_marginTop="55dp"
         android:layout_marginEnd="181dp"
         android:layout_marginBottom="544dp"
-        android:text="Home" />
+        android:text="@string/home" />
 
     <Button
         android:id="@+id/button11"
@@ -52,7 +52,7 @@
         android:layout_marginTop="108dp"
         android:layout_marginEnd="183dp"
         android:layout_marginBottom="489dp"
-        android:text="Attenadance" />
+        android:text="@string/MyAtt" />
 
     <Button
         android:id="@+id/button12"
@@ -66,7 +66,7 @@
         android:layout_marginTop="170dp"
         android:layout_marginEnd="181dp"
         android:layout_marginBottom="430dp"
-        android:text="Submissions" />
+        android:text="@string/submi" />
 
     <Button
         android:id="@+id/button13"
@@ -80,7 +80,7 @@
         android:layout_marginTop="232dp"
         android:layout_marginEnd="181dp"
         android:layout_marginBottom="372dp"
-        android:text="Informations" />
+        android:text="@string/Infoma" />
 
     <Button
         android:id="@+id/button14"
@@ -94,7 +94,7 @@
         android:layout_marginTop="289dp"
         android:layout_marginEnd="181dp"
         android:layout_marginBottom="311dp"
-        android:text="Help" />
+        android:text="@string/Help" />
 
 
 </RelativeLayout>
