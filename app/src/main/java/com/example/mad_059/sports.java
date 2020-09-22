@@ -14,7 +14,7 @@ public class sports extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sports);
 
-        textView2 = (TextView) findViewById(R.id.textView65);
+        textView2 = (TextView) findViewById(R.id.txtBack);
         textView2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

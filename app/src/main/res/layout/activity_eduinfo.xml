@@ -7,7 +7,7 @@
     tools:context=".eduinfo">
 
     <ImageView
-        android:id="@+id/imageView32"
+        android:id="@+id/img1"
         android:layout_width="466dp"
         android:layout_height="749dp"
         android:contentDescription="@string/img"
@@ -19,7 +19,7 @@
         app:srcCompat="@drawable/capture" />
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar11"
+        android:id="@+id/tb1"
         android:layout_width="418dp"
         android:layout_height="59dp"
         android:background="#050B42"
@@ -32,11 +32,51 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
+    <ImageView
+        android:id="@+id/img2"
+        android:layout_width="233dp"
+        android:layout_height="168dp"
+        android:contentDescription="@string/img"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.15"
+        app:srcCompat="@drawable/sports" />
+
+    <ImageView
+        android:id="@+id/img3"
+        android:layout_width="233dp"
+        android:layout_height="168dp"
+        android:contentDescription="@string/img"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.011"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.52"
+        app:srcCompat="@drawable/fees" />
+
+    <ImageView
+        android:id="@+id/img4"
+        android:layout_width="193dp"
+        android:layout_height="172dp"
+        android:contentDescription="@string/img"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.926"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.946"
+        app:srcCompat="@drawable/courses" />
+
     <TextView
-        android:id="@+id/textView60"
+        android:id="@+id/txtBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/aclonica"
+        android:onClick="goBack"
         android:text="@string/back"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
@@ -48,7 +88,7 @@
         app:layout_constraintVertical_bias="0.022" />
 
     <TextView
-        android:id="@+id/textView61"
+        android:id="@+id/txtEduInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/aclonica"
@@ -63,10 +103,11 @@
         app:layout_constraintVertical_bias="0.008" />
 
     <TextView
-        android:id="@+id/textView62"
+        android:id="@+id/txtSports"
         android:layout_width="135dp"
         android:layout_height="104dp"
         android:fontFamily="@font/aclonica"
+        android:onClick="openSports"
         android:text="@string/sands"
         android:textAlignment="center"
         android:textColor="#000000"
@@ -79,10 +120,11 @@
         app:layout_constraintVertical_bias="0.202" />
 
     <TextView
-        android:id="@+id/textView63"
+        android:id="@+id/txtFees"
         android:layout_width="150dp"
         android:layout_height="97dp"
         android:fontFamily="@font/aclonica"
+        android:onClick="openFees"
         android:text="@string/fee"
         android:textAlignment="center"
         android:textColor="#000000"
@@ -95,10 +137,11 @@
         app:layout_constraintVertical_bias="0.525" />
 
     <TextView
-        android:id="@+id/textView64"
+        android:id="@+id/txtCourses"
         android:layout_width="153dp"
         android:layout_height="128dp"
         android:fontFamily="@font/aclonica"
+        android:onClick="openCourses"
         android:text="@string/cando"
         android:textAlignment="center"
         android:textColor="#000000"
@@ -109,44 +152,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.927" />
-
-    <ImageView
-        android:id="@+id/imageView23"
-        android:layout_width="233dp"
-        android:layout_height="168dp"
-        android:contentDescription="@string/img"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.011"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.52"
-        app:srcCompat="@drawable/fees" />
-
-    <ImageView
-        android:id="@+id/imageView29"
-        android:layout_width="170dp"
-        android:layout_height="166dp"
-        android:contentDescription="@string/img"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.933"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.146"
-        app:srcCompat="@drawable/sports" />
-
-    <ImageView
-        android:id="@+id/imageView43"
-        android:layout_width="193dp"
-        android:layout_height="172dp"
-        android:contentDescription="@string/img"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.926"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.946"
-        app:srcCompat="@drawable/courses" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -138,4 +138,36 @@
         <item>Low</item>
     </string-array>
     <string name="select">Select</string>
+    <string name="reset">Reset Password</string>
+    <string name="cpwd">Confirm Password</string>
+    <string name="uppwd">Update Password</string>
+    <string name="sp1">Batminton</string>
+    <string name="sp2">Basketball</string>
+    <string name="sp3">Carrom</string>
+    <string name="sp4">Chess</string>
+    <string name="sp5">Cricket</string>
+    <string name="sp6">Football</string>
+    <string name="sp7">Fustal</string>
+    <string name="sp8">Hockey</string>
+    <string name="sp9">Karate</string>
+    <string name="sp10">Netball</string>
+    <string name="sp11">Rugby</string>
+    <string name="sp12">Swimming</string>
+    <string name="sp13">Table Tennis</string>
+    <string name="sp14">Tennis</string>
+    <string name="sp15"><![CDATA[Track &  Feild]]></string>
+    <string name="sp16">Water Polo</string>
+    <string name="sp17">Vollyball</string>
+    <string name="cdetails">" Contact Details
+                                Name: Ms.Hithaishi Jayawardana (Sports Coordinator)
+                                Tel no: 011 754 3139
+                                Email: hithaishi.j@sliit.lk"</string>
+    <string name="sis">Students Interactive Socity</string>
+    <string name="fs">Facalty Socities</string>
+    <string name="sc">Sports Council</string>
+    <string name="os">Other Socities</string>
+    <string name="cd">Contact Details</string>
+    <string name="cdname">Name: Ms.Hithaishi Jayawardana (Sports Coordinator)</string>
+    <string name="cdtel">Tel no: 011 754 3139</string>
+    <string name="cdemail">Email: hithaishi.j@sliit.lk</string>
 </resources>

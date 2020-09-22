@@ -16,8 +16,9 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class register2 extends AppCompatActivity {
 
-    EditText txtStName,txtPhone,txtEmail,txtDate;
+    EditText txtStName,txtPhone,txtEmail,txtDate,txtRegNo,txtPwd,txtRePwd;
     Button btnregister;
+    String regNo,pwd,repwd;
     DatabaseReference dbRef;
     Student std;
 
@@ -30,16 +31,30 @@ public class register2 extends AppCompatActivity {
         txtPhone = findViewById(R.id.phoneNo);
         txtEmail = findViewById(R.id.email);
         txtDate = findViewById(R.id.date);
+        txtRegNo = findViewById(R.id.ETRegNo);
+        txtPwd = findViewById(R.id.ETpwd);
+        txtRePwd = findViewById(R.id.ETrepwd);
+
+        Intent intent = getIntent();
+
+        regNo = intent.getStringExtra("regno");
+        pwd = intent.getStringExtra("pwd");
+        repwd = intent.getStringExtra("repwd");
+
+        txtRegNo.setText(regNo);
+        txtPwd.setText(pwd);
+        txtRePwd.setText(repwd);
 
         btnregister = findViewById(R.id.btn2);
         std = new Student();
 
-        //insert register 2 data
-        btnregister .setOnClickListener(new View.OnClickListener() {
+        //insert 2 register forms data
+        btnregister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 dbRef = FirebaseDatabase.getInstance().getReference().child("Student");
                 try {
+
                     if(TextUtils.isEmpty(txtStName.getText().toString()))
                         Toast.makeText(getApplicationContext(),"Please enter the Name",Toast.LENGTH_SHORT).show();
                     else if(TextUtils.isEmpty(txtPhone.getText().toString()))
@@ -54,11 +69,15 @@ public class register2 extends AppCompatActivity {
                         std.setPhone(Integer.parseInt(txtPhone.getText().toString().trim()));
                         std.setEmail(txtEmail.getText().toString().trim());
                         std.setDate(txtDate.getText().toString().trim());
+                        std.setRegNo(txtRegNo.getText().toString().trim());
+                        std.setPwd(txtPwd.getText().toString().trim());
+                        std.setRepwd(txtRePwd.getText().toString().trim());
 
-                        dbRef.push().setValue(std);
+                        dbRef.child("Std1").setValue(std);
                         Toast.makeText(getApplicationContext(),"Registered Successfully!",Toast.LENGTH_SHORT).show();
                         clearControls();
-                        openRegister();
+
+openRegister();
                     }
                 }catch (NumberFormatException e)
                 {
@@ -67,13 +86,13 @@ public class register2 extends AppCompatActivity {
 
             }
         });
+
     }
 
     public void openRegister(){
-
         Intent intent2 = new Intent(this,profile.class);
-        startActivity(intent2);
 
+        startActivity(intent2);
     }
 
     private void clearControls(){
@@ -82,6 +101,9 @@ public class register2 extends AppCompatActivity {
         txtPhone.setText("");
         txtEmail.setText("");
         txtDate.setText("");
+        txtRegNo.setText("");
+        txtPwd.setText("");
+        txtRePwd.setText("");
     }
 
 }

@@ -6,13 +6,20 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+
+import com.example.mad_059.Database.Student;
 
 public class resetpwd2 extends AppCompatActivity {
-    private Button button;
+    Button button;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resetpwd2);
+
+
 
         button =(Button) findViewById(R.id.button7);
         button.setOnClickListener(new View.OnClickListener() {

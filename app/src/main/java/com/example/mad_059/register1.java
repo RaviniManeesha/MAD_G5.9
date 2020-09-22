@@ -18,8 +18,6 @@ public class register1 extends AppCompatActivity {
 
     EditText txtRegNo,txtpwd,txtrepwd;
     Button btnnext;
-    DatabaseReference dbRef;
-    Student std;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,49 +29,29 @@ public class register1 extends AppCompatActivity {
         txtrepwd = findViewById(R.id.ETrepwd);
 
         btnnext = findViewById(R.id.btn1);
-        std = new Student();
-
-        //insert student register 1 data
-        btnnext.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                dbRef = FirebaseDatabase.getInstance().getReference().child("Student");
-
-                if(TextUtils.isEmpty(txtRegNo.getText().toString()))
-                    Toast.makeText(getApplicationContext(),"Please enter the Registration Number",Toast.LENGTH_SHORT).show();
-                else if(TextUtils.isEmpty(txtpwd.getText().toString()))
-                    Toast.makeText(getApplicationContext(),"Please enter the Password",Toast.LENGTH_SHORT).show();
-                else  if(TextUtils.isEmpty(txtrepwd.getText().toString()))
-                    Toast.makeText(getApplicationContext(),"Please reenter the Password",Toast.LENGTH_SHORT).show();
-                else{
-                    std.setRegNo(txtRegNo.getText().toString().trim());
-                    std.setPwd(txtpwd.getText().toString().trim());
-                    std.setRepwd(txtrepwd.getText().toString().trim());
-
-                    dbRef.push().setValue(std);
-
-
-                    clearControls();
-                    openNext();
-                }
-            }
-        });
 
 
     }
 
-    private void clearControls(){
+    public void openNext(View view){
 
-        txtRegNo.setText("");
-        txtpwd.setText("");
-        txtrepwd.setText("");
+        if(TextUtils.isEmpty(txtRegNo.getText().toString()))
+            Toast.makeText(getApplicationContext(),"Please enter the Registration Number",Toast.LENGTH_SHORT).show();
+        else if(TextUtils.isEmpty(txtpwd.getText().toString()))
+            Toast.makeText(getApplicationContext(),"Please enter the Password",Toast.LENGTH_SHORT).show();
+        else  if(TextUtils.isEmpty(txtrepwd.getText().toString()))
+            Toast.makeText(getApplicationContext(),"Please reenter the Password",Toast.LENGTH_SHORT).show();
+        else{
+            Intent intent = new Intent(this,register2.class);
+            intent .putExtra("regno",txtRegNo.getText().toString());
+            intent .putExtra("pwd",txtpwd.getText().toString());
+            intent .putExtra("repwd",txtrepwd.getText().toString());
+            startActivity(intent);
+        }
+
+
     }
 
-    public void openNext(){
-
-        Intent intent = new Intent(this,register2.class);
-        startActivity(intent);
-    }
 
 }
 
