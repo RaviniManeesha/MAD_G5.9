@@ -11,7 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".updatepwd"></activity>
+        <activity android:name=".othe_clubs"></activity>
+        <activity android:name=".sportclub" />
+        <activity android:name=".facultys" />
+        <activity android:name=".sis" />
+        <activity android:name=".updatepwd" />
         <activity android:name=".submission" />
         <activity android:name=".fees" />
         <activity android:name=".courses" />
@@ -40,9 +44,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".editprofile" />
-        <activity android:name=".MainActivity">
-
-        </activity>
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

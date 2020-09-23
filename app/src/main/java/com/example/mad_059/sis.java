@@ -5,21 +5,20 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
 
-public class fees extends AppCompatActivity {
+public class sis extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fees);
-
+        setContentView(R.layout.activity_sis);
     }
 
-    //go back
-    public  void  goBack(View view){
-        Intent intent2 = new Intent(fees.this,eduinfo.class);
-        startActivity(intent2);
+    //go back Sports and Clubs Details Activity
+    public  void  goBack(View view)
+    {
+        Intent intent1 = new Intent(sis.this,sports.class);
+        startActivity(intent1);
 
     }
 }

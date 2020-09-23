@@ -7,7 +7,7 @@
     tools:context=".fees">
 
     <ImageView
-        android:id="@+id/imageView34"
+        android:id="@+id/img1"
         android:layout_width="466dp"
         android:layout_height="749dp"
         android:contentDescription="@string/img"
@@ -20,7 +20,7 @@
         app:srcCompat="@drawable/capture" />
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar13"
+        android:id="@+id/tb1"
         android:layout_width="418dp"
         android:layout_height="59dp"
         android:background="#050B42"
@@ -34,10 +34,11 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/textView68"
+        android:id="@+id/textBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/aclonica"
+        android:onClick="goBack"
         android:text="@string/back"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
@@ -49,184 +50,397 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.022" />
 
-    <TextView
-        android:id="@+id/textView69"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/aclonica"
-        android:text="@string/cfees"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="36sp"
+    <ScrollView
+        android:layout_width="408dp"
+        android:layout_height="671dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.121" />
+        app:layout_constraintVertical_bias="0.967"
+        tools:ignore="MissingConstraints,NestedScrolling">
 
-    <TextView
-        android:id="@+id/textView70"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/aclonica"
-        android:text="@string/regfee"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.133"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.21" />
+    <LinearLayout
+        android:layout_width="434dp"
+        android:layout_height="700dp"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textView71"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/aclonica"
-        android:text="@string/efees"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.602" />
+        <TextView
+            android:id="@+id/textView69"
+            android:layout_width="405dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/aclonica"
+            android:text="@string/cfees"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="36sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.102" />
 
-    <TextView
-        android:id="@+id/textView72"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/aclonica"
-        android:text="@string/rfee"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.169"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.701" />
+        <TableLayout
+            android:layout_width="406dp"
+            android:layout_height="617dp"
+            android:background="#020202"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
 
-    <TextView
-        android:id="@+id/textView76"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/aclonica"
-        android:text="@string/pfees"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.106"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.862" />
+            <TableRow
+                android:layout_width="350dp"
+                android:layout_height="107dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginRight="5dp">
 
-    <TextView
-        android:id="@+id/textView101"
-        android:layout_width="169dp"
-        android:layout_height="47dp"
-        android:background="#E900BCD4"
-        android:fontFamily="@font/aclonica"
-        android:text="@string/courses"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.142"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.314" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:height="50dp"
+                    android:background="#77C1E3"
+                    android:fontFamily="@font/aclonica"
+                    android:layout_marginEnd="3dp"
+                    android:gravity="center"
+                    android:text="@string/courses"
+                    android:textColor="#000000"
+                    android:textColorHint="#000000"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/textView102"
-        android:layout_width="169dp"
-        android:layout_height="48dp"
-        android:background="#E900BCD4"
-        android:fontFamily="@font/aclonica"
-        android:text="@string/cfees"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.88"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.314" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:height="50dp"
+                    android:background="#77C1E3"
+                    android:fontFamily="@font/aclonica"
+                    android:gravity="center"
+                    android:text="@string/cfees"
+                    android:textColor="#000000"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/textView103"
-        android:layout_width="168dp"
-        android:layout_height="48dp"
-        android:background="#DCA8A8"
-        android:fontFamily="@font/aclonica"
-        android:text="@string/c1"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.135"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.398" />
 
-    <TextView
-        android:id="@+id/textView104"
-        android:layout_width="169dp"
-        android:layout_height="48dp"
-        android:background="#DCA8A8"
-        android:fontFamily="@font/aclonica"
-        android:text="@string/fees"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.88"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.484" />
+            </TableRow>
 
-    <TextView
-        android:id="@+id/textView105"
-        android:layout_width="169dp"
-        android:layout_height="48dp"
-        android:background="#DCA8A8"
-        android:fontFamily="@font/aclonica"
-        android:text="@string/fees"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.88"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.398" />
+            <TableRow
+                android:layout_width="350dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginRight="5dp">
 
-    <TextView
-        android:id="@+id/textView106"
-        android:layout_width="168dp"
-        android:layout_height="48dp"
-        android:background="#DCA8A8"
-        android:fontFamily="@font/aclonica"
-        android:text="@string/c2"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.135"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.484" />
+                <TextView
+                    android:layout_width="179dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="3dp"
+                    android:layout_weight="1"
+                    android:height="60dp"
+                    android:background="#A3ADB1"
+                    android:fontFamily="@font/aclonica"
+                    android:gravity="center"
+                    android:text="@string/c1"
+                    android:textAlignment="inherit"
+                    android:textColor="#000000"
+                    android:textColorHint="#000000"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:height="80dp"
+                    android:background="#A3ADB1"
+                    android:fontFamily="@font/aclonica"
+                    android:gravity="center"
+                    android:text="@string/cfees"
+                    android:textColor="#000000"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="350dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginRight="5dp">
+
+                <TextView
+                    android:layout_width="179dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="3dp"
+                    android:layout_weight="1"
+                    android:height="60dp"
+                    android:background="#9DD1E6"
+                    android:fontFamily="@font/aclonica"
+                    android:gravity="center"
+                    android:text="@string/c2"
+                    android:textAlignment="inherit"
+                    android:textColor="#000000"
+                    android:textColorHint="#000000"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:height="80dp"
+                    android:background="#9DD1E6"
+                    android:fontFamily="@font/aclonica"
+                    android:gravity="center"
+                    android:text="@string/cfees"
+                    android:textColor="#000000"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="350dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginRight="5dp">
+
+                <TextView
+                    android:layout_width="179dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="3dp"
+                    android:layout_weight="1"
+                    android:height="60dp"
+                    android:background="#A3ADB1"
+                    android:fontFamily="@font/aclonica"
+                    android:gravity="center"
+                    android:text="@string/c3"
+                    android:textAlignment="inherit"
+                    android:textColor="#000000"
+                    android:textColorHint="#000000"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:height="80dp"
+                    android:background="#A3ADB1"
+                    android:fontFamily="@font/aclonica"
+                    android:gravity="center"
+                    android:text="@string/cfees"
+                    android:textColor="#000000"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="350dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginRight="5dp">
+
+                <TextView
+                    android:layout_width="179dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="3dp"
+                    android:layout_weight="1"
+                    android:height="60dp"
+                    android:background="#9DD1E6"
+                    android:fontFamily="@font/aclonica"
+                    android:gravity="center"
+                    android:text="@string/c4"
+                    android:textAlignment="inherit"
+                    android:textColor="#000000"
+                    android:textColorHint="#000000"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:height="80dp"
+                    android:background="#9DD1E6"
+                    android:fontFamily="@font/aclonica"
+                    android:gravity="center"
+                    android:text="@string/cfees"
+                    android:textColor="#000000"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="350dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginRight="5dp">
+
+                <TextView
+                    android:layout_width="179dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="3dp"
+                    android:layout_weight="1"
+                    android:height="60dp"
+                    android:background="#A3ADB1"
+                    android:fontFamily="@font/aclonica"
+                    android:gravity="center"
+                    android:text="@string/c5"
+                    android:textAlignment="inherit"
+                    android:textColor="#000000"
+                    android:textColorHint="#000000"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:height="80dp"
+                    android:background="#A3ADB1"
+                    android:fontFamily="@font/aclonica"
+                    android:gravity="center"
+                    android:text="@string/cfees"
+                    android:textColor="#000000"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="350dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginRight="5dp">
+
+                <TextView
+                    android:layout_width="179dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="3dp"
+                    android:layout_weight="1"
+                    android:height="60dp"
+                    android:background="#9DD1E6"
+                    android:fontFamily="@font/aclonica"
+                    android:gravity="center"
+                    android:text="@string/c6"
+                    android:textAlignment="inherit"
+                    android:textColor="#000000"
+                    android:textColorHint="#000000"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:height="80dp"
+                    android:background="#9DD1E6"
+                    android:fontFamily="@font/aclonica"
+                    android:gravity="center"
+                    android:text="@string/cfees"
+                    android:textColor="#000000"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="350dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginRight="5dp">
+
+                <TextView
+                    android:layout_width="179dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="3dp"
+                    android:layout_weight="1"
+                    android:height="60dp"
+                    android:background="#A3ADB1"
+                    android:fontFamily="@font/aclonica"
+                    android:gravity="center"
+                    android:text="@string/c7"
+                    android:textAlignment="inherit"
+                    android:textColor="#000000"
+                    android:textColorHint="#000000"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:height="80dp"
+                    android:background="#A3ADB1"
+                    android:fontFamily="@font/aclonica"
+                    android:gravity="center"
+                    android:text="@string/cfees"
+                    android:textColor="#000000"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+
+        </TableLayout>
+
+        <TextView
+            android:id="@+id/textView71"
+            android:layout_width="408dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/aclonica"
+            android:text="@string/efees"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="36sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.602" />
+        <TextView
+            android:id="@+id/textView72"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/aclonica"
+            android:text="@string/rfee"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="30sp"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="60dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.169"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.701" />
+
+        <TextView
+            android:id="@+id/textView76"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/aclonica"
+            android:text="@string/pfees"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="30sp"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="60dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.106"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.862" />
+
+    </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -124,12 +124,28 @@
 
     <!--courses-->
     <string name="courses">Courses</string>
-    <string name="c1">Course 1</string>
-    <string name="c2">Course 2</string>
-    <string name="c3">Course 3</string>
-    <string name="c4">Course 4</string>
-    <string name="odu">Overses Education</string>
-    <string name="details">Details</string>
+    <string name="c1">BSc (Hons) in Information Technology
+Specialising in Computer Systems &amp; Network Engineering</string>
+    <string name="c2">BSc (Hons) in Information Technology
+Specialising in Information Systems Engineering</string>
+    <string name="c3">BSc (Hons) in Information Technology
+Specialising in Cyber Security</string>
+    <string name="c4">BSc (Hons) in Information Technology
+Specialising in Software Engineering</string>
+    <string name="c5">BSc (Hons) in Information Technology
+Specialising in Data Science</string>
+    <string name="c6">BSc (Hons) in Information Technology
+Specialising in Interactive Media</string>
+    <string name="c7">BSc (Hons) in Information Technology
+Specialising in Information Technology</string>
+    <string name="odu">Foreign Courses</string>
+    <string name="f1">
+Bachelor of Science
+(Computer Systems &amp; Networking)</string>
+    <string name="f2">Bachelor of Computing
+(Software Engineering)</string>
+    <string name="f3">Bachelor of Information Technology</string>
+
 
     <string-array name="priority">
         <item>Select</item>
@@ -170,4 +186,44 @@
     <string name="cdname">Name: Ms.Hithaishi Jayawardana (Sports Coordinator)</string>
     <string name="cdtel">Tel no: 011 754 3139</string>
     <string name="cdemail">Email: hithaishi.j@sliit.lk</string>
+    <string name="SIS">Students Interactive Society</string>
+    <string name="sisdetails">The main student body within SLIIT, comprising student representatives of the Departmental societies in Information Technology, Engineering, and Business Management.</string>
+    <string name="sisdetails2">The patrons of the society are the Chancellor and Vise Chancellor of SLIIT. SIS together with the respective student communities, organize various events, maintains decorum and adheres to rules, upholding the good name of the institute.</string>
+    <string name="sisgroup">Student Interactive Society – Office Bearers</string>
+    <string name="president">1.President:</string>
+    <string name="vpresident">2.Vice President:</string>
+    <string name="secretary">3.Secretary</string>
+    <string name="vsecretary">4.Assistant Secretary:</string>
+    <string name="treasurer">5.Treasurer:</string>
+    <string name="editor">6.Editor:</string>
+    <string name="fcsc">Faculty of computing student community (FCSC)</string>
+    <string name="fcscdetails">Aims at enhancing the knowledge of IT students and accustom them to the ever-changing IT industry. This is done through activities such as workshops and guest lectures by leading IT Professionals in the industry, enabling better student interaction and knowledge-sharing.</string>
+    <string name="fcscgroup">Faculty of computing student community (FCSC) – Office Bearers</string>
+    <string name="FESC">Faculty of engineering student community (FESC)</string>
+    <string name="fescdetails">Considered the main student community of the Faculty of Engineering, functioning under the guidance of the Student Interactive Society (SIS). FESC mainly focuses on the academic problems and the difficulties of engineering students, and works together with senior staff of the faculty and the community for solutions.</string>
+    <string name="fescgroup">Faculty of engineering student community (FESC) – Office Bearers</string>
+    <string name="FBSC">Faculty Of Business Student Community (FBSC)</string>
+    <string name="fbscdetails">Formed under the main student body, The student Interactive Society (SIS), comprises the undergraduates of the Business Management stream. The committee acts as the student representative, facilitating necessary programmes along with managing the Faculty of Business.</string>
+    <string name="fbscgroup">Faculty Of Business Student Community (FBSC) – Office Bearers</string>
+    <string name="sportclub">" Sport Council"</string>
+    <string name="scouncildetails">Promotes sports and recreational activities. At SLIIT, students engage in a wide range of sports including cricket, rugby, volleyball, tennis, table tennis, badminton, chess, carom and karate. The Malabe campus has excellent indoor and outdoor sports facilities. These include a large playground, a tennis court, a basketball court, indoor table tennis, carom and a well- equipped gymnasium.</string>
+    <string name="club1">ISACA in SLIIT</string>
+    <string name="c1details">ISACA SLIIT student chapter is to promote the career in assurance and consult audit in cyber security sides. To provide the career work we do some workshops and meetups to help the students to get success. ISACA SLIIT Student Chapter is the third ISACA Student Chapter under the ISACA Sri Lanaka Chapter, which work with the aim of encouraging education beyond the university students’ capability to learn and to connect the supportive professionals in the industry.</string>
+    <string name="club2">Rotaract Club</string>
+    <string name="c2details">A service club established for SLIIT students under ‘Rotary International’. The sponsorship by local Rotary Club/s is mentored by the parent club in Battaramulla. Membership is open to all SLIIT students and aims to develop professional and leadership skills, emphasizing on respect for rights of others, promoting ethical standards and the dignity of all useful occupations. It also creates opportunities for members to initiate community development projects, promoting peace and understanding within the community. Interacting within sponsoring Rotary Clubs and actively participating in the activities undertaken by them. Rotaractors conduct projects under four categories. Professional development, community service, club service and international understanding.</string>
+    <string name="club3">The Gavel Club</string>
+    <string name="c3details">A community that provides the student body with opportunities to develop communications skills as well as means for self-improvement. Since its formation in 2012, The Gavel Club has thrived in the guidance and support of the SLIIT Toastmasters Club, as well as other academic staff. As a communications and leadership programme modeled after Toastmasters International, The Gavel club is a way of providing the Toastmasters experience to groups who may be eligible for regular membership.</string>
+    <string name="c32details">" The Toastmasters title is globally recognized as an accredited name. Not only does The Gavel Club allow students to earn this title, but it also prepares these students for the demands of the real world after university."</string>
+    <string name="club4">SLIIT Gaming Community</string>
+    <string name="c4details">Formed in 2013, by a group of young, dynamic individuals with a passion for digital games including game designing and developing. A multipurpose group to create opportunities amongst those interested in this particular field. The community mainly intends to teach the fundamentals of game designing and development, providing resources and instructions to those willing to embark on creating or designing games and game testing.</string>
+    <string name="club5">SLIIT AIESEC</string>
+    <string name="club6">SLIIT LEO Club</string>
+    <string name="club7">SLIIT Faculty Of Computing Media Unit</string>
+    <string name="club8">SLIIT Faculty Of Engineering Media Unit</string>
+    <string name="club9">IEEE Student Branch of SLIIT</string>
+    <string name="club10">SLIIT Engineering Research and Innovation Club</string>
+    <string name="club11">Art Circle SLIIT</string>
+    <string name="club12">SLIIT Drama Society</string>
+    <string name="club13">SLIIT Student Chapter</string>
+
 </resources>

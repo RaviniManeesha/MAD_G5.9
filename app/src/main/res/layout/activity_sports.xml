@@ -36,6 +36,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/aclonica"
+        android:onClick="goBack"
         android:text="@string/back"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
@@ -64,7 +65,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tx5"
+                android:id="@+id/txtSports"
                 android:layout_width="409dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -82,39 +83,41 @@
 
 
             <ImageView
-                android:id="@+id/imageView27"
+                android:id="@+id/img2"
                 android:layout_width="112dp"
                 android:layout_height="108dp"
-                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
                 android:background="#FFFFFF"
+                android:contentDescription="@string/img"
                 app:srcCompat="@drawable/sliit_sport_19" />
 
             <ImageView
-                android:id="@+id/imageView50"
+                android:id="@+id/img3"
                 android:layout_width="112dp"
                 android:layout_height="108dp"
-                android:layout_marginLeft="150dp"
+                android:layout_marginStart="150dp"
                 android:layout_marginTop="-108dp"
-
                 android:background="#FFFFFF"
-                app:srcCompat="@drawable/sliit_sport_4" />
+                app:srcCompat="@drawable/sliit_sport_4"
+                android:contentDescription="@string/img" />
 
             <ImageView
-                android:id="@+id/imageView47"
+                android:id="@+id/img4"
                 android:layout_width="112dp"
                 android:layout_height="108dp"
-                android:layout_marginLeft="280dp"
+                android:layout_marginStart="280dp"
                 android:layout_marginTop="-108dp"
-                android:layout_marginRight="10dp"
+                android:layout_marginEnd="10dp"
                 android:background="#FFFFFF"
+                android:contentDescription="@string/img"
                 app:srcCompat="@drawable/sliit_sport_22" />
 
             <TextView
-                android:id="@+id/textView67"
+                android:id="@+id/txt1"
                 android:layout_width="113dp"
                 android:layout_height="23dp"
-                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="-25dp"
                 android:fontFamily="@font/aclonica"
                 android:text="@string/sp1"
@@ -123,10 +126,10 @@
                 android:textSize="18sp" />
 
             <TextView
-                android:id="@+id/textView108"
+                android:id="@+id/txt2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="153dp"
+                android:layout_marginStart="153dp"
                 android:layout_marginTop="-24dp"
                 android:fontFamily="@font/aclonica"
                 android:text="@string/sp2"
@@ -135,10 +138,10 @@
                 android:textSize="18sp" />
 
             <TextView
-                android:id="@+id/textView109"
+                android:id="@+id/txt3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="290dp"
+                android:layout_marginStart="290dp"
                 android:layout_marginTop="-21dp"
                 android:fontFamily="@font/aclonica"
                 android:text="@string/sp3"
@@ -147,38 +150,41 @@
                 android:textSize="18sp" />
 
             <ImageView
-                android:id="@+id/imageView53"
+                android:id="@+id/img5"
                 android:layout_width="112dp"
                 android:layout_height="108dp"
-                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
                 android:background="#FFFFFF"
+                android:contentDescription="@string/img"
                 app:srcCompat="@drawable/sliit_sport_6" />
 
             <ImageView
-                android:id="@+id/imageView54"
+                android:id="@+id/img6"
                 android:layout_width="112dp"
                 android:layout_height="108dp"
-                android:layout_marginLeft="150dp"
+                android:layout_marginStart="150dp"
                 android:layout_marginTop="-108dp"
                 android:background="#FFFFFF"
+                android:contentDescription="@string/img"
                 app:srcCompat="@drawable/sliit_sport_8" />
 
             <ImageView
-                android:id="@+id/imageView55"
+                android:id="@+id/img7"
                 android:layout_width="112dp"
                 android:layout_height="108dp"
-                android:layout_marginLeft="280dp"
+                android:layout_marginStart="280dp"
                 android:layout_marginTop="-108dp"
-                android:layout_marginRight="20dp"
+                android:layout_marginEnd="20dp"
                 android:background="#FFFFFF"
+                android:contentDescription="@string/img"
                 app:srcCompat="@drawable/sliit_sport_23" />
 
             <TextView
-                android:id="@+id/textView110"
+                android:id="@+id/txt4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
+                android:layout_marginStart="50dp"
                 android:layout_marginTop="-25dp"
                 android:fontFamily="@font/aclonica"
                 android:text="@string/sp4"
@@ -187,10 +193,10 @@
                 android:textSize="18sp" />
 
             <TextView
-                android:id="@+id/textView111"
+                android:id="@+id/txt5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="170dp"
+                android:layout_marginStart="170dp"
                 android:layout_marginTop="-23dp"
                 android:fontFamily="@font/aclonica"
                 android:text="@string/sp5"
@@ -199,10 +205,10 @@
                 android:textSize="18sp" />
 
             <TextView
-                android:id="@+id/textView112"
+                android:id="@+id/txt6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="290dp"
+                android:layout_marginStart="290dp"
                 android:layout_marginTop="-23dp"
                 android:fontFamily="@font/aclonica"
                 android:text="@string/sp6"
@@ -211,37 +217,40 @@
                 android:textSize="18sp" />
 
             <ImageView
-                android:id="@+id/imageView52"
+                android:id="@+id/img8"
                 android:layout_width="112dp"
                 android:layout_height="108dp"
-                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
                 android:background="#FFFFFF"
+                android:contentDescription="@string/img"
                 app:srcCompat="@drawable/sliit_sport_24" />
 
             <ImageView
-                android:id="@+id/imageView51"
+                android:id="@+id/img9"
                 android:layout_width="112dp"
                 android:layout_height="108dp"
-                android:layout_marginLeft="150dp"
+                android:layout_marginStart="150dp"
                 android:layout_marginTop="-108dp"
                 android:background="#FFFFFF"
+                android:contentDescription="@string/img"
                 app:srcCompat="@drawable/sliit_sport_10" />
 
             <ImageView
-                android:id="@+id/imageView49"
+                android:id="@+id/img10"
                 android:layout_width="112dp"
                 android:layout_height="108dp"
-                android:layout_marginLeft="280dp"
+                android:layout_marginStart="280dp"
                 android:layout_marginTop="-108dp"
                 android:background="#FFFFFF"
+                android:contentDescription="@string/img"
                 app:srcCompat="@drawable/sliit_sport_12" />
 
             <TextView
-                android:id="@+id/textView113"
+                android:id="@+id/txt7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="45dp"
+                android:layout_marginStart="45dp"
                 android:layout_marginTop="-25dp"
                 android:fontFamily="@font/aclonica"
                 android:text="@string/sp7"
@@ -250,10 +259,10 @@
                 android:textSize="18sp" />
 
             <TextView
-                android:id="@+id/textView114"
+                android:id="@+id/txt8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="165dp"
+                android:layout_marginStart="165dp"
                 android:layout_marginTop="-25dp"
                 android:fontFamily="@font/aclonica"
                 android:text="@string/sp8"
@@ -262,10 +271,10 @@
                 android:textSize="18sp" />
 
             <TextView
-                android:id="@+id/textView115"
+                android:id="@+id/txt9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="300dp"
+                android:layout_marginStart="300dp"
                 android:layout_marginTop="-25dp"
                 android:fontFamily="@font/aclonica"
                 android:text="@string/sp9"
@@ -274,37 +283,40 @@
                 android:textSize="18sp" />
 
             <ImageView
-                android:id="@+id/imageView1"
+                android:id="@+id/img11"
                 android:layout_width="112dp"
                 android:layout_height="108dp"
-                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
                 android:background="#FFFFFF"
+                android:contentDescription="@string/img"
                 app:srcCompat="@drawable/sliit_sport_13" />
 
             <ImageView
-                android:id="@+id/imageView44"
+                android:id="@+id/img12"
                 android:layout_width="112dp"
                 android:layout_height="108dp"
-                android:layout_marginLeft="150dp"
+                android:layout_marginStart="150dp"
                 android:layout_marginTop="-108dp"
                 android:background="#FFFFFF"
+                android:contentDescription="@string/img"
                 app:srcCompat="@drawable/sliit_sport_15" />
 
             <ImageView
-                android:id="@+id/imageView46"
+                android:id="@+id/img13"
                 android:layout_width="112dp"
                 android:layout_height="108dp"
-                android:layout_marginLeft="280dp"
+                android:layout_marginStart="280dp"
                 android:layout_marginTop="-108dp"
                 android:background="#FFFFFF"
+                android:contentDescription="@string/img"
                 app:srcCompat="@drawable/sliit_sport_17" />
 
             <TextView
-                android:id="@+id/textView116"
+                android:id="@+id/txt10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
+                android:layout_marginStart="40dp"
                 android:layout_marginTop="-25dp"
                 android:fontFamily="@font/aclonica"
                 android:text="@string/sp10"
@@ -313,10 +325,10 @@
                 android:textSize="18sp" />
 
             <TextView
-                android:id="@+id/textView118"
+                android:id="@+id/txt11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="170dp"
+                android:layout_marginStart="170dp"
                 android:layout_marginTop="-25dp"
                 android:fontFamily="@font/aclonica"
                 android:text="@string/sp11"
@@ -325,10 +337,10 @@
                 android:textSize="18sp" />
 
             <TextView
-                android:id="@+id/textView117"
+                android:id="@+id/txt12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="283dp"
+                android:layout_marginStart="283dp"
                 android:layout_marginTop="-25dp"
                 android:fontFamily="@font/aclonica"
                 android:text="@string/sp12"
@@ -337,40 +349,43 @@
                 android:textSize="18sp" />
 
             <ImageView
-                android:id="@+id/imageView"
+                android:id="@+id/img14"
                 android:layout_width="112dp"
                 android:layout_height="108dp"
-                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
                 android:background="#FFFFFF"
+                android:contentDescription="@string/img"
                 app:srcCompat="@drawable/sliit_sport_18"
                 tools:ignore="DuplicateIds" />
 
             <ImageView
-                android:id="@+id/imageView44"
+                android:id="@+id/img15"
                 android:layout_width="112dp"
                 android:layout_height="108dp"
-                android:layout_marginLeft="150dp"
+                android:layout_marginStart="150dp"
                 android:layout_marginTop="-108dp"
                 android:background="#FFFFFF"
                 app:srcCompat="@drawable/sliit_sport_19"
+                android:contentDescription="@string/img"
                 tools:ignore="DuplicateIds" />
 
             <ImageView
-                android:id="@+id/imageView46"
+                android:id="@+id/img16"
                 android:layout_width="112dp"
                 android:layout_height="108dp"
-                android:layout_marginLeft="280dp"
+                android:layout_marginStart="280dp"
                 android:layout_marginTop="-108dp"
                 android:background="#FFFFFF"
                 app:srcCompat="@drawable/sliit_sport_2"
+                android:contentDescription="@string/img"
                 tools:ignore="DuplicateIds" />
 
             <TextView
-                android:id="@+id/textView116"
+                android:id="@+id/txt13"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="22dp"
+                android:layout_marginStart="22dp"
                 android:layout_marginTop="-25dp"
                 android:fontFamily="@font/aclonica"
                 android:text="@string/sp13"
@@ -380,10 +395,10 @@
                 tools:ignore="DuplicateIds" />
 
             <TextView
-                android:id="@+id/textView118"
+                android:id="@+id/txt14"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="170dp"
+                android:layout_marginStart="170dp"
                 android:layout_marginTop="-25dp"
                 android:fontFamily="@font/aclonica"
                 android:text="@string/sp14"
@@ -393,10 +408,10 @@
                 tools:ignore="DuplicateIds" />
 
             <TextView
-                android:id="@+id/textView117"
+                android:id="@+id/txt15"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="277dp"
+                android:layout_marginStart="277dp"
                 android:layout_marginTop="-20dp"
                 android:fontFamily="@font/aclonica"
                 android:text="@string/sp15"
@@ -406,31 +421,33 @@
                 tools:ignore="DuplicateIds" />
 
             <ImageView
-                android:id="@+id/imageView"
+                android:id="@+id/img17"
                 android:layout_width="112dp"
                 android:layout_height="108dp"
-                android:layout_marginLeft="70dp"
+                android:layout_marginStart="70dp"
                 android:layout_marginTop="20dp"
                 android:background="#FFFFFF"
                 app:srcCompat="@drawable/sliit_sport_25"
+                android:contentDescription="@string/img"
                 tools:ignore="DuplicateIds" />
 
             <ImageView
-                android:id="@+id/imageView44"
+                android:id="@+id/img18"
                 android:layout_width="112dp"
                 android:layout_height="108dp"
-                android:layout_marginLeft="230dp"
+                android:layout_marginStart="230dp"
                 android:layout_marginTop="-108dp"
-                android:layout_marginRight="70dp"
+                android:layout_marginEnd="70dp"
                 android:background="#FFFFFF"
                 app:srcCompat="@drawable/sliit_sport_26"
+                android:contentDescription="@string/img"
                 tools:ignore="DuplicateIds" />
 
             <TextView
-                android:id="@+id/textView116"
+                android:id="@+id/txt16"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="72dp"
+                android:layout_marginStart="72dp"
                 android:layout_marginTop="-25dp"
                 android:fontFamily="@font/aclonica"
                 android:text="@string/sp16"
@@ -440,10 +457,10 @@
                 tools:ignore="DuplicateIds" />
 
             <TextView
-                android:id="@+id/textView118"
+                android:id="@+id/txtd1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="245dp"
+                android:layout_marginStart="245dp"
                 android:layout_marginTop="-25dp"
                 android:fontFamily="@font/aclonica"
                 android:text="@string/sp17"
@@ -453,10 +470,10 @@
                 tools:ignore="DuplicateIds" />
 
             <TextView
-                android:id="@+id/textView118"
+                android:id="@+id/txtd2"
                 android:layout_width="424dp"
                 android:layout_height="30dp"
-                android:layout_marginLeft="-10dp"
+                android:layout_marginStart="-10dp"
                 android:layout_marginTop="25dp"
                 android:fontFamily="@font/aclonica"
                 android:text="@string/cd"
@@ -466,10 +483,10 @@
                 tools:ignore="DuplicateIds" />
 
             <TextView
-                android:id="@+id/textView118"
+                android:id="@+id/txtd3"
                 android:layout_width="424dp"
                 android:layout_height="40dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/aclonica"
                 android:text="@string/cdname"
@@ -479,10 +496,10 @@
                 tools:ignore="DuplicateIds" />
 
             <TextView
-                android:id="@+id/textView118"
+                android:id="@+id/txtd4"
                 android:layout_width="424dp"
                 android:layout_height="30dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="7dp"
                 android:fontFamily="@font/aclonica"
                 android:text="@string/cdtel"
@@ -492,10 +509,10 @@
                 tools:ignore="DuplicateIds" />
 
             <TextView
-                android:id="@+id/textView118"
+                android:id="@+id/txtd5"
                 android:layout_width="424dp"
                 android:layout_height="30dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/aclonica"
                 android:text="@string/cdemail"
@@ -503,10 +520,11 @@
                 android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="18sp"
                 tools:ignore="DuplicateIds" />
+
             <ScrollView
                 android:layout_width="418dp"
                 android:layout_height="400dp"
-                tools:ignore="MissingConstraints">
+                tools:ignore="MissingConstraints,NestedScrolling">
 
                 <LinearLayout
                     android:layout_width="434dp"
@@ -514,7 +532,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/tx5"
+                        android:id="@+id/txtClubs"
                         android:layout_width="409dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
@@ -532,13 +550,14 @@
                         tools:ignore="DuplicateIds" />
 
                     <Button
-                        android:id="@+id/button2"
+                        android:id="@+id/btn1"
                         android:layout_width="300dp"
                         android:layout_height="50dp"
-                        android:layout_marginLeft="60dp"
+                        android:layout_marginStart="60dp"
                         android:layout_marginTop="30dp"
                         android:background="#76D8E4"
                         android:fontFamily="@font/aclonica"
+                        android:onClick="openSIS"
                         android:text="@string/sis"
                         android:textAllCaps="false"
                         android:textColor="#000000"
@@ -552,13 +571,14 @@
                         tools:ignore="DuplicateIds" />
 
                     <Button
-                        android:id="@+id/button2"
+                        android:id="@+id/btn2"
                         android:layout_width="300dp"
                         android:layout_height="50dp"
-                        android:layout_marginLeft="60dp"
+                        android:layout_marginStart="60dp"
                         android:layout_marginTop="30dp"
                         android:background="#76D8E4"
                         android:fontFamily="@font/aclonica"
+                        android:onClick="openFaculty"
                         android:text="@string/fs"
                         android:textAllCaps="false"
                         android:textColor="#000000"
@@ -572,13 +592,14 @@
                         tools:ignore="DuplicateIds" />
 
                     <Button
-                        android:id="@+id/button2"
+                        android:id="@+id/btn3"
                         android:layout_width="300dp"
                         android:layout_height="50dp"
-                        android:layout_marginLeft="60dp"
+                        android:layout_marginStart="60dp"
                         android:layout_marginTop="30dp"
                         android:background="#76D8E4"
                         android:fontFamily="@font/aclonica"
+                        android:onClick="openSports"
                         android:text="@string/sc"
                         android:textAllCaps="false"
                         android:textColor="#000000"
@@ -592,13 +613,14 @@
                         tools:ignore="DuplicateIds" />
 
                     <Button
-                        android:id="@+id/button2"
+                        android:id="@+id/btn4"
                         android:layout_width="300dp"
                         android:layout_height="50dp"
-                        android:layout_marginLeft="60dp"
+                        android:layout_marginStart="60dp"
                         android:layout_marginTop="30dp"
                         android:background="#76D8E4"
                         android:fontFamily="@font/aclonica"
+                        android:onClick="openOthers"
                         android:text="@string/os"
                         android:textAllCaps="false"
                         android:textColor="#000000"
