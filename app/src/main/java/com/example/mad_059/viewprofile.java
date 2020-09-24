@@ -1,78 +1,71 @@
 package com.example.mad_059;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 
+import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+import com.example.mad_059.Database.DBHelper;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 public class viewprofile extends AppCompatActivity {
 
-    private Button button3;
-    TextView textView2,txtregno,txtpwd,txtname,txtemail,txtphone,txtdate;
+    TextView txtRegNo,txtPwd,txtName,txtEmail,txtPhone,txtDate;
+    DBHelper DB;
+    String RegNo,Pwd,Name,Phone,Email,Date;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_viewprofile);
 
-        txtregno =  findViewById(R.id.reegno);
-        txtname =  findViewById(R.id.name);
-        txtpwd =  findViewById(R.id.password);
-        txtphone =  findViewById(R.id.phone);
-        txtdate =  findViewById(R.id.date);
-        txtemail =  findViewById(R.id.email);
+        txtRegNo =  findViewById(R.id.regno);
+        txtName =  findViewById(R.id.name);
+        txtPwd =  findViewById(R.id.password);
+        txtPhone =  findViewById(R.id.phone);
+        txtDate =  findViewById(R.id.date);
+        txtEmail =  findViewById(R.id.email);
 
-        button3 =(Button) findViewById(R.id.button);
-        button3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openEdit();
+        DB = new DBHelper(this);
+
+        Cursor cursor = DB.getData();
+        if(cursor.getCount() == 0){
+
+            Toast.makeText(getApplicationContext(),"No Data",Toast.LENGTH_SHORT).show();
+
+        }else{
+
+            while(cursor.moveToNext()){
+                RegNo = cursor.getString(1);
+                Pwd = cursor.getString(2);
+                Name =  cursor.getString(3);
+                Phone = cursor.getString(4);
+                Email = cursor.getString(5);
+                Date = cursor.getString(6);
             }
-        });
+        }
 
-        textView2 =  findViewById(R.id.textView19);
-        textView2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent1 = new Intent(viewprofile.this,profile.class);
-                startActivity(intent1);
+        txtRegNo.setText(RegNo);
+        txtName.setText(Name);
+        txtPwd.setText(Pwd);
+        txtPhone.setText(Phone);
+        txtEmail.setText(Email);
+        txtDate.setText(Date);
 
 
-            }
-        });
-
-        DatabaseReference readRef = FirebaseDatabase.getInstance().getReference().child("Student").child("Std1");
-        readRef.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                txtregno.setText(dataSnapshot.child("regNo").getValue().toString());
-                txtname.setText(dataSnapshot.child("stName").getValue().toString());
-                txtpwd.setText(dataSnapshot.child("pwd").getValue().toString());
-                txtphone.setText(dataSnapshot.child("phone").getValue().toString());
-                txtemail.setText(dataSnapshot.child("email").getValue().toString());
-                txtdate.setText(dataSnapshot.child("date").getValue().toString());
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
     }
 
-    public void openEdit(){
-
-        Intent intent3 = new Intent(this,editprofile.class);
-        startActivity(intent3);
+    public void openEdit(View view){
+        Intent intent1 = new Intent(this,editprofile.class);
+        startActivity(intent1);
     }
+
+    public void goBack1(View view){
+        Intent intent2 = new Intent(viewprofile.this,profile.class);
+        startActivity(intent2);
+    }
+
 }

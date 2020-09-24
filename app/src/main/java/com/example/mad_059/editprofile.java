@@ -1,131 +1,91 @@
 package com.example.mad_059;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.example.mad_059.Database.DBHelper;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 public class editprofile extends AppCompatActivity {
 
-    Button btndone;
-    TextView textView4,txtregno,txtname,txtemail,txtphone,txtdate,txteditpwd,txtPwd,txtRePwd ;
-
-    DatabaseReference dbRef;
+    TextView txtRegNo,txtName,txtEmail,txtPhone,txtDate;
+    DBHelper DB;
+    String RegNo,Name,Phone,Email,Date;
+    Integer ID;
+    Button btnUpdate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_editprofile);
 
-
-
-        txtregno =  findViewById(R.id.regno);
-        txtname =  findViewById(R.id.stname);
-        txtphone =  findViewById(R.id.phone);
-        txtdate =  findViewById(R.id.date);
-        txtemail =  findViewById(R.id.email);
+        txtRegNo =  findViewById(R.id.regno);
+        txtName =  findViewById(R.id.name);
+        txtPhone =  findViewById(R.id.phone);
+        txtDate =  findViewById(R.id.date);
+        txtEmail =  findViewById(R.id.email);
 
         //view data
-        DatabaseReference readRef = FirebaseDatabase.getInstance().getReference().child("Student").child("Std1");
-        readRef.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                txtregno.setText(dataSnapshot.child("regNo").getValue().toString());
-                txtname.setText(dataSnapshot.child("stName").getValue().toString());
-                txtphone.setText(dataSnapshot.child("phone").getValue().toString());
-                txtemail.setText(dataSnapshot.child("email").getValue().toString());
-                txtdate.setText(dataSnapshot.child("date").getValue().toString());
-            }
+        DB = new DBHelper(this);
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
+        Cursor cursor = DB.getData();
+        if(cursor.getCount() == 0){
 
+            Toast.makeText(getApplicationContext(),"No Data",Toast.LENGTH_SHORT).show();
+
+        }else{
+
+            while(cursor.moveToNext()){
+                ID = Integer.valueOf(cursor.getString(0));
+                RegNo = cursor.getString(1);
+                Name =  cursor.getString(3);
+                Phone = cursor.getString(4);
+                Email = cursor.getString(5);
+                Date = cursor.getString(6);
             }
-        });
+        }
+
+        txtRegNo.setText(RegNo);
+        txtName.setText(Name);
+        txtPhone.setText(Phone);
+        txtEmail.setText(Email);
+        txtDate.setText(Date);
 
         //update data
-        btndone = findViewById(R.id.btndone2);
-        btndone.setOnClickListener(new View.OnClickListener() {
+        btnUpdate = findViewById(R.id.btndone2);
+        btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DatabaseReference updRef = FirebaseDatabase.getInstance().getReference().child("Student");
-                updRef.addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                        if(dataSnapshot.hasChild("Std1"))
-                        {
-                            try {
-                              
+                String RegNo = txtRegNo.getText().toString();
+                String Name = txtName.getText().toString();
+                String Phone = txtPhone.getText().toString();
+                String Date = txtDate.getText().toString();
+                String Email = txtEmail.getText().toString();
 
 
-
-                                clearControls();
-
-
-                                Toast.makeText(getApplicationContext(),"Update Successfully!",Toast.LENGTH_SHORT).show();
-
-                            }catch (NumberFormatException e)
-                            {
-                                Toast.makeText(getApplicationContext(),"Error!!",Toast.LENGTH_SHORT).show();
-                                openDone();
-                            }
-                        }else
-                        {
-                            Toast.makeText(getApplicationContext(),"No Source to Update!!",Toast.LENGTH_SHORT).show();
-                        }
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                    }
-                });
-
-            }
-        });
-
-        textView4 = (TextView) findViewById(R.id.textView22);
-        textView4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent1 = new Intent(editprofile.this,viewprofile.class);
-                startActivity(intent1);
-
-
-            }
-        });
-
-
-
+                Boolean checkupdatedata = DB.UpdateData(ID,RegNo, Name, Phone,Email,Date);
+                if(checkupdatedata==true) {
+                    Toast.makeText(editprofile.this, " Updated User Details", Toast.LENGTH_SHORT).show();
+                    openDone();
+                }else
+                    Toast.makeText(editprofile.this, " Not Updated User Details", Toast.LENGTH_SHORT).show();
+            }        });
     }
 
     public void openDone(){
 
-        Intent intent4 = new Intent(this,viewprofile.class);
-        startActivity(intent4);
+        Intent intent1 = new Intent(this,viewprofile.class);
+        startActivity(intent1);
     }
 
-    private void clearControls(){
-
-        txtname.setText("");
-        txtphone.setText("");
-        txtemail.setText("");
-        txtdate.setText("");
-        txtregno.setText("");
-        txtPwd.setText("");
-        txtRePwd.setText("");
-
+    public void goBack3(View view){
+        Intent intent2 = new Intent(this,viewprofile.class);
+        startActivity(intent2);
     }
 }

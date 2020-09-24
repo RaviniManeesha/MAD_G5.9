@@ -36,6 +36,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/aclonica"
+        android:onClick="goSubmissionCancel"
         android:text="@string/cancel"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
@@ -198,7 +199,7 @@
         app:layout_constraintVertical_bias="0.706" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName5"
+        android:id="@+id/mName"
         android:layout_width="270dp"
         android:layout_height="50dp"
         android:autofillHints=""

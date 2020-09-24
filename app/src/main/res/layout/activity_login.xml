@@ -8,7 +8,7 @@
 
 
     <ImageView
-        android:id="@+id/imageView11"
+        android:id="@+id/img1"
         android:layout_width="454dp"
         android:layout_height="789dp"
         android:background="#FFFFFF"
@@ -54,6 +54,7 @@
         android:layout_width="270dp"
         android:layout_height="50dp"
         android:fontFamily="@font/aclonica"
+        android:onClick="resetPwd"
         android:text="@string/forgotpwd"
         android:textAlignment="inherit"
         android:textColor="#000000"
@@ -70,7 +71,7 @@
         android:layout_width="270dp"
         android:layout_height="50dp"
         android:fontFamily="@font/aclonica"
-        android:text="@string/email"
+        android:text="@string/regnum"
         android:textAlignment="inherit"
         android:textColor="#000000"
         android:textSize="22sp"
@@ -98,7 +99,7 @@
         app:layout_constraintVertical_bias="0.632" />
 
     <EditText
-        android:id="@+id/Email"
+        android:id="@+id/Regno"
         android:layout_width="270dp"
         android:layout_height="50dp"
         android:autofillHints=""

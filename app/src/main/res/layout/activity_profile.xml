@@ -7,7 +7,7 @@
     tools:context=".profile">
 
     <ImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/img1"
         android:layout_width="447dp"
         android:layout_height="803dp"
         android:contentDescription="@string/img"
@@ -52,6 +52,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/aclonica"
+        android:onClick="viewProfile"
         android:text="@string/stname"
         android:textColor="#000000"
         android:textSize="20sp"
@@ -79,11 +80,12 @@
         app:layout_constraintVertical_bias="0.397" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btn2"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:background="#76D8E4"
         android:fontFamily="@font/aclonica"
+        android:onClick="openSubmissions"
         android:text="@string/sub"
         android:textAllCaps="false"
         android:textColor="#000000"
@@ -96,7 +98,7 @@
         app:layout_constraintVertical_bias="0.486" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/btn3"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:background="#76D8E4"
@@ -113,7 +115,7 @@
         app:layout_constraintVertical_bias="0.58" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/btn4"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:background="#76D8E4"
@@ -130,7 +132,7 @@
         app:layout_constraintVertical_bias="0.671" />
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/btn5"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:background="#76D8E4"
@@ -147,11 +149,12 @@
         app:layout_constraintVertical_bias="0.757" />
 
     <Button
-        android:id="@+id/button9"
+        android:id="@+id/btn6"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:background="#76D8E4"
         android:fontFamily="@font/aclonica"
+        android:onClick="openInformation"
         android:text="@string/info"
         android:textAllCaps="false"
         android:textColor="#000000"
@@ -164,11 +167,12 @@
         app:layout_constraintVertical_bias="0.845" />
 
     <Button
-        android:id="@+id/button10"
+        android:id="@+id/btnLogout"
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:background="#000000"
         android:fontFamily="@font/aclonica"
+        android:onClick="openLogout"
         android:text="@string/loout"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
@@ -180,7 +184,7 @@
         app:layout_constraintVertical_bias="0.96" />
 
     <ImageView
-        android:id="@+id/imageView36"
+        android:id="@+id/img2"
         android:layout_width="139dp"
         android:layout_height="319dp"
         android:contentDescription="@string/img"
