@@ -18,7 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class updatepwd extends AppCompatActivity {
     TextView txtoldpwd,txtnewpwd,txtconpwd;
-    Student std;
+
     Button btnupdate;
     DatabaseReference dbRef;
 
@@ -27,7 +27,7 @@ public class updatepwd extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_updatepwd);
 
-        std = new Student();
+
         txtoldpwd =  findViewById(R.id.oldpwd);
         txtnewpwd =  findViewById(R.id.newpwd);
         txtconpwd =  findViewById(R.id.cpwd);
@@ -43,10 +43,9 @@ public class updatepwd extends AppCompatActivity {
                         if(dataSnapshot.hasChild("Std1"))
                         {
 
-                            std.setPwd(txtnewpwd.getText().toString().trim());
 
-                            dbRef = FirebaseDatabase.getInstance().getReference().child("Student").child("Std1");
-                            dbRef.setValue(std);
+
+
 
                             openProfile();
                             Toast.makeText(getApplicationContext(),"Update Password Successfully!",Toast.LENGTH_SHORT).show();

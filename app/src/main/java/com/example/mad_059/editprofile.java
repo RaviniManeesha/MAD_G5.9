@@ -20,7 +20,7 @@ public class editprofile extends AppCompatActivity {
 
     Button btndone;
     TextView textView4,txtregno,txtname,txtemail,txtphone,txtdate,txteditpwd,txtPwd,txtRePwd ;
-    Student std;
+
     DatabaseReference dbRef;
 
     @Override
@@ -28,7 +28,7 @@ public class editprofile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_editprofile);
 
-        std = new Student();
+
 
         txtregno =  findViewById(R.id.regno);
         txtname =  findViewById(R.id.stname);
@@ -67,15 +67,9 @@ public class editprofile extends AppCompatActivity {
                         if(dataSnapshot.hasChild("Std1"))
                         {
                             try {
-                                std.setRegNo(txtregno.getText().toString().trim());
-                                std.setStName(txtname.getText().toString().trim());
-                                std.setEmail(txtemail.getText().toString().trim());
-                                std.setDate(txtdate.getText().toString().trim());
+                              
 
-                                std.setPhone(Integer.parseInt(txtphone.getText().toString().trim()));
 
-                                dbRef = FirebaseDatabase.getInstance().getReference().child("Student").child("Std1");
-                                dbRef.setValue(std);
 
                                 clearControls();
 
