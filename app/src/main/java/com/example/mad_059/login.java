@@ -32,6 +32,7 @@ public class login extends AppCompatActivity {
         DB = new DBHelper(this);
 
         Cursor cursor = DB.getData();
+        //get data
         if(cursor.getCount() == 0){
 
             Toast.makeText(getApplicationContext(),"No Data",Toast.LENGTH_SHORT).show();
@@ -44,34 +45,37 @@ public class login extends AppCompatActivity {
             }
         }
 
-        txtRegNo.setText(RegNo);
-        txtPwd.setText(Pwd);
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
-        Reg = txtRegNo.getText().toString();
-        pwd = txtPwd.getText().toString();
+                String Reg = txtRegNo.getText().toString();
+                String PWD = txtPwd.getText().toString();
+
+                if(TextUtils.isEmpty( txtRegNo.getText().toString()))
+                    Toast.makeText(getApplicationContext(),"Please enter the Registration Number",Toast.LENGTH_SHORT).show();
+                else if(TextUtils.isEmpty(txtPwd.getText().toString()))
+                    Toast.makeText(getApplicationContext(),"Please enter the Password",Toast.LENGTH_SHORT).show();
+                else if (Reg.equals("IT19083742") && PWD.equals("1234")){
+                    Toast.makeText(getApplicationContext(),"Login Successful",Toast.LENGTH_SHORT).show();
+                  openProfile();
+                }else{
+                    Toast.makeText(getApplicationContext(),"Login Unsuccessful",Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
 
     }
 
-    public void openProfile(View view){
-
-        if(TextUtils.isEmpty( txtRegNo.getText().toString()))
-            Toast.makeText(getApplicationContext(),"Please enter the Registration Number",Toast.LENGTH_SHORT).show();
-        else if(TextUtils.isEmpty(txtPwd.getText().toString()))
-            Toast.makeText(getApplicationContext(),"Please enter the Password",Toast.LENGTH_SHORT).show();
-        else{
-            if(RegNo == Reg && Pwd == pwd) {
-
-
-            }else{
-                Intent intent = new Intent(this, profile.class);
-                startActivity(intent);
-            }
-        }
+    public void openProfile(){
+        Intent intent = new Intent(this, profile.class);
+        startActivity(intent);
 
     }
 
     public void resetPwd(View view){
-        Intent intent1 = new Intent(login.this,resetpwd1.class);
+        Intent intent1 = new Intent(login.this,resetpwd2.class);
         startActivity(intent1);
 
     }

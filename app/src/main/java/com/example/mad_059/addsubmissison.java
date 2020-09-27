@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -16,7 +17,7 @@ import com.example.mad_059.Database.DBHelper;
 public class addsubmissison extends AppCompatActivity {
 
     TextView txtName,txtDay,txtTime,txtNote,txtRegNo,txtmCode;
-    TextView btnDone;
+    Button btnDone;
     DBHelper DB;
     String  RegNo,mCode;
 
@@ -67,7 +68,15 @@ public class addsubmissison extends AppCompatActivity {
         btnDone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                if(TextUtils.isEmpty(txtName.getText().toString())) {
+                    Toast.makeText(getApplicationContext(), "Please enter the Submission Name", Toast.LENGTH_SHORT).show();
+                }else if(TextUtils.isEmpty(txtDay.getText().toString())) {
+                    Toast.makeText(getApplicationContext(), "Please enter the Day", Toast.LENGTH_SHORT).show();
+                }else if(TextUtils.isEmpty(txtTime.getText().toString())) {
+                    Toast.makeText(getApplicationContext(), "Please enter the Time", Toast.LENGTH_SHORT).show();
+                }else if(TextUtils.isEmpty(txtNote.getText().toString())) {
+                    Toast.makeText(getApplicationContext(), "Please enter the Note", Toast.LENGTH_SHORT).show();
+                }else {
                     String Name = txtName.getText().toString();
                     String Day = txtDay.getText().toString();
                     String Time = txtTime.getText().toString();
@@ -75,15 +84,14 @@ public class addsubmissison extends AppCompatActivity {
                     String mCode = txtmCode.getText().toString();
                     String RegNO = txtRegNo.getText().toString();
 
-
-                    Boolean checkinsertdata2 = DB.insertSub(Name,Day,Time,Note, mCode, RegNO);
+                    Boolean checkinsertdata2 = DB.insertSub(Name, Day, Time, Note, mCode, RegNO);
                     if (checkinsertdata2 == true) {
-                        Toast.makeText(addsubmissison.this, "Add New Module Successfully!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(addsubmissison.this, "Add New Submission Successfully!", Toast.LENGTH_SHORT).show();
 
 
                     } else
                         Toast.makeText(addsubmissison.this, "Adding Unsuccessful!", Toast.LENGTH_SHORT).show();
-
+                }
             }
         });
 

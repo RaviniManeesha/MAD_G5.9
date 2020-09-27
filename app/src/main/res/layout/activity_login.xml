@@ -146,7 +146,6 @@
         android:layout_height="50dp"
         android:background="#000000"
         android:fontFamily="@font/aclonica"
-        android:onClick="openProfile"
         android:text="@string/login"
         android:textColor="#FFFFFF"
         android:textSize="18sp"

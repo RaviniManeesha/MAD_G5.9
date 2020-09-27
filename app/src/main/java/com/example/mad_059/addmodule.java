@@ -10,12 +10,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.mad_059.Database.DBHelper;
-import com.example.mad_059.Database.Module;
 
 
 public class addmodule extends AppCompatActivity {
 
-    TextView txtmName,txtmCode,txtRegNo;
+    TextView txtmName,txtmCode,txtRegNo,btnCancel;
     Button btnDone;
     DBHelper DB;
     String  RegNo;
@@ -28,6 +27,7 @@ public class addmodule extends AppCompatActivity {
         txtmName = findViewById(R.id.mName);
         txtmCode = findViewById(R.id.mCode);
         txtRegNo = findViewById(R.id.RegNo);
+        btnCancel = findViewById(R.id.btnCancel);
 
         DB = new DBHelper(this);
         btnDone = findViewById(R.id.btnDone);
@@ -80,6 +80,11 @@ public class addmodule extends AppCompatActivity {
     public  void goSubmissionDone(){
         Intent intent2 = new Intent(this,viewsubmissions.class);
         startActivity(intent2);
+    }
+
+    public void Cancel(View view){
+        Intent intent3 = new Intent(this,viewsubmissions.class);
+        startActivity(intent3);
     }
 
 }

@@ -4,12 +4,14 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.mad_059.Database.DBHelper;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -17,69 +19,63 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class updatepwd extends AppCompatActivity {
-    TextView txtoldpwd,txtnewpwd,txtconpwd;
 
-    Button btnupdate;
-    DatabaseReference dbRef;
+    TextView txtOldPwd,txtNewPwd,txtConPwd;
+    Button btnUpdate;
+    DBHelper DB;
+    String Pwd;
+    Integer ID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_updatepwd);
 
+        txtOldPwd =  findViewById(R.id.oldpwd);
+        txtNewPwd =  findViewById(R.id.newpwd);
+        txtConPwd =  findViewById(R.id.cpwd);
+        btnUpdate = findViewById(R.id.btnUp);
 
-        txtoldpwd =  findViewById(R.id.oldpwd);
-        txtnewpwd =  findViewById(R.id.newpwd);
-        txtconpwd =  findViewById(R.id.cpwd);
+        DB = new DBHelper(this);
+        //get data
+        Cursor cursor = DB.getData();
+        if(cursor.getCount() == 0){
 
-        btnupdate = findViewById(R.id.button7);
-        btnupdate.setOnClickListener(new View.OnClickListener() {
+            Toast.makeText(getApplicationContext(),"No Data",Toast.LENGTH_SHORT).show();
+
+        }else{
+
+            while(cursor.moveToNext()){
+                ID = Integer.valueOf(cursor.getString(0));
+                Pwd = cursor.getString(2);
+
+            }
+        }
+
+        txtOldPwd.setText(Pwd);
+
+
+        //update data
+        btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DatabaseReference updRef = FirebaseDatabase.getInstance().getReference().child("Student");
-                updRef.addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        if(dataSnapshot.hasChild("Std1"))
-                        {
+                String Pwd = txtNewPwd.getText().toString();
+
+                Boolean checkupdatedata = DB.UpdateUserPwd(ID, Pwd);
+                if (checkupdatedata == true) {
+                    Toast.makeText(updatepwd.this, " Updated User Details", Toast.LENGTH_SHORT).show();
+                    openProfile();
+
+                } else
+                    Toast.makeText(updatepwd.this, " Not Updated User Details", Toast.LENGTH_SHORT).show();
+            }        });
 
 
-
-
-
-                            openProfile();
-                            Toast.makeText(getApplicationContext(),"Update Password Successfully!",Toast.LENGTH_SHORT).show();
-                        }else
-                        {
-                            Toast.makeText(getApplicationContext(),"Do not Success Update!!",Toast.LENGTH_SHORT).show();
-                        }
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                    }
-                });
-            }
-        });
-
-        DatabaseReference readRef = FirebaseDatabase.getInstance().getReference().child("Student").child("Std1");
-        readRef.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                txtoldpwd.setText(dataSnapshot.child("pwd").getValue().toString());
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
     }
 
     public  void openProfile()
     {
-        Intent intent1 = new Intent(updatepwd.this,profile.class);
+        Intent intent1 = new Intent(updatepwd.this,viewprofile.class);
         startActivity(intent1);
     }
 

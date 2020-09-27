@@ -226,5 +226,6 @@ Bachelor of Science
     <string name="club12">SLIIT Drama Society</string>
     <string name="club13">SLIIT Student Chapter</string>
     <string name="mcode">Module Code</string>
+    <string name="deletesub">Delete Submission</string>
 
 </resources>

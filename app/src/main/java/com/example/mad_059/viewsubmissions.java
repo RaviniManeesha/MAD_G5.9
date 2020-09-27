@@ -4,13 +4,22 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ListAdapter;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.mad_059.Database.DBHelper;
+
+import org.json.JSONArray;
+
+import java.util.ArrayList;
+import java.util.HashMap;
 
 public class viewsubmissions extends AppCompatActivity {
     TextView txtAll,txtToday,txtSch,txtAdd;
@@ -32,21 +41,6 @@ public class viewsubmissions extends AppCompatActivity {
         txtSch = (TextView) findViewById(R.id.sch);
 
 
-        btnModule = findViewById(R.id.btnModule);
-        DB = new DBHelper(this);
-        Cursor cursor = DB.getmData();
-        if(cursor.getCount() == 0){
-
-            Toast.makeText(getApplicationContext(),"No Data",Toast.LENGTH_SHORT).show();
-
-        }else{
-
-            while(cursor.moveToNext()){
-                mName =  cursor.getString(1);
-            }
-        }
-
-       btnModule.setText(mName);
 
     }
 

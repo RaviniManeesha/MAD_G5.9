@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".othe_clubs"/>
+        <activity android:name=".module"></activity>
+        <activity android:name=".deletesubmission" />
+        <activity android:name=".othe_clubs" />
         <activity android:name=".sportclub" />
         <activity android:name=".facultys" />
         <activity android:name=".sis" />
@@ -32,7 +34,6 @@
         <activity android:name=".viewsubmissions" />
         <activity android:name=".viewprofile" />
         <activity android:name=".resetpwd2" />
-        <activity android:name=".resetpwd1" />
         <activity android:name=".login" />
         <activity android:name=".register2" />
         <activity android:name=".register1" />
@@ -44,9 +45,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".editprofile" />
-        <activity android:name=".MainActivity" >
-
-        </activity>
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>

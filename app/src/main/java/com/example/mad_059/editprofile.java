@@ -88,4 +88,9 @@ public class editprofile extends AppCompatActivity {
         Intent intent2 = new Intent(this,viewprofile.class);
         startActivity(intent2);
     }
+
+    public void  openEditPwd(View view){
+        Intent intent3 = new Intent(this,updatepwd.class);
+        startActivity(intent3);
+    }
 }

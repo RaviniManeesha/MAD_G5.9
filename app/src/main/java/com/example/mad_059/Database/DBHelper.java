@@ -5,11 +5,15 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 public class DBHelper extends SQLiteOpenHelper {
 
     public DBHelper(Context context) {
         super(context, "Student.db", null, 1);
     }
+
 
     @Override
     public void onCreate(SQLiteDatabase DB) {
@@ -92,20 +96,23 @@ public class DBHelper extends SQLiteOpenHelper {
     {
 
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery("select * from Student",null);
+        Cursor cursor = db.rawQuery("select * from Student where RegNo = 'IT19083742' ",null);
         return cursor;
-
-
     }
     //retrive module data method
     public Cursor getmData ()
     {
-
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery("select * from Module",null);
+        Cursor cursor = db.rawQuery("select * from Module Where RegNo = 'IT19083742'",null);
         return cursor;
+    }
 
-
+    //retrive submission data method
+    public Cursor getsData ()
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery("select * from Submission Where RegNo = 'IT19083742'",null);
+        return cursor;
     }
 
     //update data method
@@ -130,6 +137,61 @@ public class DBHelper extends SQLiteOpenHelper {
             return false;
         }}
 
+    //update data method
+    public Boolean UpdateUserPwd(Integer ID,String Pwd) {
+        SQLiteDatabase DB = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("Pwd", Pwd);
+
+        Cursor cursor = DB.rawQuery("Select * from Student where ID = ?", new String[]{String.valueOf(ID)});
+        if (cursor.getCount() > 0) {
+            long result = DB.update("Student", contentValues, "ID=?", new String[]{String.valueOf(ID)});
+            if (result == -1) {
+                return false;
+            } else {
+                return true;
+            }
+        } else {
+            return false;
+        }}
+    //updateSubmission method
+    public Boolean UpdateSub(Integer ID,String Name, String Day,String Time,String Note) {
+        SQLiteDatabase DB = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("sName", Name);
+        contentValues.put("rDay", Day);
+        contentValues.put("rTime", Time);
+        contentValues.put("Note",Note);
+
+        Cursor cursor = DB.rawQuery("Select * from Submission where SID = ?", new String[]{String.valueOf(ID)});
+        if (cursor.getCount() > 0) {
+            long result = DB.update("Submission", contentValues, "SID=?", new String[]{String.valueOf(ID)});
+            if (result == -1) {
+                return false;
+            } else {
+                return true;
+            }
+        } else {
+            return false;
+        }}
+
+        //delete submission
+        public Boolean deleteSub(Integer ID)
+        {
+            SQLiteDatabase DB = this.getWritableDatabase();
+            Cursor cursor = DB.rawQuery("Select * from Submission where SID = ?", new String[]{String.valueOf(ID)});
+            if (cursor.getCount() > 0) {
+                long result = DB.delete("Submission", "SID=?", new String[]{String.valueOf(ID)});
+                if (result == -1) {
+                    return false;
+                } else {
+                    return true;
+                }
+            } else {
+                return false;
+            }
+
+        }
 
 
 }
