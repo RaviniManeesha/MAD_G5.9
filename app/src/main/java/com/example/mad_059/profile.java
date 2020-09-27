@@ -47,10 +47,8 @@ public class profile extends AppCompatActivity {
             }
         }
 
-
         txtRegNo.setText(RegNo);
         txtName.setText(Name);
-
 
     }
 

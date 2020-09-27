@@ -7,7 +7,7 @@
     tools:context=".viewsubmissions">
 
     <ImageView
-        android:id="@+id/imageView12"
+        android:id="@+id/img1"
         android:layout_width="466dp"
         android:layout_height="749dp"
         android:contentDescription="@string/img"
@@ -19,11 +19,12 @@
         app:srcCompat="@drawable/capture" />
 
     <TextView
-        android:id="@+id/textView25"
+        android:id="@+id/all"
         android:layout_width="332dp"
         android:layout_height="75dp"
         android:background="#FFFFFF"
         android:fontFamily="@font/aclonica"
+        android:onClick="openAll"
         android:text="@string/all"
         android:textAlignment="inherit"
         android:textColor="#000000"
@@ -36,11 +37,12 @@
         app:layout_constraintVertical_bias="0.455" />
 
     <TextView
-        android:id="@+id/textView21"
+        android:id="@+id/today"
         android:layout_width="152dp"
         android:layout_height="134dp"
         android:background="#FFFFFF"
         android:fontFamily="@font/aclonica"
+        android:onClick="openToday"
         android:text="@string/today"
         android:textAlignment="center"
         android:textColor="#000000"
@@ -53,11 +55,12 @@
         app:layout_constraintVertical_bias="0.242" />
 
     <TextView
-        android:id="@+id/textView23"
+        android:id="@+id/sch"
         android:layout_width="152dp"
         android:layout_height="134dp"
         android:background="#FFFFFF"
         android:fontFamily="@font/aclonica"
+        android:onClick="openScheduled"
         android:text="@string/scheduled"
         android:textAlignment="center"
         android:textColor="#000000"
@@ -70,55 +73,22 @@
         app:layout_constraintVertical_bias="0.242" />
 
     <TextView
-        android:id="@+id/textView26"
+        android:id="@+id/add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#00FFFFFF"
         android:fontFamily="@font/aclonica"
+        android:onClick="addModule"
         android:text="@string/addm"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.94"
+        app:layout_constraintHorizontal_bias="0.788"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.942" />
-
-    <Button
-        android:id="@+id/button12"
-        android:layout_width="189dp"
-        android:layout_height="45dp"
-        android:background="#9C27B0"
-        android:fontFamily="@font/aclonica"
-        android:text="@string/module1"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="22sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.198"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.686" />
-
-    <Button
-        android:id="@+id/button13"
-        android:layout_width="189dp"
-        android:layout_height="45dp"
-        android:background="#009688"
-        android:fontFamily="@font/aclonica"
-        android:text="@string/module2"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="22sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.198"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.771" />
 
     <TextView
         android:id="@+id/textView28"
@@ -165,37 +135,21 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.01" />
 
-    <TextView
-        android:id="@+id/textView27"
-        android:layout_width="70dp"
-        android:layout_height="33dp"
-        android:fontFamily="@font/aclonica"
-        android:text="@string/edit"
-        android:textColor="#FFFFFF"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.979"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.022" />
-
     <Button
-        android:id="@+id/button15"
-        android:layout_width="151dp"
-        android:layout_height="57dp"
-        android:background="#e61610"
+        android:id="@+id/btnModule"
+        android:layout_width="181dp"
+        android:layout_height="50dp"
+        android:background="#9C27B0"
         android:fontFamily="@font/aclonica"
-        android:text="@string/delete"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.061"
+        app:layout_constraintHorizontal_bias="0.178"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.958" />
+        app:layout_constraintVertical_bias="0.688" />
 
     <EditText
         android:id="@+id/editTextTextPersonName3"
@@ -230,22 +184,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.1" />
 
-    <TextView
-        android:id="@+id/textView77"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/aclonica"
-        android:text="@string/back"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.046"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.022" />
-
     <ImageView
         android:id="@+id/imageView37"
         android:layout_width="149dp"
@@ -253,10 +191,36 @@
         android:contentDescription="@string/img"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.538"
+        app:layout_constraintHorizontal_bias="0.347"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.941"
         app:srcCompat="@drawable/add" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="137dp"
+        android:layout_height="48dp"
+        android:contentDescription="@string/img"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.685"
+        app:srcCompat="@android:drawable/ic_menu_delete" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:contentDescription="@string/img"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.817"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.689"
+        app:srcCompat="@android:drawable/ic_menu_edit" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

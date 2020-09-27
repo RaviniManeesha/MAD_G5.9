@@ -164,8 +164,8 @@
 
     <TextView
         android:id="@+id/email"
-        android:layout_width="270dp"
-        android:layout_height="50dp"
+        android:layout_width="352dp"
+        android:layout_height="48dp"
         android:fontFamily="@font/aclonica"
         android:textAlignment="center"
         android:textColor="@android:color/background_light"

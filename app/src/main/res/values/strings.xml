@@ -68,7 +68,7 @@
     <string name="search">Search</string>
 
     <!--add module-->
-    <string name="newm">New Module</string>
+    <string name="newm">Add New Module</string>
     <string name="cancel">Cancel</string>
     <string name="mname">Module Name</string>
     <string name="color">Color</string>
@@ -225,5 +225,6 @@ Bachelor of Science
     <string name="club11">Art Circle SLIIT</string>
     <string name="club12">SLIIT Drama Society</string>
     <string name="club13">SLIIT Student Chapter</string>
+    <string name="mcode">Module Code</string>
 
 </resources>
