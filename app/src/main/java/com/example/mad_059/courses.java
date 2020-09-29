@@ -8,20 +8,16 @@ import android.view.View;
 import android.widget.TextView;
 
 public class courses extends AppCompatActivity {
-    TextView textView2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_courses);
 
-        textView2 = (TextView) findViewById(R.id.textView73);
-        textView2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent2 = new Intent(courses.this,eduinfo.class);
-                startActivity(intent2);
+    }
 
-            }
-        });
+    public void goEduInfo(View view){
+        Intent intent1 = new Intent(courses.this,eduinfo.class);
+        startActivity(intent1);
     }
 }

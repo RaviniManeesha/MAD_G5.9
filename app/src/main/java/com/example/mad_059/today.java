@@ -14,17 +14,6 @@ public class today extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_today);
 
-        textView1 = (TextView) findViewById(R.id.textView43);
-        textView1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent1 = new Intent(today.this,viewsubmissions.class);
-                startActivity(intent1);
-
-
-            }
-        });
-
         textView2 = (TextView) findViewById(R.id.textView45);
         textView2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,4 +36,9 @@ public class today extends AppCompatActivity {
             }
         });
     }
+    public  void  goSub(View view){
+        Intent intent1 = new Intent(today.this,viewsubmissions.class);
+        startActivity(intent1);
+    }
+
 }

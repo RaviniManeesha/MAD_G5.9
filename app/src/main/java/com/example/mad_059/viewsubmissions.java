@@ -70,4 +70,9 @@ public class viewsubmissions extends AppCompatActivity {
         Intent intent1 = new Intent(viewsubmissions.this,addmodule.class);
         startActivity(intent1);
     }
+
+    public  void  goProfile(View view){
+        Intent intent1 = new Intent(viewsubmissions.this,profile.class);
+        startActivity(intent1);
+    }
 }

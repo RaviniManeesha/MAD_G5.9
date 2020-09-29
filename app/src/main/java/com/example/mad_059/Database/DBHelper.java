@@ -175,6 +175,25 @@ public class DBHelper extends SQLiteOpenHelper {
             return false;
         }}
 
+        //update module
+        public Boolean UpdateModule(Integer ID,String Name, String mCode) {
+            SQLiteDatabase DB = this.getWritableDatabase();
+            ContentValues contentValues = new ContentValues();
+            contentValues.put("mName", Name);
+            contentValues.put("mCode", mCode);
+
+            Cursor cursor = DB.rawQuery("Select * from Module  where MID = ?", new String[]{String.valueOf(ID)});
+            if (cursor.getCount() > 0) {
+                long result = DB.update("Module", contentValues, "MID=?", new String[]{String.valueOf(ID)});
+                if (result == -1) {
+                    return false;
+                } else {
+                    return true;
+                }
+            } else {
+                return false;
+            }}
+
         //delete submission
         public Boolean deleteSub(Integer ID)
         {
@@ -182,6 +201,24 @@ public class DBHelper extends SQLiteOpenHelper {
             Cursor cursor = DB.rawQuery("Select * from Submission where SID = ?", new String[]{String.valueOf(ID)});
             if (cursor.getCount() > 0) {
                 long result = DB.delete("Submission", "SID=?", new String[]{String.valueOf(ID)});
+                if (result == -1) {
+                    return false;
+                } else {
+                    return true;
+                }
+            } else {
+                return false;
+            }
+
+        }
+
+        //delete module
+        public Boolean deleteModule(Integer ID)
+        {
+            SQLiteDatabase DB = this.getWritableDatabase();
+            Cursor cursor = DB.rawQuery("Select * from Module where MID = ?", new String[]{String.valueOf(ID)});
+            if (cursor.getCount() > 0) {
+                long result = DB.delete("Module", "MID=?", new String[]{String.valueOf(ID)});
                 if (result == -1) {
                     return false;
                 } else {

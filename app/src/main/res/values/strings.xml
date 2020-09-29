@@ -227,5 +227,8 @@ Bachelor of Science
     <string name="club13">SLIIT Student Chapter</string>
     <string name="mcode">Module Code</string>
     <string name="deletesub">Delete Submission</string>
+    <string name="mDetails">Module Details</string>
+    <string name="editmodule">Edit Module Details</string>
+    <string name="deleteModule">Delete Module Details</string>
 
 </resources>

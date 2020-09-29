@@ -79,4 +79,10 @@ public class updatepwd extends AppCompatActivity {
         startActivity(intent1);
     }
 
+    public  void goProfile(View view)
+    {
+        Intent intent1 = new Intent(updatepwd.this,editprofile.class);
+        startActivity(intent1);
+    }
+
 }

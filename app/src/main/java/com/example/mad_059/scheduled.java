@@ -18,16 +18,7 @@ public class scheduled extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scheduled);
 
-        textView1 = (TextView) findViewById(R.id.textView46);
-        textView1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent1 = new Intent(scheduled.this,viewsubmissions.class);
-                startActivity(intent1);
 
-
-            }
-        });
 
         textView2 = (TextView) findViewById(R.id.textView51);
         textView2.setOnClickListener(new View.OnClickListener() {
@@ -50,5 +41,9 @@ public class scheduled extends AppCompatActivity {
 
             }
         });
+    }
+    public  void  goSub(View view){
+        Intent intent1 = new Intent(scheduled.this,viewsubmissions.class);
+        startActivity(intent1);
     }
 }

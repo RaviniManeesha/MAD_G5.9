@@ -2,6 +2,7 @@ package com.example.mad_059;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
@@ -65,5 +66,9 @@ public class deletesubmission extends AppCompatActivity {
                 else
                     Toast.makeText(deletesubmission.this, "Not Deleted Submission", Toast.LENGTH_SHORT).show();
             }        });
+    }
+    public  void Cancel(View view){
+        Intent intent1 = new Intent(deletesubmission.this,viewsubmissions.class);
+        startActivity(intent1);
     }
 }
