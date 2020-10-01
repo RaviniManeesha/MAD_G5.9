@@ -9,18 +9,22 @@
     android:background="@drawable/back1">
 
 
+
     <Button
         android:id="@+id/mon2"
-        android:layout_width="174dp"
-        android:layout_height="115dp"
+        android:layout_width="223dp"
+        android:layout_height="96dp"
         android:background="@color/colorPinkRoseDark"
+        android:fontFamily="@font/aclonica"
         android:text=" Check the Days "
+        android:textSize="20dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.756" />
+        app:layout_constraintVertical_bias="0.57" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -35,14 +39,17 @@
 
     <Button
         android:id="@+id/mon"
-        android:layout_width="163dp"
-        android:layout_height="123dp"
+        android:layout_width="227dp"
+        android:layout_height="94dp"
         android:background="@color/colorGrapeFruitDark"
+        android:fontFamily="@font/aclonica"
         android:text=" Add Your Subjects"
+        android:textSize="20dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.121" />
+        app:layout_constraintVertical_bias="0.069" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

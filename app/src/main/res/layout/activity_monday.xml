@@ -45,14 +45,14 @@
 
     <TextView
         android:id="@+id/nodata"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
         android:layout_marginTop="30dp"
-        android:text="No Data"
         android:alpha="0.1"
+        android:text="No Data"
         android:textSize="20sp"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/empty"
-        android:visibility="gone"/>
+        app:layout_constraintTop_toBottomOf="@+id/empty" />
 </androidx.constraintlayout.widget.ConstraintLayout>
