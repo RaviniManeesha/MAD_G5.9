@@ -13,10 +13,11 @@ import android.widget.Toast;
 import com.example.mad_059.Database.DBHelper;
 
 public class deletesubmission extends AppCompatActivity {
-    TextView txtName,txtDay,txtTime,txtNote,txtID;
+
+    TextView txtName,txtDay,txtTime,txtNote,txtID,txtmName;
     Button btnDelete;
     DBHelper DB;
-    String Name,Day,Time,Note;
+    String Name,Day,Time,Note,mName,sid;
     Integer SID;
 
     @Override
@@ -28,12 +29,18 @@ public class deletesubmission extends AppCompatActivity {
         txtDay = findViewById(R.id.Day);
         txtTime= findViewById(R.id.Time);
         txtNote = findViewById(R.id.Note);
+        txtmName = findViewById(R.id.mname);
         btnDelete = findViewById(R.id.btnDelete);
+        txtID = findViewById(R.id.ID);
 
         //view data
         DB = new DBHelper(this);
+        Intent intent = getIntent();
+        sid = intent.getStringExtra("sid");
+        SID = Integer.parseInt(sid);
+        txtID.setText(sid);
 
-        Cursor cursor = DB.getsData();
+        Cursor cursor = DB.getSub(SID);
         if(cursor.getCount() == 0){
 
             Toast.makeText(getApplicationContext(),"No Data",Toast.LENGTH_SHORT).show();
@@ -42,11 +49,11 @@ public class deletesubmission extends AppCompatActivity {
 
             while(cursor.moveToNext()){
                 SID = Integer.valueOf(cursor.getString(0));
-                Name = cursor.getString(1);
-                Day =  cursor.getString(2);
-                Time = cursor.getString(3);
-                Note = cursor.getString(4);
-
+                Name= cursor.getString(1);
+                Day = cursor.getString(2);
+                Time =  cursor.getString(3);
+                Note =  cursor.getString(4);
+                mName =  cursor.getString(5);
             }
         }
 
@@ -54,21 +61,31 @@ public class deletesubmission extends AppCompatActivity {
         txtDay.setText(Day);
         txtTime.setText(Time);
         txtNote.setText(Note);
-
+        txtmName.setText(mName);
 
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 Boolean checkudeletedata = DB.deleteSub(SID);
-                if(checkudeletedata==true)
+                if(checkudeletedata==true) {
                     Toast.makeText(deletesubmission.this, "Delete Submission", Toast.LENGTH_SHORT).show();
-                else
+                    openSub();
+                }else
                     Toast.makeText(deletesubmission.this, "Not Deleted Submission", Toast.LENGTH_SHORT).show();
             }        });
+
+    }
+    public  void openSub(){
+        Intent intent2 = new Intent(deletesubmission.this,submissions.class);
+        intent2.putExtra("sid", txtID.getText().toString());
+        startActivity(intent2);
+
     }
     public  void Cancel(View view){
-        Intent intent1 = new Intent(deletesubmission.this,viewsubmissions.class);
-        startActivity(intent1);
+        Intent intent2 = new Intent(deletesubmission.this,submission.class);
+        intent2.putExtra("sid", txtID.getText().toString());
+        startActivity(intent2);
+
     }
 }

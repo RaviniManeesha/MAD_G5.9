@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -14,27 +15,34 @@ import com.example.mad_059.Database.DBHelper;
 
 public class editsubmission extends AppCompatActivity {
 
-    TextView txtName,txtDay,txtTime,txtNote;
     Button btnDone;
+    TextView txtName,txtTime,txtDay,txtNote,txtmName,txtID;
     DBHelper DB;
-    String Name,Day,Time,Note;
+    String  Name,Day,Time,Note,mName;
     Integer SID;
+    String sid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_editsubmission);
 
-      txtName = findViewById(R.id.subName);
-      txtDay = findViewById(R.id.Day);
-      txtTime= findViewById(R.id.Time);
-      txtNote = findViewById(R.id.Note);
-      btnDone = findViewById(R.id.btnEdit);
+        txtName = findViewById(R.id.subName);
+        txtDay = findViewById(R.id.Day);
+        txtTime= findViewById(R.id.Time);
+        txtNote = findViewById(R.id.Note);
+        txtmName = findViewById(R.id.mName);
+        txtID = findViewById(R.id.id);
+        btnDone = findViewById(R.id.btnEdit);
 
-        //view data
         DB = new DBHelper(this);
-
-        Cursor cursor = DB.getsData();
+        //get passing ID
+        Intent intent = getIntent();
+        sid = intent.getStringExtra("sid");
+        txtID.setText(sid);
+        SID = Integer.parseInt(sid);
+        //get data
+        Cursor cursor = DB.getSub(SID);
         if(cursor.getCount() == 0){
 
             Toast.makeText(getApplicationContext(),"No Data",Toast.LENGTH_SHORT).show();
@@ -43,11 +51,11 @@ public class editsubmission extends AppCompatActivity {
 
             while(cursor.moveToNext()){
                 SID = Integer.valueOf(cursor.getString(0));
-                Name = cursor.getString(1);
-                Day =  cursor.getString(2);
-                Time = cursor.getString(3);
-                Note = cursor.getString(4);
-
+                Name= cursor.getString(1);
+                Day = cursor.getString(2);
+                Time =  cursor.getString(3);
+                Note =  cursor.getString(4);
+                mName =  cursor.getString(5);
             }
         }
 
@@ -55,6 +63,8 @@ public class editsubmission extends AppCompatActivity {
         txtDay.setText(Day);
         txtTime.setText(Time);
         txtNote.setText(Note);
+        txtmName.setText(mName);
+
 
         //update data
         btnDone.setOnClickListener(new View.OnClickListener() {
@@ -64,9 +74,10 @@ public class editsubmission extends AppCompatActivity {
                 String Day = txtDay.getText().toString();
                 String Time = txtTime.getText().toString();
                 String Note = txtNote.getText().toString();
+                String mName = txtmName.getText().toString();
 
 
-                Boolean checkupdatedata = DB.UpdateSub(SID, Name, Day, Time, Note);
+                Boolean checkupdatedata = DB.UpdateSub(sid, Name, Day, Time, Note,mName);
                 if (checkupdatedata == true) {
                     Toast.makeText(editsubmission.this, " Updated Submission Details", Toast.LENGTH_SHORT).show();
                     openSub();
@@ -75,16 +86,20 @@ public class editsubmission extends AppCompatActivity {
             }        });
     }
 
-    public  void goSub(View view){
-        Intent intent1 = new Intent(editsubmission.this,submission.class);
-        startActivity(intent1);
-
-    }
-
     public  void openSub(){
         Intent intent2 = new Intent(editsubmission.this,submission.class);
+        intent2.putExtra("sid", txtID.getText().toString());
         startActivity(intent2);
 
     }
+
+    public  void goBack(View view){
+        Intent intent2 = new Intent(editsubmission.this,submission.class);
+        intent2.putExtra("sid", txtID.getText().toString());
+
+        startActivity(intent2);
+
+    }
+
 
 }

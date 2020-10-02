@@ -2,67 +2,42 @@ package com.example.mad_059;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.mad_059.Database.DBHelper;
 
-public class addsubmissison extends AppCompatActivity {
-
-    TextView txtName,txtDay,txtTime,txtNote,txtRegNo,txtmCode;
+public class addsubmission extends AppCompatActivity {
+    TextView txtName,txtDay,txtTime,txtNote,txtRegNo,txtmName;
     Button btnDone;
     DBHelper DB;
-    String  RegNo,mCode;
+    String  No;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_addsubmissison);
+        setContentView(R.layout.activity_addsubmission);
 
         txtName = findViewById(R.id.sName);
         txtDay = findViewById(R.id.rDay);
         txtTime= findViewById(R.id.rTime);
         txtNote = findViewById(R.id.Note);
-        txtRegNo = findViewById(R.id.RegNo);
-        txtmCode = findViewById(R.id.mCode);
+        txtRegNo = findViewById(R.id.id);
+        txtmName = findViewById(R.id.mName);
         btnDone = findViewById(R.id.Done);
 
-        //get mCode and RegNo
+        //get  RegNo
         DB = new DBHelper(this);
-        Cursor cursor = DB.getData();
-        if(cursor.getCount() == 0){
+        Intent intent = getIntent();
+        No = intent.getStringExtra("RegNo");
 
-            Toast.makeText(getApplicationContext(),"No Data",Toast.LENGTH_SHORT).show();
-
-        }else{
-
-            while(cursor.moveToNext()){
-                RegNo = cursor.getString(1);
-            }
-        }
-
-        txtRegNo.setText(RegNo);
-
-        Cursor cursor2 = DB.getmData();
-        if(cursor2.getCount() == 0){
-
-            Toast.makeText(getApplicationContext(),"No Data",Toast.LENGTH_SHORT).show();
-
-        }else{
-
-            while(cursor2.moveToNext()){
-                mCode = cursor2.getString(2);
-            }
-        }
-
-        txtmCode.setText(mCode);
+        txtRegNo.setText(No);
 
         //add data
         btnDone.setOnClickListener(new View.OnClickListener() {
@@ -70,6 +45,8 @@ public class addsubmissison extends AppCompatActivity {
             public void onClick(View view) {
                 if(TextUtils.isEmpty(txtName.getText().toString())) {
                     Toast.makeText(getApplicationContext(), "Please enter the Submission Name", Toast.LENGTH_SHORT).show();
+                }else if(TextUtils.isEmpty(txtmName.getText().toString())) {
+                    Toast.makeText(getApplicationContext(), "Please enter the Module Name", Toast.LENGTH_SHORT).show();
                 }else if(TextUtils.isEmpty(txtDay.getText().toString())) {
                     Toast.makeText(getApplicationContext(), "Please enter the Day", Toast.LENGTH_SHORT).show();
                 }else if(TextUtils.isEmpty(txtTime.getText().toString())) {
@@ -81,19 +58,30 @@ public class addsubmissison extends AppCompatActivity {
                     String Day = txtDay.getText().toString();
                     String Time = txtTime.getText().toString();
                     String Note = txtNote.getText().toString();
-                    String mCode = txtmCode.getText().toString();
+                    String mCode = txtmName.getText().toString();
                     String RegNO = txtRegNo.getText().toString();
 
                     Boolean checkinsertdata2 = DB.insertSub(Name, Day, Time, Note, mCode, RegNO);
                     if (checkinsertdata2 == true) {
-                        Toast.makeText(addsubmissison.this, "Add New Submission Successfully!", Toast.LENGTH_SHORT).show();
-
+                        Toast.makeText(addsubmission.this, "Add New Submission Successfully!", Toast.LENGTH_SHORT).show();
+                        goSub();
 
                     } else
-                        Toast.makeText(addsubmissison.this, "Adding Unsuccessful!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(addsubmission.this, "Adding Unsuccessful!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
+    }
 
+    public  void  goSub(View view){
+        Intent intent1 = new Intent(addsubmission.this,submissions.class);
+        intent1.putExtra("RegNo", txtRegNo.getText().toString());
+        startActivity(intent1);
+    }
+
+    public  void  goSub(){
+        Intent intent2 = new Intent(addsubmission.this,submissions.class);
+        intent2.putExtra("RegNo", txtRegNo.getText().toString());
+        startActivity(intent2);
     }
 }

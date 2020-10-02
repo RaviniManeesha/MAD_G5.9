@@ -18,6 +18,7 @@ public class resetpwd2 extends AppCompatActivity {
     TextView txtCon,txtNew;
     DBHelper DB;
     Integer ID;
+    String No;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,12 +31,13 @@ public class resetpwd2 extends AppCompatActivity {
 
 
         DB = new DBHelper(this);
+
+        Intent intent = getIntent();
+        No = intent.getStringExtra("RegNo");
         //get data
-        Cursor cursor = DB.getData();
+        Cursor cursor = DB.getData(No);
         if(cursor.getCount() == 0){
-
             Toast.makeText(getApplicationContext(),"No Data",Toast.LENGTH_SHORT).show();
-
         }else{
 
             while(cursor.moveToNext()){
@@ -68,8 +70,7 @@ public class resetpwd2 extends AppCompatActivity {
 
 
     public void openLogin(){
-
-        Intent intent = new Intent(this,login.class);
-        startActivity(intent);
+        Intent intent1 = new Intent(this,login.class);
+        startActivity(intent1);
     }
 }

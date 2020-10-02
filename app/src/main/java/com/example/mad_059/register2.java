@@ -41,6 +41,7 @@ public class register2 extends AppCompatActivity {
         txtRegNo.setText(No);
         txtPwd.setText(Pwd);
 
+        //insert data
         DB = new DBHelper(this);
         btnRegister = findViewById(R.id.btn2);
         btnRegister.setOnClickListener(new View.OnClickListener() {
@@ -80,6 +81,7 @@ public class register2 extends AppCompatActivity {
 
     public void openRegister(){
         Intent intent2 = new Intent(this,profile.class);
+        intent2.putExtra("RegNo", txtRegNo.getText().toString());
         startActivity(intent2);
     }
 

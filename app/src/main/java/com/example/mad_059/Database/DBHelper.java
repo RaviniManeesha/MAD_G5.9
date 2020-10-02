@@ -10,29 +10,26 @@ import java.util.HashMap;
 
 public class DBHelper extends SQLiteOpenHelper {
 
+    //create database
     public DBHelper(Context context) {
         super(context, "Student.db", null, 1);
     }
 
-
+    //create tables
     @Override
     public void onCreate(SQLiteDatabase DB) {
         DB.execSQL("create Table Student(ID INTEGER primary key autoincrement,RegNo TEXT, Pwd TEXT, StName TEXT,Phone TEXT,Email EMAIL,Date DATE)");
-        DB.execSQL("create Table Module(MID INTEGER primary key autoincrement,mName TEXT,mCode TEXT,RegNo TEXT)");
-        DB.execSQL("create Table Submission(SID INTEGER primary key autoincrement,sName TEXT,rDay TEXT,rTime TEXT,Note TEXT,mCode TEXT,RegNo TEXT)");
+        DB.execSQL("create Table Submission(SID INTEGER primary key autoincrement,sName TEXT,rDay DATETIME,rTime TEXT,Note TEXT,mName TEXT,RegNo TEXT)");
 
 }
 
     @Override
     public void onUpgrade(SQLiteDatabase DB, int i, int i1) {
         DB.execSQL("drop Table if exists Student");
-        DB.execSQL("drop Table if exists Module");
         DB.execSQL("drop Table if exists Submission");
     }
-
-
-
-    //insert data
+    
+    //insert user data
     public Boolean insertUser(String RegNo,String Pwd,String Name,String Phone,String Email,String Date)
     {
         SQLiteDatabase DB = this.getWritableDatabase();
@@ -52,26 +49,9 @@ public class DBHelper extends SQLiteOpenHelper {
         }
     }
 
-    //insert module data
-    public Boolean insertModule(String mName,String mCode,String RegNo)
-    {
-        SQLiteDatabase DB = this.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put("mName", mName);
-        contentValues.put("mCode", mCode);
-        contentValues.put("RegNo", RegNo);
-
-
-        long result=DB.insert("Module", null, contentValues);
-        if(result==-1){
-            return false;
-        }else{
-            return true;
-        }
-    }
 
     //insert submission data
-    public Boolean insertSub(String sName,String rDay,String rTime,String Note,String mCode, String RegNo)
+    public Boolean insertSub(String sName,String rDay,String rTime,String Note,String mName,String RegNo)
     {
         SQLiteDatabase DB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -79,7 +59,7 @@ public class DBHelper extends SQLiteOpenHelper {
         contentValues.put("rDay", rDay);
         contentValues.put("rTime", rTime);
         contentValues.put("Note", Note);
-        contentValues.put("mCode", mCode);
+        contentValues.put("mName", mName);
         contentValues.put("RegNo", RegNo);
 
 
@@ -91,27 +71,42 @@ public class DBHelper extends SQLiteOpenHelper {
         }
     }
 
-    //retrive data method
-    public Cursor getData ()
+    //get data for profile
+    public Cursor getData(String RegNo)
     {
-
+        String query = "SELECT * FROM Student WHERE RegNo =  " + RegNo ;
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery("select * from Student where RegNo = 'IT19083742' ",null);
-        return cursor;
-    }
-    //retrive module data method
-    public Cursor getmData ()
-    {
-        SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery("select * from Module Where RegNo = 'IT19083742'",null);
+        Cursor cursor = db.query("Student", new String[]{"ID,RegNo,Pwd,StName,Phone,Email,Date"}, "RegNo = ? ",new String[]{String.valueOf(RegNo)},null, null, null, null);
         return cursor;
     }
 
-    //retrive submission data method
     public Cursor getsData ()
     {
-        SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery("select * from Submission Where RegNo = 'IT19083742'",null);
+        SQLiteDatabase DB = this.getWritableDatabase();
+        Cursor cursor = DB.rawQuery("select * from Submission where RegNo = 'IT19083742' ",null);
+        return cursor;
+    }
+
+    public Cursor getSub(Integer SID){
+        String query = "SELECT * FROM Submission  WHERE SID =  " + SID  ;
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = null;
+        if(db != null){
+            cursor = db.query("Submission", new String[]{"SID,sName,rDay,rTime,Note,mName,RegNo"}, "SID = ? ",new String[]{String.valueOf(SID)},null, null, null, null);
+        }
+        return cursor;
+    }
+
+    //show data
+    public Cursor readAllData(String RegNo){
+        String query = "SELECT * FROM Submission  WHERE RegNo =  " + RegNo ;
+        SQLiteDatabase db = this.getReadableDatabase();
+    
+        Cursor cursor = null;
+        if(db != null){
+            cursor = db.query("Submission", new String[]{"SID,sName,rDay,rTime,Note,mName,RegNo"}, "RegNo = ? ",new String[]{String.valueOf(RegNo)},null, null, null, null);
+        }
         return cursor;
     }
 
@@ -137,7 +132,7 @@ public class DBHelper extends SQLiteOpenHelper {
             return false;
         }}
 
-    //update data method
+    //update password
     public Boolean UpdateUserPwd(Integer ID,String Pwd) {
         SQLiteDatabase DB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -154,14 +149,16 @@ public class DBHelper extends SQLiteOpenHelper {
         } else {
             return false;
         }}
+
     //updateSubmission method
-    public Boolean UpdateSub(Integer ID,String Name, String Day,String Time,String Note) {
+    public Boolean UpdateSub(String ID, String Name, String Day, String Time, String Note, String mName) {
         SQLiteDatabase DB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("sName", Name);
         contentValues.put("rDay", Day);
         contentValues.put("rTime", Time);
         contentValues.put("Note",Note);
+        contentValues.put("mName", mName);
 
         Cursor cursor = DB.rawQuery("Select * from Submission where SID = ?", new String[]{String.valueOf(ID)});
         if (cursor.getCount() > 0) {
@@ -174,25 +171,6 @@ public class DBHelper extends SQLiteOpenHelper {
         } else {
             return false;
         }}
-
-        //update module
-        public Boolean UpdateModule(Integer ID,String Name, String mCode) {
-            SQLiteDatabase DB = this.getWritableDatabase();
-            ContentValues contentValues = new ContentValues();
-            contentValues.put("mName", Name);
-            contentValues.put("mCode", mCode);
-
-            Cursor cursor = DB.rawQuery("Select * from Module  where MID = ?", new String[]{String.valueOf(ID)});
-            if (cursor.getCount() > 0) {
-                long result = DB.update("Module", contentValues, "MID=?", new String[]{String.valueOf(ID)});
-                if (result == -1) {
-                    return false;
-                } else {
-                    return true;
-                }
-            } else {
-                return false;
-            }}
 
         //delete submission
         public Boolean deleteSub(Integer ID)
@@ -211,25 +189,6 @@ public class DBHelper extends SQLiteOpenHelper {
             }
 
         }
-
-        //delete module
-        public Boolean deleteModule(Integer ID)
-        {
-            SQLiteDatabase DB = this.getWritableDatabase();
-            Cursor cursor = DB.rawQuery("Select * from Module where MID = ?", new String[]{String.valueOf(ID)});
-            if (cursor.getCount() > 0) {
-                long result = DB.delete("Module", "MID=?", new String[]{String.valueOf(ID)});
-                if (result == -1) {
-                    return false;
-                } else {
-                    return true;
-                }
-            } else {
-                return false;
-            }
-
-        }
-
 
 }
 
