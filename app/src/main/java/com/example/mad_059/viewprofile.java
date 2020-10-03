@@ -13,9 +13,9 @@ import com.example.mad_059.Database.DBHelper;
 
 public class viewprofile extends AppCompatActivity {
 
-    TextView txtRegNo,txtPwd,txtName,txtEmail,txtPhone,txtDate;
+    TextView txtRegNo,txtPwd,txtName,txtEmail,txtPhone,txtDate,txtNo;
     DBHelper DB;
-    String RegNo,Pwd,Name,Phone,Email,Date;
+    String RegNo,Pwd,Name,Phone,Email,Date,No;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,10 +28,15 @@ public class viewprofile extends AppCompatActivity {
         txtPhone =  findViewById(R.id.phone);
         txtDate =  findViewById(R.id.date);
         txtEmail =  findViewById(R.id.email);
+        txtNo = findViewById(R.id.id);
 
         DB = new DBHelper(this);
+        //get passing ID
+        Intent intent = getIntent();
 
-        Cursor cursor = DB.getData();
+        No = intent.getStringExtra("RegNo");
+
+        Cursor cursor = DB.getData(No);
         if(cursor.getCount() == 0){
 
             Toast.makeText(getApplicationContext(),"No Data",Toast.LENGTH_SHORT).show();
@@ -60,11 +65,13 @@ public class viewprofile extends AppCompatActivity {
 
     public void openEdit(View view){
         Intent intent1 = new Intent(this,editprofile.class);
+        intent1.putExtra("RegNo", txtRegNo.getText().toString());
         startActivity(intent1);
     }
 
     public void goBack1(View view){
         Intent intent2 = new Intent(viewprofile.this,profile.class);
+        intent2.putExtra("RegNo", txtRegNo.getText().toString());
         startActivity(intent2);
     }
 

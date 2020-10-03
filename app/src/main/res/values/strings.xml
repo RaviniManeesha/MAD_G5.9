@@ -1,4 +1,15 @@
 <resources>
+
+    <!--Attendance-->
+    <string-array name="days">
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+        <item>Sunday</item>
+    </string-array>
     <!--app name-->
     <string name="app_name">UniStudiac</string>
 
@@ -230,5 +241,10 @@ Bachelor of Science
     <string name="mDetails">Module Details</string>
     <string name="editmodule">Edit Module Details</string>
     <string name="deleteModule">Delete Module Details</string>
+    <string name="check_the_days">Check the Days</string>
+    <string name="add_your_subjects">Add Your Subjects</string>
+    <string name="no_data">No Data</string>
+    <string name="todo">TODO</string>
+
 
 </resources>

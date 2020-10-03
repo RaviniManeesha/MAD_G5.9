@@ -20,12 +20,11 @@ import com.google.firebase.database.ValueEventListener;
 
 public class updatepwd extends AppCompatActivity {
 
-    TextView txtOldPwd,txtNewPwd,txtConPwd;
+    TextView txtOldPwd,txtNewPwd,txtConPwd,txtRegNo;
     Button btnUpdate;
     DBHelper DB;
-    String Pwd;
+    String Pwd,No;
     Integer ID;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,21 +33,24 @@ public class updatepwd extends AppCompatActivity {
         txtOldPwd =  findViewById(R.id.oldpwd);
         txtNewPwd =  findViewById(R.id.newpwd);
         txtConPwd =  findViewById(R.id.cpwd);
+        txtRegNo = findViewById(R.id.id2);
         btnUpdate = findViewById(R.id.btnUp);
 
         DB = new DBHelper(this);
+        Intent intent = getIntent();
+
+        No = intent.getStringExtra("RegNo");
+
+
         //get data
-        Cursor cursor = DB.getData();
+        Cursor cursor = DB.getData(No);
         if(cursor.getCount() == 0){
-
             Toast.makeText(getApplicationContext(),"No Data",Toast.LENGTH_SHORT).show();
-
         }else{
 
             while(cursor.moveToNext()){
                 ID = Integer.valueOf(cursor.getString(0));
                 Pwd = cursor.getString(2);
-
             }
         }
 
@@ -76,12 +78,14 @@ public class updatepwd extends AppCompatActivity {
     public  void openProfile()
     {
         Intent intent1 = new Intent(updatepwd.this,viewprofile.class);
+        intent1.putExtra("RegNo", txtRegNo.getText().toString());
         startActivity(intent1);
     }
 
     public  void goProfile(View view)
     {
         Intent intent1 = new Intent(updatepwd.this,editprofile.class);
+        intent1.putExtra("RegNo", txtRegNo.getText().toString());
         startActivity(intent1);
     }
 

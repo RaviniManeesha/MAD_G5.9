@@ -18,7 +18,7 @@ public class login extends AppCompatActivity {
      TextView  txtRegNo,txtPwd;
      Button btnLogin;
      DBHelper DB;
-     String RegNo,Pwd,Reg,pwd;
+     String RegNo,Pwd,Reg,pwd,No;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +31,7 @@ public class login extends AppCompatActivity {
 
         DB = new DBHelper(this);
 
-        Cursor cursor = DB.getData();
+        Cursor cursor = DB.getData(No);
         //get data
         if(cursor.getCount() == 0){
 

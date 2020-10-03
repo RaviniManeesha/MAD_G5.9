@@ -16,7 +16,7 @@ public class editprofile extends AppCompatActivity {
 
     TextView txtRegNo,txtName,txtEmail,txtPhone,txtDate;
     DBHelper DB;
-    String RegNo,Name,Phone,Email,Date;
+    String RegNo,Name,Phone,Email,Date,No;
     Integer ID;
     Button btnUpdate;
 
@@ -33,8 +33,11 @@ public class editprofile extends AppCompatActivity {
 
         //view data
         DB = new DBHelper(this);
+        Intent intent = getIntent();
 
-        Cursor cursor = DB.getData();
+        No = intent.getStringExtra("RegNo");
+
+        Cursor cursor = DB.getData(No);
         if(cursor.getCount() == 0){
 
             Toast.makeText(getApplicationContext(),"No Data",Toast.LENGTH_SHORT).show();
@@ -79,18 +82,20 @@ public class editprofile extends AppCompatActivity {
     }
 
     public void openDone(){
-
         Intent intent1 = new Intent(this,viewprofile.class);
+        intent1.putExtra("RegNo", txtRegNo.getText().toString());
         startActivity(intent1);
     }
 
     public void goBack3(View view){
         Intent intent2 = new Intent(this,viewprofile.class);
+        intent2.putExtra("RegNo", txtRegNo.getText().toString());
         startActivity(intent2);
     }
 
     public void  openEditPwd(View view){
         Intent intent3 = new Intent(this,updatepwd.class);
+        intent3.putExtra("RegNo", txtRegNo.getText().toString());
         startActivity(intent3);
     }
 }

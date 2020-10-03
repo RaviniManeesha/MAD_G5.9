@@ -11,35 +11,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".deletemodule"></activity>
-        <activity android:name=".editmodule" />
-        <activity android:name=".module" />
-        <activity android:name=".deletesubmission" />
+        <activity android:name=".editsubmission" />
+        <activity android:name=".submission" />
+        <activity android:name=".addsubmission" />
+        <activity android:name=".submissions" />
         <activity android:name=".othe_clubs" />
-        <activity android:name=".sportclub"  />
-        <activity android:name=".facultys"  />
+        <activity android:name=".sportclub" />
+        <activity android:name=".facultys" />
         <activity android:name=".sis" />
         <activity android:name=".updatepwd" />
-        <activity android:name=".submission" />
         <activity android:name=".fees" />
         <activity android:name=".courses" />
-        <activity android:name=".sports"  />
-        <activity android:name=".eduinfo"  />
-        <activity android:name=".information"  />
-        <activity android:name=".all" />
-        <activity android:name=".scheduled"/>
-        <activity android:name=".today" />
-        <activity android:name=".editsubmission" />
-        <activity android:name=".addsubmissison" />
-        <activity android:name=".viewmodule" />
-        <activity android:name=".addmodule" />
-        <activity android:name=".viewsubmissions" />
+        <activity android:name=".sports" />
+        <activity android:name=".eduinfo" />
+        <activity android:name=".information" />
         <activity android:name=".viewprofile" />
         <activity android:name=".resetpwd2" />
         <activity android:name=".login" />
         <activity android:name=".register2" />
         <activity android:name=".register1" />
-        <activity android:name=".profile">
+        <activity android:name=".profile" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -47,7 +38,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".editprofile" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity">
+
+        </activity>
     </application>
 
 </manifest>
