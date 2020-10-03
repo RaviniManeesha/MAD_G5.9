@@ -96,23 +96,9 @@
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.324"
+        app:layout_constraintHorizontal_bias="0.298"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Teacher_input2"
-        app:layout_constraintVertical_bias="0.308" />
+        app:layout_constraintVertical_bias="0.048" />
 
-    <EditText
-        android:id="@+id/day"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:fontFamily="@font/aclonica"
-        android:hint="Day"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/time"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.157"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Teacher_input2"
-        app:layout_constraintVertical_bias="0.365" />
 </androidx.constraintlayout.widget.ConstraintLayout>
