@@ -2,6 +2,7 @@ package com.example.attendancecriteria;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -11,7 +12,7 @@ import androidx.annotation.Nullable;
 
 public class MyDatabaseHelper extends SQLiteOpenHelper {
     private Context context;
-    private static final String DATABASE_NAME = "Attendance1.db";
+    private static final String DATABASE_NAME = "Attendance2.db";
     private static final int DATABASE_VERSION =1;
 
     private static final String TABLE_NAME = "Monday";
@@ -20,6 +21,9 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
     private static final String COLUMN_Room= "Room";
     private static final String COLUMN_Teacher= "Teacher";
     private static final String COLUMN_Day= "Day";
+    private static final String COLUMN_Time= "Time";
+
+
 
 
 
@@ -36,7 +40,8 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
                                COLUMN_SUB + " TEXT, " +
                                     COLUMN_Room+ " TEXT, " +
                                             COLUMN_Teacher+ " TEXT, " +
-                                                    COLUMN_Day + " TEXT)";
+                                                    COLUMN_Day + " TEXT,"+
+                                                            COLUMN_Time + " TEXT)";
         db.execSQL(query);
     }
 
@@ -46,7 +51,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    void addSub(String subject,String Room, String Teacher,String day) {
+    void addSub(String subject,String Room, String Teacher,String day,String time) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
@@ -54,11 +59,13 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         cv.put(COLUMN_Room, Room);
         cv.put(COLUMN_Teacher, Teacher);
         cv.put(COLUMN_Day, day);
+        cv.put(COLUMN_Time, time);
         long result = db.insert(TABLE_NAME, null, cv);
         if (result == -1) {
             Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(context, "Added", Toast.LENGTH_SHORT).show();
+
         }
 
     }
@@ -74,12 +81,13 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         return cursor;
     }
 
-    void updateData(String row_id,String subject,String room,String teacher){
+    void updateData(String row_id,String subject,String room,String teacher,String time){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put(COLUMN_SUB,subject);
         cv.put(COLUMN_Room,room);
         cv.put(COLUMN_Teacher,teacher);
+        cv.put(COLUMN_Time,time);
 
         long result = db.update(TABLE_NAME, cv, "_id = ?", new String[]{row_id});
         if(result == -1){

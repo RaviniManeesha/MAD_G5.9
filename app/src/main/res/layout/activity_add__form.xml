@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint=" Add a Subject"
+        android:hint="@string/add_a_subject"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         android:fontFamily="@font/aclonica"
@@ -28,7 +28,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:fontFamily="@font/aclonica"
-        android:hint="Enter Teacher's Name"
+        android:hint="@string/enter_teacher_s_name"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,7 +43,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:fontFamily="@font/aclonica"
-        android:hint="Enter the Room Number"
+        android:hint="@string/enter_the_room_number"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -67,15 +67,15 @@
         android:id="@+id/add_button"
         android:layout_width="match_parent"
         android:layout_height="64dp"
-        android:layout_marginTop="132dp"
+        android:layout_marginTop="476dp"
         android:fontFamily="@font/aclonica"
-        android:text="Add"
+        android:text="@string/add"
         android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintHorizontal_bias="0.266"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Teacher_input" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView"
@@ -83,12 +83,39 @@
         android:layout_height="33dp"
         android:layout_marginTop="44dp"
         android:fontFamily="@font/aclonica"
-        android:text="Day -:"
+        android:text="@string/day"
         android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@+id/spinner"
         app:layout_constraintHorizontal_bias="0.697"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Teacher_input" />
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="140dp"
+        android:layout_height="32dp"
+        android:fontFamily="@font/aclonica"
+        android:text="@string/hour_minute"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/add_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.859"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.386" />
+
+    <Button
+        android:id="@+id/buttontime"
+        android:layout_width="106dp"
+        android:layout_height="49dp"
+        android:fontFamily="@font/aclonica"
+        android:text="Time"
+        app:layout_constraintBottom_toTopOf="@+id/add_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.102"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner"
+        app:layout_constraintVertical_bias="0.373" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

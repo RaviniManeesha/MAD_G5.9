@@ -1,5 +1,33 @@
 <resources>
     <string name="app_name">SQL_Attendance</string>
+    <string name="number_of_days">Number of Days</string>
+    <string name="input_the_number_of_dates_for_the_semester">Input the Number of dates for the semester</string>
+    <string name="input_your_attendance_criteria">Input Your Attendance Criteria</string>
+    <string name="_0">0</string>
+    <string name="days_you_should_attend_to_the_class">Days You Should Attend to the Class</string>
+    <string name="calculate">Calculate</string>
+    <string name="result">Result</string>
+    <string name="percent">%</string>
+    <string name="addsubject">Add a Subject</string>
+    <string name="enter_teacher_s_name">Enter Teacher\'s Name</string>
+    <string name="room_number">Enter the Room Number</string>
+    <string name="add">Add</string>
+    <string name="day">Day -:</string>
+    <string name="hour_minute">Hour:Minute</string>
+    <string name="pick_a_date">Pick a Date</string>
+    <string name="check_the_days">Check the Days</string>
+    <string name="add_your_subjects">Add Your Subjects</string>
+    <string name="no_data">No Data</string>
+    <string name="add_a_subject">Add a Subject</string>
+    <string name="enter_the_room_number">Enter the Room Number</string>
+    <string name="teacher_s_name">Teacher\'s Name</string>
+    <string name="update">Update</string>
+    <string name="delete">Delete</string>
+    <string name="_1">1</string>
+    <string name="subject">Subject</string>
+    <string name="_120">120</string>
+    <string name="teacher">Teacher</string>
+
 
     <string-array name="days">
         <item>Monday</item>

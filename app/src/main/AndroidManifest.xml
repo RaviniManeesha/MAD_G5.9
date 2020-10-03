@@ -9,9 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Calculate" android:label="Calculate the dates"
-            android:parentActivityName=".Monday">
-        </activity>
+        <activity
+            android:name=".Calculate"
+            android:label="Calculate the dates"
+            android:parentActivityName=".Monday" />
         <activity
             android:name=".UpdateActivity"
             android:parentActivityName=".Monday" />
@@ -23,11 +24,13 @@
             android:name=".Monday"
             android:label="Add Subjects" />
         <activity android:name=".MainActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
     </application>
 

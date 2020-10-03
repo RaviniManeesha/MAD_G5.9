@@ -30,7 +30,7 @@ public class Monday extends AppCompatActivity {
     TextView no_data;
 
     MyDatabaseHelper myDB;
-    ArrayList<String> sub_id, subject, room, teacher,day;
+    ArrayList<String> sub_id, subject, room, teacher,day,time;
     StudentAdapter studentAdapter;
 
     @Override
@@ -63,11 +63,12 @@ public class Monday extends AppCompatActivity {
         room = new ArrayList<>();
         teacher = new ArrayList<>();
         day = new ArrayList<>();
+        time = new ArrayList<>();
 
 
-        storeDataArrays();
+      storeDataArrays();
 
-        studentAdapter = new StudentAdapter(Monday.this, this, sub_id, subject, room, teacher,day);
+        studentAdapter = new StudentAdapter(Monday.this, this, sub_id, subject, room, teacher,day,time);
         recyclerView.setAdapter(studentAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(Monday.this));
     }
@@ -98,6 +99,7 @@ public class Monday extends AppCompatActivity {
                 room.add(cursor.getString(2));
                 teacher.add(cursor.getString(3));
                 day.add(cursor.getString(4));
+                time.add(cursor.getString(5));
             }
             empty_image.setVisibility(View.GONE);
             no_data.setVisibility(View.GONE);
