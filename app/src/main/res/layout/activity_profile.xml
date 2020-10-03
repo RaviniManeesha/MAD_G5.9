@@ -4,10 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradiant"
-    tools:context=".profile"
-    android:id="@+id/mainLayout">
+    tools:context=".profile">
 
+    <ImageView
+        android:id="@+id/img1"
+        android:layout_width="447dp"
+        android:layout_height="803dp"
+        android:contentDescription="@string/img"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/capture" />
 
     <TextView
         android:id="@+id/textView1"
@@ -59,7 +68,6 @@
         android:layout_height="50dp"
         android:background="#76D8E4"
         android:fontFamily="@font/aclonica"
-        android:onClick="goModules"
         android:text="@string/modules"
         android:textAllCaps="false"
         android:textColor="#000000"
@@ -95,7 +103,6 @@
         android:layout_height="50dp"
         android:background="#76D8E4"
         android:fontFamily="@font/aclonica"
-        android:onClick="goAttendance"
         android:text="@string/atte"
         android:textAllCaps="false"
         android:textColor="#000000"
@@ -113,7 +120,6 @@
         android:layout_height="50dp"
         android:background="#76D8E4"
         android:fontFamily="@font/aclonica"
-        android:onClick="goFees"
         android:text="@string/fees"
         android:textAllCaps="false"
         android:textColor="#000000"
@@ -131,7 +137,6 @@
         android:layout_height="50dp"
         android:background="#76D8E4"
         android:fontFamily="@font/aclonica"
-        android:onClick="goLibrary"
         android:text="@string/lib"
         android:textAllCaps="false"
         android:textColor="#000000"

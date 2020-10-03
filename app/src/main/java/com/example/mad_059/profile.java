@@ -1,21 +1,29 @@
 package com.example.mad_059;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.mad_059.Database.DBHelper;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class profile extends AppCompatActivity {
 
-    TextView txtRegNo,txtName,txtNo;
+    TextView txtRegNo,txtName;
     DBHelper DB;
-    String  RegNo,Name,No;
+    String  RegNo,Name;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,17 +32,9 @@ public class profile extends AppCompatActivity {
 
         txtRegNo = findViewById(R.id.Rnumber);
         txtName = findViewById(R.id.stName);
-        txtNo = findViewById(R.id.regno);
 
         DB = new DBHelper(this);
-
-        //get passing ID
-        Intent intent = getIntent();
-
-        No = intent.getStringExtra("RegNo");
-
-        //get data
-        Cursor cursor = DB.getData(No);
+        Cursor cursor = DB.getData();
         if(cursor.getCount() == 0){
 
             Toast.makeText(getApplicationContext(),"No Data",Toast.LENGTH_SHORT).show();
@@ -42,32 +42,42 @@ public class profile extends AppCompatActivity {
         }else{
 
             while(cursor.moveToNext()){
-                RegNo = cursor.getString(1);
-                Name = cursor.getString(3);
-
+              RegNo = cursor.getString(1);
+              Name =  cursor.getString(3);
             }
         }
+
         txtRegNo.setText(RegNo);
         txtName.setText(Name);
+
     }
 
     public void openLogout(View view){
-        Intent intent1 = new Intent(this, login.class);
+
+        Intent intent1 = new Intent(this,login.class);
         startActivity(intent1);
+
+
     }
     public void openSubmissions(View view){
-        Intent intent2 = new Intent(this, submissions.class);
-        intent2.putExtra("RegNo", txtRegNo.getText().toString());
+
+        Intent intent2 = new Intent(this,viewsubmissions.class);
         startActivity(intent2);
+
+
     }
+
     public void openInformation(View view){
-        Intent intent3 = new Intent(this, information.class);
-        intent3.putExtra("RegNo", txtRegNo.getText().toString());
+
+        Intent intent3 = new Intent(this,information.class);
         startActivity(intent3);
+
+
     }
+
     public  void  viewProfile(View view){
-        Intent intent2 = new Intent(profile.this, viewprofile.class);
-        intent2.putExtra("RegNo", txtRegNo.getText().toString());
+        Intent intent2 = new Intent(profile.this,viewprofile.class);
         startActivity(intent2);
     }
+
 }

@@ -4,9 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradiant"
-    tools:context=".addsubmission">
+    tools:context=".addsubmissison">
 
+    <ImageView
+        android:id="@+id/imageView14"
+        android:layout_width="466dp"
+        android:layout_height="749dp"
+        android:contentDescription="@string/img"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/capture" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar6"
@@ -27,7 +37,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/aclonica"
-        android:onClick="goSub"
         android:text="@string/cancel"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
@@ -37,6 +46,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.022" />
+
+    <TextView
+        android:id="@+id/textView36"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/aclonica"
+        android:text="@string/subdetails"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.126" />
 
     <TextView
         android:id="@+id/textView4"
@@ -50,21 +75,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.104" />
-
-    <TextView
-        android:id="@+id/textView15"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/aclonica"
-        android:text="@string/mname"
-        android:textColor="@color/common_google_signin_btn_text_dark_focused"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.25" />
+        app:layout_constraintVertical_bias="0.208" />
 
     <TextView
         android:id="@+id/textView6"
@@ -78,7 +89,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.396" />
+        app:layout_constraintVertical_bias="0.374" />
 
     <TextView
         android:id="@+id/textView40"
@@ -94,26 +105,10 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.668" />
+        app:layout_constraintVertical_bias="0.547" />
 
     <TextView
-        android:id="@+id/id"
-        android:layout_width="270dp"
-        android:layout_height="50dp"
-        android:fontFamily="@font/aclonica"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="22sp"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.177"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <TextView
-        android:id="@+id/textView22"
+        android:id="@+id/textView41"
         android:layout_width="270dp"
         android:layout_height="50dp"
         android:fontFamily="@font/aclonica"
@@ -123,15 +118,15 @@
         android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.823" />
+        app:layout_constraintVertical_bias="0.719" />
 
     <EditText
         android:id="@+id/sName"
-        android:layout_width="356dp"
-        android:layout_height="53dp"
+        android:layout_width="270dp"
+        android:layout_height="50dp"
         android:autofillHints=""
         android:background="#FFFFFF"
         android:ems="10"
@@ -145,33 +140,13 @@
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.17"
-        tools:ignore="LabelFor" />
-
-    <EditText
-        android:id="@+id/mName"
-        android:layout_width="356dp"
-        android:layout_height="53dp"
-        android:autofillHints=""
-        android:background="#FFFFFF"
-        android:ems="10"
-        android:fontFamily="@font/aclonica"
-        android:inputType="textPersonName"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="22sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.509"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.317"
+        app:layout_constraintVertical_bias="0.287"
         tools:ignore="LabelFor" />
 
     <EditText
         android:id="@+id/Note"
-        android:layout_width="356dp"
-        android:layout_height="126dp"
+        android:layout_width="270dp"
+        android:layout_height="50dp"
         android:autofillHints=""
         android:background="#FFFFFF"
         android:ems="10"
@@ -183,16 +158,16 @@
         android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.527"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.527"
+        app:layout_constraintVertical_bias="0.45"
         tools:ignore="LabelFor,RtlCompat" />
 
     <EditText
         android:id="@+id/rDay"
-        android:layout_width="356dp"
-        android:layout_height="53dp"
+        android:layout_width="270dp"
+        android:layout_height="50dp"
         android:autofillHints=""
         android:background="#FFFFFF"
         android:ems="10"
@@ -203,16 +178,16 @@
         android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.734"
+        app:layout_constraintVertical_bias="0.621"
         tools:ignore="LabelFor" />
 
     <EditText
         android:id="@+id/rTime"
-        android:layout_width="356dp"
-        android:layout_height="53dp"
+        android:layout_width="270dp"
+        android:layout_height="50dp"
         android:autofillHints=""
         android:background="#FFFFFF"
         android:ems="10"
@@ -223,10 +198,10 @@
         android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.88"
+        app:layout_constraintVertical_bias="0.792"
         tools:ignore="LabelFor" />
 
     <Button
@@ -241,9 +216,39 @@
         android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.554"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976" />
+        app:layout_constraintVertical_bias="0.914" />
+
+    <TextView
+        android:id="@+id/mCode"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/aclonica"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textSize="24sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.075"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.977" />
+
+    <TextView
+        android:id="@+id/RegNo"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/aclonica"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textSize="24sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.924"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.977" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
