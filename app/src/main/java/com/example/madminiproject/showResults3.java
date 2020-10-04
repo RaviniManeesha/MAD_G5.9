@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 public class showResults3 extends AppCompatActivity {
 
-        //test comment
+        //test comment2
         private TextView  proResult1;
 
         @Override
