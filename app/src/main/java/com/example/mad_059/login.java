@@ -18,7 +18,8 @@ public class login extends AppCompatActivity {
      TextView  txtRegNo,txtPwd;
      Button btnLogin;
      DBHelper DB;
-     String RegNo,Pwd,Reg,pwd,No;
+     String Pwd,No;
+     String  ID,RegNo,pwd,StName,Phone,Email,Date;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,20 +32,6 @@ public class login extends AppCompatActivity {
 
         DB = new DBHelper(this);
 
-        Cursor cursor = DB.getData(No);
-        //get data
-        if(cursor.getCount() == 0){
-
-            Toast.makeText(getApplicationContext(),"No Data",Toast.LENGTH_SHORT).show();
-
-        }else{
-
-            while(cursor.moveToNext()){
-                RegNo = cursor.getString(1);
-                Pwd = cursor.getString(2);
-            }
-        }
-
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -52,11 +39,32 @@ public class login extends AppCompatActivity {
                 String Reg = txtRegNo.getText().toString();
                 String PWD = txtPwd.getText().toString();
 
+                //get data
+                Cursor cursor = DB.login(Reg, PWD);
+                if (cursor.getCount() == 0) {
+
+                    Toast.makeText(getApplicationContext(), "No Data", Toast.LENGTH_SHORT).show();
+
+                } else {
+
+                    while (cursor.moveToNext()) {
+
+                        ID = cursor.getString(0);
+                        RegNo = cursor.getString(1);
+                        pwd = cursor.getString(2);
+                        StName = cursor.getString(3);
+                        Phone = cursor.getString(4);
+                        Email = cursor.getString(5);
+                        Date = cursor.getString(6);
+
+                    }
+                }
+
                 if(TextUtils.isEmpty( txtRegNo.getText().toString()))
                     Toast.makeText(getApplicationContext(),"Please enter the Registration Number",Toast.LENGTH_SHORT).show();
                 else if(TextUtils.isEmpty(txtPwd.getText().toString()))
                     Toast.makeText(getApplicationContext(),"Please enter the Password",Toast.LENGTH_SHORT).show();
-                else if (Reg.equals("IT19083742") && PWD.equals("1234")){
+                else if (Reg.equals(RegNo) && PWD.equals(pwd)){
                     Toast.makeText(getApplicationContext(),"Login Successful",Toast.LENGTH_SHORT).show();
                   openProfile();
                 }else{
@@ -70,12 +78,14 @@ public class login extends AppCompatActivity {
 
     public void openProfile(){
         Intent intent = new Intent(this, profile.class);
+        intent.putExtra("RegNo", txtRegNo.getText().toString());
         startActivity(intent);
 
     }
 
     public void resetPwd(View view){
         Intent intent1 = new Intent(login.this,resetpwd2.class);
+        intent1.putExtra("RegNo", txtRegNo.getText().toString());
         startActivity(intent1);
 
     }

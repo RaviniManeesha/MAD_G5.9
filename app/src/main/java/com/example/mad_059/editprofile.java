@@ -34,7 +34,6 @@ public class editprofile extends AppCompatActivity {
         //view data
         DB = new DBHelper(this);
         Intent intent = getIntent();
-
         No = intent.getStringExtra("RegNo");
 
         Cursor cursor = DB.getData(No);

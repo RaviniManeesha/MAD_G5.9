@@ -4,20 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradiant"
     tools:context=".register1">
 
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="467dp"
-        android:layout_height="787dp"
-        android:contentDescription="@string/img"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.347"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.186"
-        app:srcCompat="@drawable/capture" />
+
 
     <ImageView
         android:id="@+id/imageView9"

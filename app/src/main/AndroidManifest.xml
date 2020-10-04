@@ -11,9 +11,34 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".deletesubmission"></activity>
+        <activity android:name=".exten"></activity>
+        <activity android:name=".UpdateDetails" />
+        <activity android:name=".gpa" />
+        <activity android:name=".campusInfo" />
+        <activity android:name=".Events" />
+        <activity android:name=".Map" />
+        <activity android:name=".Caf" />
+        <activity android:name=".activity_showprofee2" />
+        <activity android:name=".proratafee2" />
+        <activity android:name=".fees_main" />
+        <activity android:name=".showprofee1" />
+        <activity android:name=".proratafee1" />
+        <activity android:name=".finalmarks" />
+        <activity android:name=".adddetails" />
+        <activity android:name=".detailslist" />
+        <activity android:name=".updatemodule" />
+        <activity android:name=".AddModules" />
+        <activity android:name=".modulelist" />
+        <activity android:name=".module_main" />
+        <activity android:name=".updatebook" />
+        <activity android:name=".addbook" />
+        <activity android:name=".booklist" />
+        <activity android:name=".Calculate" />
+        <activity android:name=".Monday" />
+        <activity android:name=".updateattendance" />
+        <activity android:name=".attendance_main" />
+        <activity android:name=".Add_Form" />
         <activity android:name=".editsubmission" />
-        <activity android:name=".submission" />
         <activity android:name=".addsubmission" />
         <activity android:name=".submissions" />
         <activity android:name=".othe_clubs" />
@@ -33,15 +58,15 @@
         <activity android:name=".register1" />
         <activity android:name=".profile">
 
-
         </activity>
         <activity android:name=".editprofile" />
-        <activity android:name=".MainActivity" >
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
     </application>
 

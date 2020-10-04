@@ -22,25 +22,31 @@ import android.widget.Toast;
 
 import com.example.mad_059.Database.DBHelper;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class submissions extends AppCompatActivity {
 
-    TextView txtRegNo,txtSid;
+    TextView txtRegNo,txtSid,txtDate,txtDay;
     DBHelper DB;
     RecyclerView recyclerView;
-    ArrayList<String> sid, sName, Day,Time,Note,mName;
+    ArrayList<String> sid, sName, Day,Time,Note,mName,RegNo;
     CustomAdapter customAdapter;
     String No;
-
+    String subDate,Day1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_submissions);
 
+
+
         recyclerView = findViewById(R.id.recyclerView);
         txtRegNo = findViewById(R.id.id);
         txtSid = findViewById(R.id.sid);
+        txtDate = findViewById(R.id.today);
+        txtDay = findViewById(R.id.textView29);
 
         DB = new DBHelper(submissions.this);
         //get passing ID
@@ -55,10 +61,11 @@ public class submissions extends AppCompatActivity {
         Time = new ArrayList<>();
         mName = new ArrayList<>();
         Note = new ArrayList<>();
+        RegNo = new ArrayList<>();
 
         storeDataInArrays();
 
-        customAdapter = new CustomAdapter(submissions.this,this, sid, sName, Day,Time,Note,mName);
+        customAdapter = new CustomAdapter(submissions.this,this, sid, sName, Day,Time,Note,mName,RegNo);
         recyclerView.setAdapter(customAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(submissions.this));
 
@@ -71,7 +78,6 @@ public class submissions extends AppCompatActivity {
             recreate();
         }
     }
-
     public  void  goProfile(View view){
         Intent intent1 = new Intent(submissions.this,profile.class);
         intent1.putExtra("RegNo", txtRegNo.getText().toString());
@@ -84,11 +90,6 @@ public class submissions extends AppCompatActivity {
         startActivity(intent1);
     }
 
-    public void goSubmission(){
-        Intent intent3 = new Intent(submissions.this,submission.class);
-        intent3.putExtra("sid", txtSid.getText().toString());
-        startActivity(intent3);
-    }
     void storeDataInArrays(){
 
         Cursor cursor = DB.readAllData(No);
@@ -98,13 +99,16 @@ public class submissions extends AppCompatActivity {
             while (cursor.moveToNext()){
                 sid.add(cursor.getString(0));
                 sName.add(cursor.getString(1));
-                Day.add(cursor.getString(2));
+               // Day.add(cursor.getString(2));
                Time.add(cursor.getString(3));
                Note.add(cursor.getString(4));
                mName.add(cursor.getString(5));
+                RegNo.add(cursor.getString(6));
             }
         }
     }
+
+
 
 
 }

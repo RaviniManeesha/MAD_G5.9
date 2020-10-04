@@ -14,16 +14,19 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
+
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHolder> {
 
     private Context context;
     private Activity activity;
-    private ArrayList sid, sName, Day,Time,Note,mName;
+    private ArrayList sid, sName, Day,Time,Note,mName,RegNo;
 
     CustomAdapter(Activity activity, Context context, ArrayList sid, ArrayList sName, ArrayList Day,ArrayList Time,ArrayList mName,ArrayList Note
-                 ){
+             , ArrayList RegNo   ){
         this.activity = activity;
         this.context = context;
         this.sid = sid;
@@ -32,6 +35,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
         this.Time = Time;
         this.Note= Note;
         this.mName= mName;
+        this.RegNo= RegNo;
 
 
     }
@@ -53,18 +57,20 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
         holder.Time_txt.setText(String.valueOf(Time.get(position)));
         holder.Note_txt.setText(String.valueOf(Note.get(position)));
         holder.mName_txt.setText(String.valueOf(mName.get(position)));
+        holder.Reg_txt.setText(String.valueOf(RegNo.get(position)));
 
         //Recyclerview onClickListener
         holder.mainLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, submission.class);
+                Intent intent = new Intent(context, editsubmission.class);
                 intent.putExtra("sid", String.valueOf(sid.get(position)));
                 intent.putExtra("sName", String.valueOf(sName.get(position)));
                 intent.putExtra("Day", String.valueOf(Day.get(position)));
                 intent.putExtra("Time", String.valueOf(Time.get(position)));
                 intent.putExtra("Note", String.valueOf(Note.get(position)));
                 intent.putExtra("mName", String.valueOf(mName.get(position)));
+                intent.putExtra("RegNo", String.valueOf(RegNo.get(position)));
 
                 activity.startActivityForResult(intent, 1);
             }
@@ -79,7 +85,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView sid_txt, sName_txt, Day_txt,Time_txt,Note_txt,mName_txt;
+        TextView sid_txt, sName_txt, Day_txt,Time_txt,Note_txt,mName_txt,Reg_txt;
         LinearLayout mainLayout;
 
         MyViewHolder(@NonNull View itemView) {
@@ -90,7 +96,11 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
             Time_txt = itemView.findViewById(R.id.Time);
             Note_txt = itemView.findViewById(R.id.Note);
             mName_txt = itemView.findViewById(R.id.mName);
+            Reg_txt = itemView.findViewById(R.id.reg);
             mainLayout = itemView.findViewById(R.id.mainLayout);
+
+
+
             //Animate Recyclerview
             Animation translate_anim = AnimationUtils.loadAnimation(context, R.anim.translate_anim);
             mainLayout.setAnimation(translate_anim);

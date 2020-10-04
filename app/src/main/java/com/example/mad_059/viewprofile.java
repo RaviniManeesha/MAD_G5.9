@@ -33,7 +33,6 @@ public class viewprofile extends AppCompatActivity {
         DB = new DBHelper(this);
         //get passing ID
         Intent intent = getIntent();
-
         No = intent.getStringExtra("RegNo");
 
         Cursor cursor = DB.getData(No);

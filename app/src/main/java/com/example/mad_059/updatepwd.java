@@ -23,24 +23,23 @@ public class updatepwd extends AppCompatActivity {
     TextView txtOldPwd,txtNewPwd,txtConPwd,txtRegNo;
     Button btnUpdate;
     DBHelper DB;
-    String Pwd,No;
+    String DPwd,No,TPwd,CPwd,NPwd;
     Integer ID;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_updatepwd);
 
-        txtOldPwd =  findViewById(R.id.oldpwd);
-        txtNewPwd =  findViewById(R.id.newpwd);
-        txtConPwd =  findViewById(R.id.cpwd);
-        txtRegNo = findViewById(R.id.id2);
+        txtOldPwd =  findViewById(R.id.oldpwd2);
+        txtNewPwd =  findViewById(R.id.newpwd2);
+        txtConPwd =  findViewById(R.id.cpwd2);
+        txtRegNo = findViewById(R.id.reg);
         btnUpdate = findViewById(R.id.btnUp);
 
         DB = new DBHelper(this);
         Intent intent = getIntent();
-
         No = intent.getStringExtra("RegNo");
-
+        txtRegNo.setText(No);
 
         //get data
         Cursor cursor = DB.getData(No);
@@ -50,27 +49,47 @@ public class updatepwd extends AppCompatActivity {
 
             while(cursor.moveToNext()){
                 ID = Integer.valueOf(cursor.getString(0));
-                Pwd = cursor.getString(2);
+                DPwd = cursor.getString(2);
             }
         }
-
-        txtOldPwd.setText(Pwd);
-
 
         //update data
         btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String Pwd = txtNewPwd.getText().toString();
 
-                Boolean checkupdatedata = DB.UpdateUserPwd(ID, Pwd);
-                if (checkupdatedata == true) {
-                    Toast.makeText(updatepwd.this, " Updated User Details", Toast.LENGTH_SHORT).show();
-                    openProfile();
+                TPwd = txtOldPwd.getText().toString();
+                CPwd = txtConPwd.getText().toString();
+                NPwd = txtNewPwd.getText().toString();
 
-                } else
-                    Toast.makeText(updatepwd.this, " Not Updated User Details", Toast.LENGTH_SHORT).show();
-            }        });
+                if(TPwd.equals(DPwd) ){
+
+                    if( CPwd.equals(NPwd)){
+
+                        Boolean checkupdatedata = DB.UpdateUserPwd(ID, NPwd);
+                        if (checkupdatedata == true) {
+                            Toast.makeText(updatepwd.this, " Updated User Details", Toast.LENGTH_SHORT).show();
+                            openProfile();
+
+                        } else
+                            Toast.makeText(updatepwd.this, " Not Updated User Details", Toast.LENGTH_SHORT).show();
+
+                    }else{
+                        Toast.makeText(updatepwd.this, "Confirm Password is not Match to Confirm Password!", Toast.LENGTH_SHORT).show();
+                    }
+
+                }else{
+                    Toast.makeText(updatepwd.this, "Old Password is Not Match!", Toast.LENGTH_SHORT).show();
+                }
+
+
+
+
+
+
+
+            }
+        });
 
 
     }

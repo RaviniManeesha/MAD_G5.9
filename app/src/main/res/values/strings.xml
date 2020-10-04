@@ -1,4 +1,17 @@
 <resources>
+
+
+    <!--Attendance-->
+    <string-array name="days">
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+        <item>Sunday</item>
+    </string-array>
+
     <!--app name-->
     <string name="app_name">UniStudiac</string>
 
@@ -230,5 +243,32 @@ Bachelor of Science
     <string name="mDetails">Module Details</string>
     <string name="editmodule">Edit Module Details</string>
     <string name="deleteModule">Delete Module Details</string>
+
+
+    <!--Library-->
+    <string name="book_title">Book Title</string>
+    <string name="expire_date">Expire Date</string>
+    <string name="add_button">ADD</string>
+    <string name="borrowed_date">Borrowed Date</string>
+    <string name="title_1">Title 1</string>
+    <string name="_1">1</string>
+    <string name="b_date">Borrowed date</string>
+    <string name="e_date">Expire date</string>
+    <string name="update_button">UPDATE</string>
+    <string name="btnfine">Fine</string>
+    <string name="Edate">Expire date</string>
+    <string name="btndelete">Delete</string>
+    <string name="txtshowrep">Your calculetd repeat fee is:</string>
+    <string name="txtshowpro">Your calculated prorata fee is:</string>
+    <string name="Mod2">Number of modules less than grade = C, grater than CA = 45</string>
+    <string name="Mod3">Number of modules less than grade = C, CA = 45</string>
+    <string name="txtpro">Prorata fee per module:</string>
+    <string name="txtrep">Repeat fee per module:</string>
+    <string name="btncalc">Calculate</string>
+
+
+    <string name="attendance">Attendance</string>
+    <string name="bbooks">Borrowed Books</string>
+    <string name="mlist">Modules</string>
 
 </resources>

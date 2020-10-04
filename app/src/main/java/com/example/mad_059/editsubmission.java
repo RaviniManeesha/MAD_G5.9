@@ -1,7 +1,9 @@
 package com.example.mad_059;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -16,11 +18,11 @@ import com.example.mad_059.Database.DBHelper;
 public class editsubmission extends AppCompatActivity {
 
     Button btnDone;
-    TextView txtName,txtTime,txtDay,txtNote,txtmName,txtID;
+    TextView txtName,txtTime,txtDay,txtNote,txtmName,txtRegNo;
     DBHelper DB;
-    String  Name,Day,Time,Note,mName;
+    String  Name,Day,Time,Note,mName,RegNo,sid;
     Integer SID;
-    String sid;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,74 +34,103 @@ public class editsubmission extends AppCompatActivity {
         txtTime= findViewById(R.id.Time);
         txtNote = findViewById(R.id.Note);
         txtmName = findViewById(R.id.mName);
-        txtID = findViewById(R.id.id);
-        btnDone = findViewById(R.id.btnEdit);
+        txtRegNo = findViewById(R.id.reg);
 
         DB = new DBHelper(this);
         //get passing ID
         Intent intent = getIntent();
-        sid = intent.getStringExtra("sid");
-        txtID.setText(sid);
-        SID = Integer.parseInt(sid);
-        //get data
-        Cursor cursor = DB.getSub(SID);
-        if(cursor.getCount() == 0){
 
-            Toast.makeText(getApplicationContext(),"No Data",Toast.LENGTH_SHORT).show();
+        getAndSetIntentData();
+
+    }
+
+
+    void getAndSetIntentData(){
+        if(getIntent().hasExtra("sid") && getIntent().hasExtra("sName") && getIntent().hasExtra("Day") && getIntent().hasExtra("Time") && getIntent().hasExtra("Note")  && getIntent().hasExtra("mName") && getIntent().hasExtra("RegNo"))
+        {
+            //Getting data from intent
+            sid = getIntent().getStringExtra("sid");
+            Name = getIntent().getStringExtra("sName");
+            Day = getIntent().getStringExtra("Day");
+           Time = getIntent().getStringExtra("Time");
+           Note = getIntent().getStringExtra("Note");
+           RegNo = getIntent().getStringExtra("RegNo");
+           mName = getIntent().getStringExtra("mName");
+
+            //Setting Intent Data
+
+            txtName.setText(Name);
+            txtmName.setText(mName);
+            txtNote.setText(Note);
+            txtTime.setText(Time);
+            txtDay.setText(Day);
+            txtRegNo.setText(RegNo);
+
+            SID = Integer.parseInt(sid);
 
         }else{
-
-            while(cursor.moveToNext()){
-                SID = Integer.valueOf(cursor.getString(0));
-                Name= cursor.getString(1);
-                Day = cursor.getString(2);
-                Time =  cursor.getString(3);
-                Note =  cursor.getString(4);
-                mName =  cursor.getString(5);
-            }
+            Toast.makeText(this, "NO DATA", Toast.LENGTH_SHORT).show();
         }
+    }
 
-        txtName.setText(Name);
-        txtDay.setText(Day);
-        txtTime.setText(Time);
-        txtNote.setText(Note);
-        txtmName.setText(mName);
+    public  void EditSub(View view){
 
+        String Name = txtName.getText().toString();
+        String Day = txtDay.getText().toString();
+        String Time = txtTime.getText().toString();
+        String Note = txtNote.getText().toString();
+        String mName = txtmName.getText().toString();
 
-        //update data
-        btnDone.setOnClickListener(new View.OnClickListener() {
+        Boolean checkupdatedata = DB.UpdateSub(sid, Name, Day, Time, Note,mName);
+        if (checkupdatedata == true) {
+            Toast.makeText(editsubmission.this, " Updated Submission Details", Toast.LENGTH_SHORT).show();
+            goSub();
+        } else
+            Toast.makeText(editsubmission.this, " Not Updated Submission Details", Toast.LENGTH_SHORT).show();
+    }
+
+    public  void  goSub(){
+        Intent intent2 = new Intent(editsubmission.this,submissions.class);
+        intent2.putExtra("RegNo", txtRegNo.getText().toString());
+        startActivity(intent2);
+    }
+
+    public  void  goBack(View view){
+        Intent intent2 = new Intent(editsubmission.this,submissions.class);
+        intent2.putExtra("RegNo", txtRegNo.getText().toString());
+        startActivity(intent2);
+    }
+
+    void confirmDialog(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Delete " + Name  + " ?");
+        builder.setMessage("Are you sure you want to delete " + Name  + "?");
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                String Name = txtName.getText().toString();
-                String Day = txtDay.getText().toString();
-                String Time = txtTime.getText().toString();
-                String Note = txtNote.getText().toString();
-                String mName = txtmName.getText().toString();
-
-
-                Boolean checkupdatedata = DB.UpdateSub(sid, Name, Day, Time, Note,mName);
+            public void onClick(DialogInterface dialogInterface, int i) {
+                DBHelper myDB = new DBHelper(editsubmission.this);
+                Boolean checkupdatedata =   myDB.deleteSub(SID);
                 if (checkupdatedata == true) {
-                    Toast.makeText(editsubmission.this, " Updated Submission Details", Toast.LENGTH_SHORT).show();
-                    openSub();
+                    Toast.makeText(editsubmission.this, " Successfully Deleted!", Toast.LENGTH_SHORT).show();
+
                 } else
-                    Toast.makeText(editsubmission.this, " Not Updated Submission Details", Toast.LENGTH_SHORT).show();
-            }        });
-    }
+                    Toast.makeText(editsubmission.this, " Failed to Delete!", Toast.LENGTH_SHORT).show();
 
-    public  void openSub(){
-        Intent intent2 = new Intent(editsubmission.this,submission.class);
-        intent2.putExtra("sid", txtID.getText().toString());
-        startActivity(intent2);
+                finish();
+            }
+        });
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
 
-    }
-
-    public  void goBack(View view){
-        Intent intent2 = new Intent(editsubmission.this,submission.class);
-        intent2.putExtra("sid", txtID.getText().toString());
-
-        startActivity(intent2);
+            }
+        });
+        builder.create().show();
 
     }
 
+    public  void  openDelete(View view){
+        confirmDialog();
+    }
 
 }

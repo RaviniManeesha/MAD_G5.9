@@ -4,20 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradiant"
     tools:context=".information">
 
-    <ImageView
-        android:id="@+id/img1"
-        android:layout_width="466dp"
-        android:layout_height="749dp"
-        android:contentDescription="@string/img"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.509"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/capture" />
+
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/tb1"
@@ -86,6 +76,22 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.008" />
 
+    <TextView
+        android:id="@+id/id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/aclonica"
+        android:visibility="invisible"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.925"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.102" />
+
     <Button
         android:id="@+id/btnEdu"
         android:layout_width="270dp"
@@ -110,6 +116,7 @@
         android:layout_height="50dp"
         android:background="#000000"
         android:fontFamily="@font/aclonica"
+        android:onClick="openCampusInfo"
         android:text="@string/campusinfo"
         android:textAlignment="center"
         android:textColor="#FFFFFF"

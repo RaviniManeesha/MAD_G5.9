@@ -62,6 +62,7 @@ public class profile extends AppCompatActivity {
     }
     public void openInformation(View view){
         Intent intent3 = new Intent(this,information.class);
+        intent3.putExtra("RegNo", txtRegNo.getText().toString());
         startActivity(intent3);
     }
     public  void  viewProfile(View view){
@@ -70,4 +71,27 @@ public class profile extends AppCompatActivity {
         startActivity(intent2);
     }
 
+    public  void  goAttendance(View view){
+        Intent intent2 = new Intent(profile.this,attendance_main.class);
+        intent2.putExtra("RegNo", txtRegNo.getText().toString());
+        startActivity(intent2);
+    }
+
+    public  void  goLibrary(View view){
+        Intent intent2 = new Intent(profile.this,booklist.class);
+        intent2.putExtra("RegNo", txtRegNo.getText().toString());
+        startActivity(intent2);
+    }
+
+    public  void  goModules(View view){
+        Intent intent2 = new Intent(profile.this,module_main.class);
+        intent2.putExtra("RegNo", txtRegNo.getText().toString());
+        startActivity(intent2);
+    }
+
+    public  void  goFees(View view){
+        Intent intent2 = new Intent(profile.this,fees_main.class);
+        intent2.putExtra("RegNo", txtRegNo.getText().toString());
+        startActivity(intent2);
+    }
 }
