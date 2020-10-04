@@ -4,17 +4,9 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
-/**
- * Example local unit test, which will execute on the development machine (host).
- *
- * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
- */
 public class ExampleUnitTest {
     private proratafee2 proratafee2;
     private proratafee3 proratafee3;
-
 
     @Before
     public void setup1() {
@@ -37,5 +29,4 @@ public class ExampleUnitTest {
         double result = proratafee3.multiplyNumbers2(3, 2000);
         Assert.assertEquals(6000, result, 0.001);
     }
-   
 }

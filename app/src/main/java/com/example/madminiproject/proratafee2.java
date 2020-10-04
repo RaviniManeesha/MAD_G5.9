@@ -9,8 +9,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import java.sql.SQLOutput;
-
 public class proratafee2 extends AppCompatActivity {
 
     private EditText modInput, repInput;
@@ -30,26 +28,20 @@ public class proratafee2 extends AppCompatActivity {
         btnsub3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                double a,b,c;
+                double a, b, c;
 
-                a= Double.parseDouble(modInput.getText().toString());
-                b= Double.parseDouble(repInput.getText().toString());
-                c=multiplyNumbers(a, b);
+                a = Double.parseDouble(modInput.getText().toString());
+                b = Double.parseDouble(repInput.getText().toString());
+                c = multiplyNumbers(a, b);
 
-                Intent intent = new Intent(proratafee2.this,shoeResult2.class);
-                intent.putExtra("repValue",c);
+                Intent intent = new Intent(proratafee2.this, shoeResult2.class);
+                intent.putExtra("repValue", c);
                 startActivity(intent);
-
-
             }
 
         });
-
-
     }
-
     public double multiplyNumbers(double a, double b) {
         return a * b;
     }
-
 }

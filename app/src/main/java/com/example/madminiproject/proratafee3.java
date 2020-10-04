@@ -9,8 +9,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import java.sql.SQLOutput;
-
 public class proratafee3 extends AppCompatActivity {
 
     private EditText  proInput, modInput2;
@@ -39,18 +37,12 @@ public class proratafee3 extends AppCompatActivity {
                 Intent intent = new Intent(proratafee3.this,showResults3.class);
                 intent.putExtra("proValue",f);
                 startActivity(intent);
-
-
             }
 
         });
-
-
     }
 
     public double multiplyNumbers2(double d, double e) {
         return d * e;
     }
-
-
 }

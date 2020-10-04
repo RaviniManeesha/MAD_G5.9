@@ -24,7 +24,5 @@ public class showResults3 extends AppCompatActivity {
 
 
                 System.out.println(result1);
-
-
         }
 }
