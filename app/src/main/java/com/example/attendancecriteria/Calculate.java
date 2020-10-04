@@ -35,21 +35,12 @@ public class Calculate extends AppCompatActivity {
         cal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                if(editText1.getText().toString().length() == 0){
-                    editText1.setText("0");
-                }if(result.getText().toString().length() == 0){
-                    result.setText("0");
-                }
-
-                int num1 = Integer.parseInt(editText1.getText().toString());
-                int num2 = Integer.parseInt(result.getText().toString());
-
-                int calculate = num1 * num2 / 100;
-                res.setText(String.valueOf(calculate));
+                clac();
 
             }
         });
+
+
 
         textView = (TextView) findViewById(R.id.textView4);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
@@ -74,4 +65,23 @@ public class Calculate extends AppCompatActivity {
         });
 
     }
+    public void clac(){
+        if(editText1.getText().toString().length() == 0){
+            editText1.setText("0");
+        }if(result.getText().toString().length() == 0){
+            result.setText("0");
+        }
+
+        int num1 = Integer.parseInt(editText1.getText().toString());
+        int num2 = Integer.parseInt(result.getText().toString());
+
+        int calculate = calcuattendance(num1,num2);
+        res.setText(String.valueOf(calculate));
+
+    }
+
+    public int calcuattendance(int num1, int num2){
+        return num1 * num2 / 100;
+    }
+
 }
