@@ -109,7 +109,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper{
         }
         return cursor;
     }
-
+    //Module Details
     Cursor readAllDetails(){
         String query = "SELECT * FROM " + TABLE_NAME2;
         SQLiteDatabase db = this.getReadableDatabase();
@@ -121,7 +121,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper{
         }
         return cursor;
     }
-
+    //Module
     void updateData(String row_id, String name, String no){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
@@ -137,6 +137,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper{
             Toast.makeText(context, "Successfully Updated!", Toast.LENGTH_SHORT).show();
         }
     }
+    //Modue Details
     void updateDetails(String row_id, String name, String code, String cr, String ca, String fn, String ref){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
@@ -156,7 +157,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper{
             Toast.makeText(context, "Successfully Updated!", Toast.LENGTH_SHORT).show();
         }
     }
-
+    //Module
     void deleteOneRow(String row_id){
         SQLiteDatabase db = this.getWritableDatabase();
         long result = db.delete(TABLE_NAME, "id=?",new String[] {row_id});
@@ -167,7 +168,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper{
             Toast.makeText(context, "Successfully Deleted!", Toast.LENGTH_SHORT).show();
         }
     }
-
+    //Module Details
     void deleteRow(String row_id){
         SQLiteDatabase db = this.getWritableDatabase();
         long result = db.delete(TABLE_NAME2, "id=?",new String[] {row_id});

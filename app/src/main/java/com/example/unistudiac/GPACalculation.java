@@ -39,15 +39,13 @@ public class GPACalculation extends AppCompatActivity {
         });
 
 
-
-
     }
     public void calGpa(){
         String m1g, m2g, m3g, mg4;
         int cr1,cr2,cr3,cr4;
 
         int totCr;
-        //double gpa1, gpa2, gpa3, gpa4;
+
 
         totCr = Integer.parseInt(e1.getText().toString());
         m1g = e2.getText().toString().trim();
@@ -59,7 +57,6 @@ public class GPACalculation extends AppCompatActivity {
         cr2 = Integer.parseInt(e5.getText().toString());
         cr3 = Integer.parseInt(e7.getText().toString());
         cr4 = Integer.parseInt(e9.getText().toString());
-
 
         float a,b,c,d;
         a = checkGPA(m1g);

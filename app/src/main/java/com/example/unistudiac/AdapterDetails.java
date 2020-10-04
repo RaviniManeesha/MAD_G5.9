@@ -63,8 +63,6 @@ public class AdapterDetails extends RecyclerView.Adapter<AdapterDetails.newViewH
                 activity.startActivityForResult(intent, 1);
             }
         });
-
-
     }
 
     @Override
