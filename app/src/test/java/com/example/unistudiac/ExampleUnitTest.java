@@ -1,5 +1,6 @@
 package com.example.unistudiac;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -10,8 +11,21 @@ import static org.junit.Assert.*;
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
 public class ExampleUnitTest {
-    @Test
-    public void addition_isCorrect() {
-        assertEquals(4, 2 + 2);
+
+    private FinalMark finalMark;
+
+    @Before
+    public void setup(){
+        finalMark = new FinalMark();
     }
+
+    @Test
+    public void testMarksCal(){
+        int result;
+        result = finalMark.calculate(90,80);
+        assertEquals(85, result);
+    }
+
+
+
 }
