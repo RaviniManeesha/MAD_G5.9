@@ -2,6 +2,7 @@ package com.example.madminiproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -34,12 +35,21 @@ public class addbook extends AppCompatActivity {
                 String dateE = dateE_input.getText().toString();
 
                 Boolean checkinsertdata = DB.InsertData(title, dateB, dateE);
-                if (checkinsertdata == true)
+                if (checkinsertdata == true) {
                     Toast.makeText(addbook.this, "New Entry Inserted", Toast.LENGTH_SHORT).show();
-                else
+                    openViewBookList();
+                }
+                else {
                     Toast.makeText(addbook.this, "New Entry Not Inserted", Toast.LENGTH_SHORT).show();
+                }
             }
+
         });
 
+
+    }
+    public  void openViewBookList(){
+        Intent intent1 = new Intent(this,viewBookList.class);
+        startActivity(intent1);
     }
 }

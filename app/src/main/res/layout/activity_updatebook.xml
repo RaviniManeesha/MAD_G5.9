@@ -28,12 +28,13 @@
         android:ems="10"
         android:hint="@string/book_title"
         android:inputType="textPersonName"
+        android:textAlignment="textStart"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.531" />
+        app:layout_constraintVertical_bias="0.37" />
 
     <EditText
         android:id="@+id/dateB_input2"
@@ -51,7 +52,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title_input2"
-        app:layout_constraintVertical_bias="0.683" />
+        app:layout_constraintVertical_bias="0.479" />
 
     <EditText
         android:id="@+id/dateE_input2"
@@ -59,16 +60,16 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
+        android:autofillHints=""
         android:ems="10"
+        android:hint="@string/expire_date"
         android:inputType="date"
-        android:hint = "@string/expire_date"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.605"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dateB_input2"
-        app:layout_constraintVertical_bias="0.317"
-        android:autofillHints="" />
+        app:layout_constraintVertical_bias="0.25" />
 
     <Button
         android:id="@+id/update_button"
@@ -78,6 +79,7 @@
         android:layout_marginTop="126dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="150dp"
+        android:background="#F479A3"
         android:text="@string/update_button"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"

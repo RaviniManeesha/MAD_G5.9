@@ -13,7 +13,7 @@ public class viewbook extends AppCompatActivity {
 
     TextView txttitel,txtdDate,txteDate;
     MyDatabaseHelper DB;
-    String title,bDate,eDate;
+    String id,title,bDate,eDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,22 +24,39 @@ public class viewbook extends AppCompatActivity {
         txtdDate = findViewById(R.id.bDate);
         txteDate = findViewById(R.id.eDate);
 
-        DB = new MyDatabaseHelper(this);
-        Cursor cursor = DB.getData();
-        if(cursor.getCount() == 0){
-            Toast.makeText(getApplicationContext(),"No Data",Toast.LENGTH_SHORT).show();
-        }else{
-            while(cursor.moveToNext()){
-               title = cursor.getString(1);
-               bDate = cursor.getString(2);
-               eDate = cursor.getString(3);
+        getIntentData();
+    }
+
+        void getIntentData() {
+            if (getIntent().hasExtra("id") && getIntent().hasExtra("title") && getIntent().hasExtra("bDate") && getIntent().hasExtra("eDate")) {
+                id = getIntent().getStringExtra("id");
+                title = getIntent().getStringExtra("title");
+                bDate = getIntent().getStringExtra("bDate");
+                eDate = getIntent().getStringExtra("eDate");
+
+                txttitel.setText(title);
+                txtdDate.setText(bDate);
+                txteDate.setText(eDate);
+            } else{
+                Toast.makeText(this,"No Data",Toast.LENGTH_SHORT).show();
             }
+
+
+           DB = new MyDatabaseHelper(this);
+            Cursor cursor = DB.getData();
+            if (cursor.getCount() == 0) {
+                Toast.makeText(getApplicationContext(), "No Data", Toast.LENGTH_SHORT).show();
+            } else {
+                while (cursor.moveToNext()) {
+                    title = cursor.getString(1);
+                    bDate = cursor.getString(2);
+                    eDate = cursor.getString(3);
+                }
+            }
+
+
         }
 
-        txttitel.setText(title);
-        txtdDate.setText(bDate);
-        txteDate.setText(eDate);
-    }
 
     public  void  goEdit(View view){
 
@@ -54,4 +71,5 @@ public class viewbook extends AppCompatActivity {
         startActivity(intent2);
 
     }
+
 }

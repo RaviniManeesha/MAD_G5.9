@@ -55,13 +55,13 @@ public class updatebook extends AppCompatActivity {
                 Boolean checkupdatedata = DB.UpdateData(id,title,bDate,eDate);
                 if(checkupdatedata==true) {
                     Toast.makeText(updatebook.this, " Updated User Details", Toast.LENGTH_SHORT).show();
-                    openViewBook();
+                    openViewBookList();
                 }else
                     Toast.makeText(updatebook.this, " Not Updated User Details", Toast.LENGTH_SHORT).show();
             }        });
     }
-    public  void openViewBook(){
-        Intent intent1 = new Intent(this,viewbook.class);
+    public  void openViewBookList(){
+        Intent intent1 = new Intent(this,viewBookList.class);
         startActivity(intent1);
     }
 }

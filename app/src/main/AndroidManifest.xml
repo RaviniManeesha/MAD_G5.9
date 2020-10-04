@@ -9,23 +9,43 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".deletebook"></activity>
-        <activity android:name=".updatebook" />
-        <activity android:name=".viewbook" />
-        <activity android:name=".addbook" />
-        <activity android:name=".notices" />
-        <activity android:name=".proratafee" />
-        <activity android:name=".repeatfee" />
-        <activity android:name=".semesterfee" />
-        <activity android:name=".Calcfine" />
-        <activity android:name=".EditBooks" />
-        <activity android:name=".BookDetails">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        <activity android:name=".showResults3"
+            android:label="Calculated Prorata Fees"
+            android:parentActivityName=".proratafee3">
         </activity>
+        <activity android:name=".proratafee3"
+                  android:label="Calculate Prorata Fees">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter></activity>
+        <activity android:name=".proratafee2"
+                  android:label="Calculate Repeat Fees">
+        </activity>
+        <activity android:name=".shoeResult2"
+            android:label="Calculated Repeat Fees"
+            android:parentActivityName=".proratafee2"/>
+        <activity
+            android:name=".viewBookList"
+            android:label="Your Books">
+        </activity>
+        <activity
+            android:name=".deletebook"
+            android:label="Delete Book"
+            android:parentActivityName=".viewbook" />
+        <activity
+            android:name=".updatebook"
+            android:label="Edit Book"
+            android:parentActivityName=".viewbook" />
+        <activity
+            android:name=".viewbook"
+            android:label="Your Books"
+            android:parentActivityName=".viewBookList" />
+        <activity
+            android:name=".addbook"
+            android:label="Add Book"
+            android:parentActivityName=".viewBookList" />
     </application>
 
 </manifest>

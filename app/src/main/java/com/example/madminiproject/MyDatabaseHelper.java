@@ -5,10 +5,12 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.view.View;
 
 import androidx.annotation.Nullable;
 
 public class MyDatabaseHelper extends SQLiteOpenHelper {
+    public static View txtTitleIn;
     private Context context;
     private static final String DATABASE_NAME = "Uni.db";
     private static final int DATABASE_VERSION = 1;
@@ -31,6 +33,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS Books");
         onCreate(db);
     }
+
 
     //insert data
     public Boolean InsertData(String title, String dateB, String dateE) {

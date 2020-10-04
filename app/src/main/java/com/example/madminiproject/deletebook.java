@@ -63,7 +63,7 @@ public class deletebook extends AppCompatActivity {
 
     public  void  openBookDetails(){
 
-        Intent intent1 = new Intent(this,BookDetails.class);
+        Intent intent1 = new Intent(this,viewBookList.class);
         startActivity(intent1);
 
     }
