@@ -1,190 +1,258 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@drawable/capture"
     android:backgroundTintMode="add"
-    android:textAlignment="center"
-    tools:context=".MainActivity">
+    android:textAlignment="gravity"
+    tools:context=".GPACalculation">
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:orientation="vertical">
+    <EditText
+        android:id="@+id/m4c"
+        android:layout_width="200dp"
+        android:layout_height="43dp"
+        android:layout_gravity="center"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.924"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/m4g"
+        app:layout_constraintVertical_bias="0.107" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textAlignment="center">
+    <EditText
+        android:id="@+id/m3c"
+        android:layout_width="200dp"
+        android:layout_height="43dp"
+        android:layout_gravity="center"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.924"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/m3g"
+        app:layout_constraintVertical_bias="0.057" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraintLayout"
-                android:layout_width="409dp"
-                android:layout_height="654dp"
-                tools:layout_editor_absoluteX="1dp"
-                tools:layout_editor_absoluteY="75dp">
+    <EditText
+        android:id="@+id/m4g"
+        android:layout_width="200dp"
+        android:layout_height="43dp"
+        android:layout_gravity="center"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.924"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/m3c"
+        app:layout_constraintVertical_bias="0.042" />
 
-                <RelativeLayout
-                    android:id="@+id/relativeLayout15"
-                    android:layout_width="404dp"
-                    android:layout_height="436dp"
-                    android:background="#81FFFFFF"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.366">
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:fontFamily="@font/aclonica"
+        android:text="GPA Calculation"
+        android:textColor="#080851"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.021" />
 
-                    <TextView
-                        android:id="@+id/textView28"
-                        android:layout_width="335dp"
-                        android:layout_height="40dp"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentTop="true"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentBottom="true"
-                        android:layout_marginStart="55dp"
-                        android:layout_marginTop="11dp"
-                        android:layout_marginEnd="15dp"
-                        android:layout_marginBottom="385dp"
-                        android:fontFamily="@font/aclonica"
-                        android:text="Module Name"
-                        android:textAlignment="center"
-                        android:textColor="#0C0C0C"
-                        android:textSize="30sp" />
+    <TextView
+        android:id="@+id/creditLable"
+        android:layout_width="259dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:text="No Of Credits"
+        android:textColor="#100F0F"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.042" />
 
-                    <TextView
-                        android:id="@+id/textView29"
-                        android:layout_width="207dp"
-                        android:layout_height="40dp"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentTop="true"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentBottom="true"
-                        android:layout_marginStart="18dp"
-                        android:layout_marginTop="95dp"
-                        android:layout_marginEnd="178dp"
-                        android:layout_marginBottom="301dp"
-                        android:fontFamily="@font/aclonica"
-                        android:text="Final Result"
-                        android:textColor="#101010"
-                        android:textSize="24sp" />
+    <TextView
+        android:id="@+id/creditLable2"
+        android:layout_width="158dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="8dp"
+        android:text="Module 1"
+        android:textColor="#100F0F"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.156" />
 
-                    <TextView
-                        android:id="@+id/textView30"
-                        android:layout_width="207dp"
-                        android:layout_height="40dp"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentTop="true"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentBottom="true"
-                        android:layout_marginStart="22dp"
-                        android:layout_marginTop="199dp"
-                        android:layout_marginEnd="174dp"
-                        android:layout_marginBottom="197dp"
-                        android:fontFamily="@font/aclonica"
-                        android:text="No of Credits"
-                        android:textColor="#101010"
-                        android:textSize="24sp" />
+    <TextView
+        android:id="@+id/creditLable3"
+        android:layout_width="158dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="8dp"
+        android:text="Module 2"
+        android:textColor="#100F0F"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.337" />
 
-                    <Button
-                        android:id="@+id/button5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentTop="true"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentBottom="true"
-                        android:layout_marginStart="276dp"
-                        android:layout_marginTop="93dp"
-                        android:layout_marginEnd="41dp"
-                        android:layout_marginBottom="295dp"
-                        android:backgroundTint="#FFFFFF" />
+    <TextView
+        android:id="@+id/creditLable4"
+        android:layout_width="158dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="8dp"
+        android:text="Module 3"
+        android:textColor="#100F0F"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.516" />
 
-                    <Button
-                        android:id="@+id/button11"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentTop="true"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentBottom="true"
-                        android:layout_marginStart="279dp"
-                        android:layout_marginTop="199dp"
-                        android:layout_marginEnd="38dp"
-                        android:layout_marginBottom="189dp"
-                        android:backgroundTint="#FFFFFF" />
+    <TextView
+        android:id="@+id/creditLable5"
+        android:layout_width="158dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="8dp"
+        android:text="Module 4"
+        android:textColor="#100F0F"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.691" />
 
-                    <TextView
-                        android:id="@+id/textView22"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentTop="true"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentBottom="true"
-                        android:layout_marginStart="85dp"
-                        android:layout_marginTop="343dp"
-                        android:layout_marginEnd="16dp"
-                        android:layout_marginBottom="61dp"
-                        android:fontFamily="@font/aclonica"
-                        android:text="Add more Modules"
-                        android:textColor="#0E0E0E"
-                        android:textSize="24sp" />
+    <EditText
+        android:id="@+id/credit"
+        android:layout_width="119dp"
+        android:layout_height="38dp"
+        android:layout_gravity="center"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.944"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.128" />
 
-                    <com.google.android.material.floatingactionbutton.FloatingActionButton
-                        android:id="@+id/floatingActionButton7"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentTop="true"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentBottom="true"
-                        android:layout_marginStart="18dp"
-                        android:layout_marginTop="326dp"
-                        android:layout_marginEnd="331dp"
-                        android:layout_marginBottom="54dp"
-                        android:backgroundTint="#081351"
-                        android:clickable="true"
-                        app:srcCompat="@android:drawable/ic_menu_add" />
-                </RelativeLayout>
+    <EditText
+        android:id="@+id/m1g"
+        android:layout_width="200dp"
+        android:layout_height="43dp"
+        android:layout_gravity="center"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.924"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/credit"
+        app:layout_constraintVertical_bias="0.047" />
 
-                <Button
-                    android:id="@+id/button7"
-                    android:layout_width="242dp"
-                    android:layout_height="64dp"
-                    android:backgroundTint="#140FD3"
-                    android:fontFamily="@font/aclonica"
-                    android:text="Calculate GPA"
-                    android:textSize="24sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/relativeLayout15" />
+    <EditText
+        android:id="@+id/m2g"
+        android:layout_width="200dp"
+        android:layout_height="43dp"
+        android:layout_gravity="center"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.924"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/m1c"
+        app:layout_constraintVertical_bias="0.035" />
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+    <EditText
+        android:id="@+id/m1c"
+        android:layout_width="200dp"
+        android:layout_height="43dp"
+        android:layout_gravity="center"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.924"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/m1g"
+        app:layout_constraintVertical_bias="0.022" />
 
-            <TextView
-                android:id="@+id/textView23"
-                android:layout_width="400dp"
-                android:layout_height="56dp"
-                android:fontFamily="@font/aclonica"
-                android:text="GPA Calculation"
-                android:textAlignment="center"
-                android:textColor="#090909"
-                android:textSize="36sp"
-                app:layout_constraintBottom_toBottomOf="@+id/constraintLayout"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.454"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
+    <EditText
+        android:id="@+id/m2c"
+        android:layout_width="200dp"
+        android:layout_height="43dp"
+        android:layout_gravity="center"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.924"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/m2g"
+        app:layout_constraintVertical_bias="0.037" />
 
+    <EditText
+        android:id="@+id/m3g"
+        android:layout_width="200dp"
+        android:layout_height="43dp"
+        android:layout_gravity="center"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.924"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/m2c"
+        app:layout_constraintVertical_bias="0.031" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </LinearLayout>
-</LinearLayout>
+    <Button
+        android:id="@+id/cal"
+        android:layout_width="184dp"
+        android:layout_height="57dp"
+        android:layout_marginBottom="4dp"
+        android:text="Calculate"
+        android:textColor="#050E40"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/grade9" />
+
+    <TextView
+        android:id="@+id/txtCGPA"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="41dp"
+        android:layout_marginBottom="76dp"
+        android:textAlignment="center"
+        android:textColor="#9C0A0A"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.524"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/m4c" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

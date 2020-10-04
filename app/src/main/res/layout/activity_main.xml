@@ -1,112 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
-    android:backgroundTintMode="add"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="463dp"
+        android:layout_height="751dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/capture" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:orientation="vertical">
+    <Button
+        android:id="@+id/btnAdd"
+        android:layout_width="382dp"
+        android:layout_height="77dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="#AB9C27B0"
+        android:fontFamily="@font/aclonica"
+        android:radius="10sp"
+        android:text="ADD MODULES"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.769"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.409" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textAlignment="center">
+    <Button
+        android:id="@+id/btnDetails"
+        android:layout_width="382dp"
+        android:layout_height="77dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="#F0E91E6F"
+        android:backgroundTint="#BEE91E63"
+        android:fontFamily="@font/aclonica"
+        android:text="Module Details"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.769"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.557" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="409dp"
-                android:layout_height="654dp"
-                tools:layout_editor_absoluteX="1dp"
-                tools:layout_editor_absoluteY="75dp">
+    <Button
+        android:id="@+id/btnFinal"
+        android:layout_width="382dp"
+        android:layout_height="77dp"
+        android:layout_margin="10dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="#DA03A9F4"
+        android:fontFamily="@font/aclonica"
+        android:outlineProvider="background"
+        android:text="Final Marks"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.857"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.742" />
 
-                <Button
-                    android:id="@+id/button16"
-                    android:layout_width="382dp"
-                    android:layout_height="77dp"
-                    android:backgroundTint="#494D65"
-                    android:fontFamily="@font/aclonica"
-                    android:text="CA Marks"
-                    android:textSize="24sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.37"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.233" />
+    <Button
+        android:id="@+id/btnGPA"
+        android:layout_width="382dp"
+        android:layout_height="77dp"
+        android:layout_margin="10dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:backgroundTint="#DDFFEB3B"
+        android:fontFamily="@font/aclonica"
+        android:text="GPA Calculation"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.857"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.914" />
 
-                <Button
-                    android:id="@+id/button18"
-                    android:layout_width="382dp"
-                    android:layout_height="77dp"
-                    android:backgroundTint="#494D65"
-                    android:fontFamily="@font/aclonica"
-                    android:radius="10sp"
-                    android:text="Add Modules"
-                    android:textSize="24sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.37"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.027" />
-
-                <Button
-                    android:id="@+id/button17"
-                    android:layout_width="382dp"
-                    android:layout_height="77dp"
-                    android:layout_margin="10dp"
-                    android:layout_marginStart="8dp"
-                    android:backgroundTint="#494D65"
-                    android:fontFamily="@font/aclonica"
-                    android:outlineProvider="background"
-                    android:text="Final Marks"
-                    android:textSize="24sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.435" />
-
-                <Button
-                    android:id="@+id/button19"
-                    android:layout_width="382dp"
-                    android:layout_height="77dp"
-                    android:layout_margin="10dp"
-                    android:layout_marginStart="16dp"
-                    android:backgroundTint="#494D65"
-                    android:fontFamily="@font/aclonica"
-                    android:text="GPA Calculation"
-                    android:textSize="24sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.667" />
-
-                <Button
-                    android:id="@+id/button20"
-                    android:layout_width="382dp"
-                    android:layout_height="77dp"
-                    android:layout_margin="10dp"
-                    android:layout_marginStart="8dp"
-                    android:backgroundTint="#494D65"
-                    android:fontFamily="@font/aclonica"
-                    android:outlineProvider="paddedBounds"
-                    android:text="Semester Plan"
-                    android:textSize="24sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.878" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </LinearLayout>
-</LinearLayout>
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="270dp"
+        android:layout_height="179dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnAdd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/main" />
+</androidx.constraintlayout.widget.ConstraintLayout>
