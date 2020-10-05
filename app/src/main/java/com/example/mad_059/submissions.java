@@ -31,7 +31,7 @@ public class submissions extends AppCompatActivity {
     TextView txtRegNo,txtSid,txtDate,txtDay;
     DBHelper DB;
     RecyclerView recyclerView;
-    ArrayList<String> sid, sName, Day,Time,Note,mName,RegNo;
+    ArrayList<String> sid, sName, Day,Time,Note,mName,RegNo,sdate;
     CustomAdapter customAdapter;
     String No;
     String subDate,Day1;
@@ -99,11 +99,12 @@ public class submissions extends AppCompatActivity {
             while (cursor.moveToNext()){
                 sid.add(cursor.getString(0));
                 sName.add(cursor.getString(1));
-               // Day.add(cursor.getString(2));
+               Day.add(cursor.getString(2));
                Time.add(cursor.getString(3));
                Note.add(cursor.getString(4));
                mName.add(cursor.getString(5));
                 RegNo.add(cursor.getString(6));
+                sdate.add(cursor.getString(7));
             }
         }
     }

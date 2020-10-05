@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradiant"
+    android:padding="30dp"
+    tools:context=".updateattendance">
+
+
+
+    <EditText
+        android:id="@+id/Sub_input2"
+        android:layout_width="322dp"
+        android:layout_height="54dp"
+        android:ems="10"
+        android:fontFamily="@font/aclonica"
+        android:hint=" Add a Subject"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.55"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.139" />
+
+    <EditText
+        android:id="@+id/reg"
+        android:layout_width="322dp"
+        android:layout_height="54dp"
+        android:ems="10"
+        android:fontFamily="@font/aclonica"
+        android:hint=" Add a Subject"
+        android:inputType="textPersonName"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.629"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
+
+    <EditText
+        android:id="@+id/room_input2"
+        android:layout_width="305dp"
+        android:layout_height="69dp"
+        android:ems="10"
+        android:fontFamily="@font/aclonica"
+        android:hint="Enter the Room Number"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.594"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.306" />
+
+    <EditText
+        android:id="@+id/Teacher_input2"
+        android:layout_width="306dp"
+        android:layout_height="61dp"
+        android:layout_marginBottom="60dp"
+        android:ems="10"
+        android:fontFamily="@font/aclonica"
+        android:hint=" Teacher's Name"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.59"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.518" />
+
+    <EditText
+        android:id="@+id/clztime"
+        android:layout_width="318dp"
+        android:layout_height="64dp"
+        android:ems="10"
+        android:fontFamily="@font/aclonica"
+        android:hint="Time"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.612"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Teacher_input2"
+        app:layout_constraintVertical_bias="0.065" />
+    <Button
+        android:id="@+id/update"
+        android:layout_width="345dp"
+        android:layout_height="79dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="124dp"
+        android:fontFamily="@font/aclonica"
+        android:text="Update"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.545"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Teacher_input" />
+
+
+    <Button
+        android:id="@+id/delete_button"
+        android:layout_width="356dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/aclonica"
+        android:text="Delete"
+        android:textColor="@color/colorGrapeFruit"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Teacher_input" />
+</androidx.constraintlayout.widget.ConstraintLayout>

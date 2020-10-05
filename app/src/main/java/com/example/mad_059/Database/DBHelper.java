@@ -43,7 +43,7 @@ public class DBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase DB) {
         DB.execSQL("create Table Student(ID INTEGER primary key autoincrement,RegNo TEXT, Pwd TEXT, StName TEXT,Phone TEXT,Email EMAIL,Date DATE)");
-        DB.execSQL("create Table Submission(SID INTEGER primary key autoincrement,sName TEXT,rDay TEXT,rTime TEXT,Note TEXT,mName TEXT,RegNo TEXT)");
+        DB.execSQL("create Table Submission(SID INTEGER primary key autoincrement,sName TEXT,rDay TEXT,rTime TEXT,Note TEXT,mName TEXT,RegNo TEXT,dates TEXT)");
 
 
         //Attendance
@@ -123,7 +123,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
 
     //insert submission data
-    public Boolean insertSub(String sName,String rDay,String rTime,String Note,String mName,String RegNo)
+    public Boolean insertSub(String sName,String rDay,String rTime,String Note,String mName,String RegNo,String dates)
     {
         SQLiteDatabase DB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -133,6 +133,7 @@ public class DBHelper extends SQLiteOpenHelper {
         contentValues.put("Note", Note);
         contentValues.put("mName", mName);
         contentValues.put("RegNo", RegNo);
+        contentValues.put("dates", dates);
 
 
         long result=DB.insert("Submission", null, contentValues);

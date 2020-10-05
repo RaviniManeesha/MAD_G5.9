@@ -38,6 +38,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
         this.RegNo= RegNo;
 
 
+
     }
 
     @NonNull
@@ -59,6 +60,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
         holder.mName_txt.setText(String.valueOf(mName.get(position)));
         holder.Reg_txt.setText(String.valueOf(RegNo.get(position)));
 
+
         //Recyclerview onClickListener
         holder.mainLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,6 +73,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
                 intent.putExtra("Note", String.valueOf(Note.get(position)));
                 intent.putExtra("mName", String.valueOf(mName.get(position)));
                 intent.putExtra("RegNo", String.valueOf(RegNo.get(position)));
+
 
                 activity.startActivityForResult(intent, 1);
             }
@@ -85,7 +88,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView sid_txt, sName_txt, Day_txt,Time_txt,Note_txt,mName_txt,Reg_txt;
+        TextView sid_txt, sName_txt, Day_txt,Time_txt,Note_txt,mName_txt,Reg_txt,Date_txt;
         LinearLayout mainLayout;
 
         MyViewHolder(@NonNull View itemView) {
@@ -97,6 +100,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
             Note_txt = itemView.findViewById(R.id.Note);
             mName_txt = itemView.findViewById(R.id.mName);
             Reg_txt = itemView.findViewById(R.id.reg);
+            Date_txt = itemView.findViewById(R.id.dates);
             mainLayout = itemView.findViewById(R.id.mainLayout);
 
 

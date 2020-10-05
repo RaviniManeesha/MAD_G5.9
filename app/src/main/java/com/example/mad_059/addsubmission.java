@@ -13,8 +13,11 @@ import android.widget.Toast;
 
 import com.example.mad_059.Database.DBHelper;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class addsubmission extends AppCompatActivity {
-    TextView txtName,txtDay,txtTime,txtNote,txtRegNo,txtmName;
+    TextView txtName,txtDay,txtTime,txtNote,txtRegNo,txtmName,Day1,res;
     Button btnDone;
     DBHelper DB;
     String  No;
@@ -31,6 +34,7 @@ public class addsubmission extends AppCompatActivity {
         txtRegNo = findViewById(R.id.id);
         txtmName = findViewById(R.id.mName);
         btnDone = findViewById(R.id.Done);
+        Day1 = findViewById(R.id.day1);
 
         //get  RegNo
         DB = new DBHelper(this);
@@ -60,8 +64,28 @@ public class addsubmission extends AppCompatActivity {
                     String Note = txtNote.getText().toString();
                     String mCode = txtmName.getText().toString();
                     String RegNO = txtRegNo.getText().toString();
+                    String dates = Day1.getText().toString();
 
-                    Boolean checkinsertdata2 = DB.insertSub(Name, Day, Time, Note, mCode, RegNO);
+                    SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd");
+                    String currentDate = sdf.format(new Date());
+                    Day1.setText(currentDate);
+
+                    if (txtDay.getText().toString().length() == 0) {
+                        txtDay.setText("0");
+                    }
+                    if (Day1.getText().toString().length() == 0) {
+                        Day1.setText("0");
+                    }
+
+                    int num1 = Integer.parseInt(txtDay.getText().toString());
+                    int num2 = Integer.parseInt(Day1.getText().toString());
+
+                   int calculate = 0;
+                   res.setText(String.valueOf(calculate));
+
+                   String ans = res.getText().toString();
+
+                    Boolean checkinsertdata2 = DB.insertSub(Name, Day, Time, Note, mCode, RegNO,ans);
                     if (checkinsertdata2 == true) {
                         Toast.makeText(addsubmission.this, "Add New Submission Successfully!", Toast.LENGTH_SHORT).show();
                         goSub();
@@ -83,5 +107,11 @@ public class addsubmission extends AppCompatActivity {
         Intent intent2 = new Intent(addsubmission.this,submissions.class);
         intent2.putExtra("RegNo", txtRegNo.getText().toString());
         startActivity(intent2);
+    }
+
+    void calcDate () {
+
+
+
     }
 }

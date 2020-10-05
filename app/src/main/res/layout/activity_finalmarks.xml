@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradiant"
+    android:backgroundTintMode="add"
+    android:textAlignment="gravity"
+    tools:context=".MainActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textAlignment="center">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout"
+                android:layout_width="409dp"
+                android:layout_height="654dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutca"
+                    android:layout_width="397dp"
+                    android:layout_height="125dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="#A0D4EC"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.09">
+
+                    <TextView
+                        android:id="@+id/finlca"
+                        android:layout_width="match_parent"
+                        android:layout_height="41dp"
+                        android:fontFamily="@font/aclonica"
+                        android:text="Continous Assesment Marks"
+                        android:textColor="#0C0C0C"
+                        android:textSize="30sp" />
+
+                    <EditText
+                        android:id="@+id/finalcam"
+                        android:layout_width="149dp"
+                        android:layout_height="43dp"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/aclonica"
+                        android:background="#FFFFFF" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayout3"
+                    android:layout_width="394dp"
+                    android:layout_height="198dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="36dp"
+                    android:background="#A0D4EC"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.666"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+                    tools:ignore="UnknownId">
+
+                    <TextView
+                        android:id="@+id/total"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Total"
+                        android:textAlignment="center"
+                        android:fontFamily="@font/aclonica"
+                        android:textColor="#131313"
+                        android:textSize="30sp" />
+
+                    <EditText
+                        android:id="@+id/tot"
+                        android:layout_width="149dp"
+                        android:layout_height="43dp"
+                        android:layout_gravity="center"
+                        android:background="#FFFFFF"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/grade"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/aclonica"
+                        android:text="Final Grade"
+                        android:textAlignment="center"
+                        android:textColor="#0C0C0C"
+                        android:textSize="30sp" />
+
+                    <EditText
+                        android:id="@+id/grades"
+                        android:layout_width="149dp"
+                        android:layout_height="43dp"
+                        android:layout_gravity="center"
+                        android:background="#FFFFFF"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutfinal"
+                    android:layout_width="397dp"
+                    android:layout_height="125dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="#A0D4EC"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayoutca"
+                    app:layout_constraintVertical_bias="0.245">
+
+                    <TextView
+                        android:id="@+id/finalmarks"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Final Paper Marks"
+                        android:fontFamily="@font/aclonica"
+                        android:textAlignment="center"
+                        android:textColor="#0B0A0A"
+                        android:textSize="30sp" />
+
+                    <EditText
+                        android:id="@+id/finalcam2"
+                        android:layout_width="149dp"
+                        android:layout_height="43dp"
+                        android:fontFamily="@font/aclonica"
+                        android:layout_gravity="center"
+                        android:background="#FFFFFF" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/cal"
+                    android:layout_width="200dp"
+                    android:layout_height="60dp"
+                    android:background="#091EAE"
+                    android:fontFamily="@font/aclonica"
+                    android:text="Calculate"
+                    android:textColor="#DEE0EF"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayoutfinal" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar3"
+                android:layout_width="418dp"
+                android:layout_height="59dp"
+                android:background="#050B42"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.571"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <ImageView
+                android:id="@+id/imageView45"
+                android:layout_width="49dp"
+                android:layout_height="43dp"
+                android:onClick="goMain2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.01"
+                app:srcCompat="@drawable/arrow" />
+
+            <TextView
+                android:id="@+id/no"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/aclonica"
+                android:gravity="center_horizontal"
+                android:textAlignment="center"
+                android:textColor="#0B0A0A"
+                android:textSize="30sp"
+                android:visibility="invisible"
+                tools:ignore="MissingConstraints" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</LinearLayout>
