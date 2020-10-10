@@ -24,7 +24,7 @@ public class BookAdapter  extends RecyclerView.Adapter<BookAdapter.MyViewHolder>
     private Activity activity;
     private ArrayList ID,txtTitleIn,txtDateEIn,txtDateBIn,txtRegNo;
 
-    BookAdapter (Activity activity, Context context, ArrayList ID, ArrayList txtTitleIn, ArrayList txtDateEIn, ArrayList txtDateBIn,ArrayList txtRegNo){
+    BookAdapter (Activity activity, Context context, ArrayList ID, ArrayList txtTitleIn, ArrayList txtDateBIn, ArrayList txtDateEIn,ArrayList txtRegNo){
         this.activity = activity;
         this.context = context;
         this.ID = ID;

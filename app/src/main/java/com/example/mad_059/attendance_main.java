@@ -29,7 +29,7 @@ public class attendance_main extends AppCompatActivity {
     }
 
     public  void  addSubject(View view){
-        Intent intent2 = new Intent(attendance_main.this,Monday.class);
+        Intent intent2 = new Intent(attendance_main.this,attendance_home.class);
         intent2.putExtra("RegNo", txtRegNo.getText().toString());
         startActivity(intent2);
     }

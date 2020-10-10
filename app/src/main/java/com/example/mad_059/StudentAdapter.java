@@ -18,12 +18,12 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.MyViewHo
 
     private Context context;
     Activity activity;
-    private ArrayList sub_id,subject,room,teacher,day,RegNo,time;
+    private ArrayList sub_id,subject,room,teacher,day,time,RegNo;
 
 
 
-    StudentAdapter(Activity activity, Context context, ArrayList sub_id, ArrayList subject, ArrayList room,ArrayList time,
-                   ArrayList teacher, ArrayList day,ArrayList RegNo ){
+    StudentAdapter(Activity activity,Context context, ArrayList sub_id, ArrayList subject, ArrayList room,
+                   ArrayList teacher,ArrayList day,ArrayList time,ArrayList RegNo){
         this.activity = activity;
         this.context = context;
         this.sub_id = sub_id;
@@ -31,8 +31,8 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.MyViewHo
         this.room = room;
         this.teacher = teacher;
         this.day = day;
-        this.RegNo = RegNo;
         this.time = time;
+        this.RegNo = RegNo;
     }
 
     @NonNull
@@ -51,8 +51,8 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.MyViewHo
         holder.room.setText(String.valueOf(room.get(position)));
         holder.teacher.setText(String.valueOf(teacher.get(position)));
         holder.day.setText(String.valueOf(day.get(position)));
-        holder.txtRegNo.setText(String.valueOf(RegNo.get(position)));
-        holder.txttime.setText(String.valueOf(time.get(position)));
+        holder.time.setText(String.valueOf(time.get(position)));
+        holder.RegNo.setText(String.valueOf(RegNo.get(position)));
         holder.mainLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -62,8 +62,8 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.MyViewHo
                 intent.putExtra("room",String.valueOf(room.get(position)));
                 intent.putExtra("teacher",String.valueOf(teacher.get(position)));
                 intent.putExtra("day",String.valueOf(day.get(position)));
-                intent.putExtra("RegNo",String.valueOf(RegNo.get(position)));
                 intent.putExtra("time",String.valueOf(time.get(position)));
+                intent.putExtra("RegNo",String.valueOf(RegNo.get(position)));
                 activity.startActivityForResult(intent,1);
             }
         });
@@ -76,7 +76,7 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.MyViewHo
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView sub_id,subject,room,teacher,day,txtRegNo,txttime;
+        TextView sub_id,subject,room,teacher,day,time,RegNo;
         LinearLayout mainLayout;
 
         public MyViewHolder(@NonNull View itemView) {
@@ -86,9 +86,9 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.MyViewHo
             room =itemView.findViewById(R.id.room);
             teacher =itemView.findViewById(R.id.teacher);
             day = itemView.findViewById(R.id.day);
-            txtRegNo = itemView.findViewById(R.id.reg);
-            txttime  = itemView.findViewById(R.id.time);
-            mainLayout = itemView.findViewById(R.id.moduleLayout);
+            time = itemView.findViewById(R.id.time);
+            RegNo = itemView.findViewById(R.id.id);
+            mainLayout = itemView.findViewById(R.id.mainLayout);
 
         }
     }

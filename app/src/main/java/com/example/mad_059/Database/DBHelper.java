@@ -54,8 +54,8 @@ public class DBHelper extends SQLiteOpenHelper {
                         COLUMN_Room+ " TEXT, " +
                         COLUMN_Teacher+ " TEXT, " +
                         COLUMN_Day + " TEXT," +
-                        REG_NO + " TEXT ," +
-                        COLUMN_Time + " TEXT)";
+                        COLUMN_Time + " TEXT ," +
+                         REG_NO + " TEXT)";
         DB.execSQL(query);
 
         //Library
@@ -123,7 +123,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
 
     //insert submission data
-    public Boolean insertSub(String sName,String rDay,String rTime,String Note,String mName,String RegNo,String dates)
+    public Boolean insertSub(String sName,String rDay,String rTime,String Note,String mName,String RegNo)
     {
         SQLiteDatabase DB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -133,8 +133,6 @@ public class DBHelper extends SQLiteOpenHelper {
         contentValues.put("Note", Note);
         contentValues.put("mName", mName);
         contentValues.put("RegNo", RegNo);
-        contentValues.put("dates", dates);
-
 
         long result=DB.insert("Submission", null, contentValues);
         if(result==-1){
@@ -284,7 +282,7 @@ public class DBHelper extends SQLiteOpenHelper {
         //////////////////////////////////Attendance////////////////////////////////////////////
 
 
-    public Boolean addSub(String subject, String Room, String Teacher, String day,String RegNo,String Time) {
+    public Boolean addSub(String subject, String Room, String Teacher, String day,String Time,String RegNo) {
             SQLiteDatabase db = this.getWritableDatabase();
             ContentValues cv = new ContentValues();
 
@@ -292,8 +290,8 @@ public class DBHelper extends SQLiteOpenHelper {
             cv.put(COLUMN_Room, Room);
             cv.put(COLUMN_Teacher, Teacher);
             cv.put(COLUMN_Day, day);
-            cv.put(REG_NO ,RegNo);
             cv.put(COLUMN_Time ,Time);
+            cv.put(REG_NO ,RegNo);
 
             long result = db.insert(TABLE_NAME, null, cv);
             if (result == -1) {

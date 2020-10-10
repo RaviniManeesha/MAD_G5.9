@@ -11,7 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".exten"></activity>
+        <activity android:name=".updateattendance"></activity>
+        <activity android:name=".attendance_home" />
+        <activity android:name=".add_attendance" />
+        <activity android:name=".exten" />
         <activity android:name=".UpdateDetails" />
         <activity android:name=".gpa" />
         <activity android:name=".campusInfo" />
@@ -34,10 +37,7 @@
         <activity android:name=".addbook" />
         <activity android:name=".booklist" />
         <activity android:name=".Calculate" />
-        <activity android:name=".Monday" />
-        <activity android:name=".updateattendance" />
         <activity android:name=".attendance_main" />
-        <activity android:name=".Add_Form" />
         <activity android:name=".editsubmission" />
         <activity android:name=".addsubmission" />
         <activity android:name=".submissions" />
@@ -56,9 +56,7 @@
         <activity android:name=".login" />
         <activity android:name=".register2" />
         <activity android:name=".register1" />
-        <activity android:name=".profile">
-
-        </activity>
+        <activity android:name=".profile" />
         <activity android:name=".editprofile" />
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -66,7 +64,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
     </application>
 

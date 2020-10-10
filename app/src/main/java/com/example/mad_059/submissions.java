@@ -104,7 +104,7 @@ public class submissions extends AppCompatActivity {
                Note.add(cursor.getString(4));
                mName.add(cursor.getString(5));
                 RegNo.add(cursor.getString(6));
-                sdate.add(cursor.getString(7));
+
             }
         }
     }

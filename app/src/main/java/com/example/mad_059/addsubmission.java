@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,7 +18,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class addsubmission extends AppCompatActivity {
-    TextView txtName,txtDay,txtTime,txtNote,txtRegNo,txtmName,Day1,res;
+    TextView txtName,txtDay,txtTime,txtNote,txtRegNo,txtmName;
     Button btnDone;
     DBHelper DB;
     String  No;
@@ -28,20 +29,22 @@ public class addsubmission extends AppCompatActivity {
         setContentView(R.layout.activity_addsubmission);
 
         txtName = findViewById(R.id.sName);
-        txtDay = findViewById(R.id.rDay);
         txtTime= findViewById(R.id.rTime);
         txtNote = findViewById(R.id.Note);
         txtRegNo = findViewById(R.id.id);
         txtmName = findViewById(R.id.mName);
+        txtDay = findViewById(R.id.Date);
         btnDone = findViewById(R.id.Done);
-        Day1 = findViewById(R.id.day1);
 
         //get  RegNo
         DB = new DBHelper(this);
         Intent intent = getIntent();
         No = intent.getStringExtra("RegNo");
-
         txtRegNo.setText(No);
+
+
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd");
+        String currentDate = sdf.format(new Date());
 
         //add data
         btnDone.setOnClickListener(new View.OnClickListener() {
@@ -64,28 +67,8 @@ public class addsubmission extends AppCompatActivity {
                     String Note = txtNote.getText().toString();
                     String mCode = txtmName.getText().toString();
                     String RegNO = txtRegNo.getText().toString();
-                    String dates = Day1.getText().toString();
 
-                    SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd");
-                    String currentDate = sdf.format(new Date());
-                    Day1.setText(currentDate);
-
-                    if (txtDay.getText().toString().length() == 0) {
-                        txtDay.setText("0");
-                    }
-                    if (Day1.getText().toString().length() == 0) {
-                        Day1.setText("0");
-                    }
-
-                    int num1 = Integer.parseInt(txtDay.getText().toString());
-                    int num2 = Integer.parseInt(Day1.getText().toString());
-
-                   int calculate = 0;
-                   res.setText(String.valueOf(calculate));
-
-                   String ans = res.getText().toString();
-
-                    Boolean checkinsertdata2 = DB.insertSub(Name, Day, Time, Note, mCode, RegNO,ans);
+                    Boolean checkinsertdata2 = DB.insertSub(Name, Day, Time, Note, mCode, RegNO);
                     if (checkinsertdata2 == true) {
                         Toast.makeText(addsubmission.this, "Add New Submission Successfully!", Toast.LENGTH_SHORT).show();
                         goSub();
@@ -110,7 +93,6 @@ public class addsubmission extends AppCompatActivity {
     }
 
     void calcDate () {
-
 
 
     }

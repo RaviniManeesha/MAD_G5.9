@@ -6,31 +6,20 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/moduleLayout">
+    android:id="@+id/mainLayout"
+   >
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="167dp"
-            android:layout_marginTop="12dp">
+            android:layout_height="125dp"
+            android:layout_marginBottom="12dp"
+            android:padding="12dp">
 
-
-            <TextView
-                android:id="@+id/reg"
-                android:layout_width="106dp"
-                android:layout_height="21dp"
-                android:layout_marginTop="20dp"
-                android:fontFamily="@font/aclonica"
-                android:text="RegNo"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.373"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.976" />
 
             <TextView
                 android:id="@+id/sub_id_txt"
@@ -54,13 +43,13 @@
                 android:layout_marginStart="124dp"
                 android:layout_marginLeft="124dp"
                 android:fontFamily="@font/aclonica"
-                android:text="Subject"
+                android:text="Subject1"
                 android:textColor="#000"
                 android:textSize="20dp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintHorizontal_bias="0.058"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.177" />
@@ -79,15 +68,29 @@
                 app:layout_constraintVertical_bias="0.358" />
 
             <TextView
+                android:id="@+id/id"
+                android:layout_width="63dp"
+                android:layout_height="19dp"
+                android:fontFamily="@font/aclonica"
+                android:text="120"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.802"
+                app:layout_constraintStart_toEndOf="@+id/imageView4"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.735" />
+
+            <TextView
                 android:id="@+id/teacher"
                 android:layout_width="120dp"
                 android:layout_height="22dp"
                 android:layout_marginStart="56dp"
-                android:layout_marginTop="108dp"
+                android:layout_marginTop="56dp"
                 android:fontFamily="@font/aclonica"
                 android:text="Teacher"
                 app:layout_constraintEnd_toStartOf="@+id/subject"
-                app:layout_constraintHorizontal_bias="0.01"
+                app:layout_constraintHorizontal_bias="0.152"
                 app:layout_constraintStart_toEndOf="@+id/sub_id_txt"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -97,37 +100,35 @@
                 android:layout_height="21dp"
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/aclonica"
-                android:text="Day"
+                android:text="Date"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.068"
+                app:layout_constraintHorizontal_bias="0.084"
                 app:layout_constraintStart_toEndOf="@+id/imageView3"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.868" />
+                app:layout_constraintVertical_bias="1.0" />
 
             <ImageView
                 android:id="@+id/imageView2"
-                android:layout_width="24dp"
-                android:layout_height="19dp"
-                android:layout_marginStart="44dp"
-                android:layout_marginLeft="44dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="48dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.76"
+                app:layout_constraintVertical_bias="0.586"
                 app:srcCompat="@drawable/baseline_person_black_24" />
 
             <ImageView
                 android:id="@+id/imageView3"
                 android:layout_width="18dp"
                 android:layout_height="16dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="36dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.653"
+                app:layout_constraintHorizontal_bias="0.139"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView4"
-                app:srcCompat="@drawable/ic_baseline_calendar_today_24"
-                tools:ignore="VectorDrawableCompat" />
+                app:srcCompat="@drawable/ic_baseline_calendar_today_24" />
 
             <ImageView
                 android:id="@+id/imageView4"
@@ -147,14 +148,14 @@
                 android:id="@+id/time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="64dp"
-                android:layout_marginRight="64dp"
-                android:text="Time"
+                android:layout_marginEnd="80dp"
+                android:layout_marginRight="80dp"
                 android:fontFamily="@font/aclonica"
+                android:text="Time"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/room"
-                app:layout_constraintVertical_bias="0.223" />
+                app:layout_constraintVertical_bias="0.937" />
 
             <ImageView
                 android:id="@+id/imageView5"
