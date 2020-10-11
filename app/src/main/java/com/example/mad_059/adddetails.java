@@ -43,9 +43,10 @@ public class adddetails extends AppCompatActivity {
             public void onClick(View view) {
                 DBHelper myDB = new DBHelper(adddetails.this);
 
-                Boolean checkinsertdata =  myDB.addDetails4(e1.getText().toString().trim(), e2.getText().toString().trim(),e3.getText().toString().trim(),e4.getText().toString().trim(),e5.getText().toString().trim(),e6.getText().toString().trim(),txtRegNo.toString().trim());
+                Boolean checkinsertdata =  myDB.addDetails4(e1.getText().toString().trim(), e2.getText().toString().trim(),e3.getText().toString().trim(),e4.getText().toString().trim(),e5.getText().toString().trim(),e6.getText().toString().trim(),No);
                 if (checkinsertdata == true) {
                     Toast.makeText(adddetails.this, "Data Inserted Successfully!", Toast.LENGTH_SHORT).show();
+                    goDetails();
 
                 }else
                     Toast.makeText(adddetails.this, "Failed", Toast.LENGTH_SHORT).show();
@@ -55,5 +56,11 @@ public class adddetails extends AppCompatActivity {
             }
         });
 
+    }
+
+    public  void  goDetails(){
+        Intent intent2 = new Intent(adddetails.this,detailslist.class);
+        intent2.putExtra("RegNo", txtRegNo.getText().toString());
+        startActivity(intent2);
     }
 }

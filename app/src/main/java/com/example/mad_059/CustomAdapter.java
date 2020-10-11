@@ -25,7 +25,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
     private Activity activity;
     private ArrayList sid, sName, Day,Time,Note,mName,RegNo;
 
-    CustomAdapter(Activity activity, Context context, ArrayList sid, ArrayList sName, ArrayList Day,ArrayList Time,ArrayList mName,ArrayList Note
+    CustomAdapter(Activity activity, Context context, ArrayList sid, ArrayList sName, ArrayList Day,ArrayList Time,ArrayList Note,ArrayList mName
              , ArrayList RegNo   ){
         this.activity = activity;
         this.context = context;

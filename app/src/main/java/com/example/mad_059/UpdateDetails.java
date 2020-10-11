@@ -5,10 +5,12 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.mad_059.Database.DBHelper;
@@ -17,12 +19,15 @@ public class UpdateDetails extends AppCompatActivity {
 
     EditText e1, e2, e3, e4, e5, e6;
     Button btnUpdate, btnDelete;
-
-    String no, name, code, cr, ca, fm, ref;
+    TextView txtRegNo;
+    String no, name, code, cr, ca, fm, ref,RegNo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_details);
+
+        btnUpdate = findViewById(R.id.upDet);
+        btnDelete = findViewById(R.id.deDet);
 
         e1 = findViewById(R.id.upmodN1);
         e2 = findViewById(R.id.upmodcod2);
@@ -30,14 +35,17 @@ public class UpdateDetails extends AppCompatActivity {
         e4 = findViewById(R.id.upcam2);
         e5 = findViewById(R.id.upfnm2);
         e6 = findViewById(R.id.upref2);
+        txtRegNo = findViewById(R.id.reg);
 
         setAndGetIntentData();
+
 
         //set action bar
         ActionBar ab = getSupportActionBar();
         if(ab != null){
             ab.setTitle(name);
         }
+
         btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -48,7 +56,14 @@ public class UpdateDetails extends AppCompatActivity {
                 ca =e4.getText().toString();
                 fm =e5.getText().toString();
                 ref =e6.getText().toString();
-                myDB.updateDetails4(name, no, code, cr, ca, fm, ref);
+                Boolean checkupdatedata = myDB.updateDetails4(no,name,code, cr, ca, fm, ref);
+                if (checkupdatedata == true) {
+
+                    Toast.makeText(UpdateDetails.this, " Successfully Updated!", Toast.LENGTH_SHORT).show();
+                    goList();
+                } else
+                    Toast.makeText(UpdateDetails.this, " Failed to Update!", Toast.LENGTH_SHORT).show();
+
             }
         });
         btnDelete.setOnClickListener(new View.OnClickListener() {
@@ -57,19 +72,25 @@ public class UpdateDetails extends AppCompatActivity {
                 confirmDialog();
             }
         });
+
+
     }
-    void setAndGetIntentData(){
-        if(getIntent().hasExtra("id") && getIntent().hasExtra("name") && getIntent().hasExtra("code") && getIntent().hasExtra("cr") &&getIntent().hasExtra("ca") && getIntent().hasExtra("fm") && getIntent().hasExtra("ref"))
-        {
+
+    void setAndGetIntentData() {
+        if (getIntent().hasExtra("no") && getIntent().hasExtra("name") && getIntent().hasExtra("mcode") && getIntent().hasExtra("cr") && getIntent().hasExtra("ca") && getIntent().hasExtra("fm") && getIntent().hasExtra("ref")) {
             //Getting data from intent
+            no = getIntent().getStringExtra("no");
             name = getIntent().getStringExtra("name");
-            code = getIntent().getStringExtra("code");
+            code = getIntent().getStringExtra("mcode");
             cr = getIntent().getStringExtra("cr");
             ca = getIntent().getStringExtra("ca");
             fm = getIntent().getStringExtra("fm");
             ref = getIntent().getStringExtra("ref");
+            RegNo = getIntent().getStringExtra("RegNo");
 
             //Setting Intent Data
+
+
 
             e1.setText(name);
             e2.setText(code);
@@ -77,10 +98,13 @@ public class UpdateDetails extends AppCompatActivity {
             e4.setText(ca);
             e5.setText(fm);
             e6.setText(ref);
+            txtRegNo.setText(RegNo);
 
-        }else{
+        } else {
             Toast.makeText(this, "NO DATA", Toast.LENGTH_SHORT).show();
+
         }
+
     }
 
     void confirmDialog(){
@@ -91,7 +115,7 @@ public class UpdateDetails extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 DBHelper myDB = new DBHelper(UpdateDetails.this);
-                myDB.deleteOneRow4(no);
+                myDB.deleteOneRow5(no);
                 finish();
             }
         });
@@ -103,5 +127,10 @@ public class UpdateDetails extends AppCompatActivity {
         });
         builder.create().show();
 
+    }
+    public  void  goList(){
+        Intent intent2 = new Intent(UpdateDetails.this,detailslist.class);
+        intent2.putExtra("RegNo", txtRegNo.getText().toString());
+        startActivity(intent2);
     }
 }

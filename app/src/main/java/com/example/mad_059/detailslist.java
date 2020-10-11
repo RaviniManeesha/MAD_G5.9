@@ -18,21 +18,21 @@ import java.util.ArrayList;
 
 public class detailslist extends AppCompatActivity {
 
-    RecyclerView recyclerView;
+    RecyclerView recyclerView1;
     FloatingActionButton addDetailsBtn;
     TextView txtRegNo;
     String No;
     DBHelper myDB;
     MDetailsAdapter detailsAdapter;
 
-    ArrayList<String> name, code, cr,RegNo,ca,fn,ref,no;
+    ArrayList<String> modID, modName, modCode, noOfCredits, caMarks, fMarks, ref,RegNo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detailslist);
 
-        recyclerView = findViewById(R.id.res1);
+        recyclerView1 = findViewById(R.id.res1);
         addDetailsBtn = findViewById(R.id.addDetailsBtn);
 
         //get passing ID
@@ -40,6 +40,7 @@ public class detailslist extends AppCompatActivity {
         Intent intent = getIntent();
         No = intent.getStringExtra("RegNo");
         txtRegNo.setText(No);
+
 
         addDetailsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,7 +51,20 @@ public class detailslist extends AppCompatActivity {
             }
         });
 
+        myDB = new DBHelper(detailslist.this);
+        modID = new ArrayList<>();
+        modName = new ArrayList<>();
+        modCode = new ArrayList<>();
+        noOfCredits = new ArrayList<>();
+        caMarks = new ArrayList<>();
+        fMarks = new ArrayList<>();
+        ref = new ArrayList<>();
+        RegNo = new ArrayList<>();
 
+        storeDataInArrays();
+        detailsAdapter = new MDetailsAdapter(detailslist.this,this, modID, modName, modCode, noOfCredits, caMarks, fMarks, ref,RegNo);
+        recyclerView1.setAdapter(detailsAdapter);
+        recyclerView1.setLayoutManager(new LinearLayoutManager(detailslist.this));
 
 
     }
@@ -69,17 +83,17 @@ public class detailslist extends AppCompatActivity {
 
         Cursor cursor = myDB.readAllDetails4(No);
 
-        if(cursor.getCount() == 0){
+        if(cursor.getCount() == 00){
 
         }
         else{
             while (cursor.moveToNext()){
-                no.add(cursor.getString(0));
-                name.add(cursor.getString(1));
-                code.add(cursor.getString(2));
-                cr.add(cursor.getString(3));
-                ca.add(cursor.getString(4));
-                fn.add(cursor.getString(5));
+                modID.add(cursor.getString(0));
+                modCode.add(cursor.getString(1));
+                modName.add(cursor.getString(2));
+                noOfCredits.add(cursor.getString(3));
+                caMarks.add(cursor.getString(4));
+                fMarks.add(cursor.getString(5));
                 ref.add(cursor.getString(6));
                 RegNo.add(cursor.getString(7));
 

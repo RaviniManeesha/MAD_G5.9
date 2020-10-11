@@ -4,7 +4,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.widget.Toast;
 
 public class DBHelper extends SQLiteOpenHelper {
 
@@ -51,15 +50,17 @@ public class DBHelper extends SQLiteOpenHelper {
                 "CREATE TABLE " + TABLE_NAME +
                         "(" + _ID  + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                         COLUMN_SUB + " TEXT, " +
-                        COLUMN_Room+ " TEXT, " +
-                        COLUMN_Teacher+ " TEXT, " +
+                        COLUMN_Room + " TEXT, " +
+                        COLUMN_Teacher + " TEXT, " +
                         COLUMN_Day + " TEXT," +
                         COLUMN_Time + " TEXT ," +
                          REG_NO + " TEXT)";
+
         DB.execSQL(query);
 
         //Library
         String query2= "CREATE TABLE Books(ID INTEGER PRIMARY KEY AUTOINCREMENT,title TEXT,dateB DATE,dateE DATE,RegNo TEXT)";
+
         DB.execSQL(query2);
 
         //Modules
@@ -72,15 +73,19 @@ public class DBHelper extends SQLiteOpenHelper {
 
 
         String query4 =
-                "CREATE TABLE " + TABLE_NAME3+
-                        "(" + COLUMN_ID2 + " INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN_mc + " TEXT, " +
-                        COLUMN_name2 + " TEXT, " + COLUMN_ca + " TEXT, " + COLUMN_fn + " TEXT, " +
-                        COLUMN_cr + " TEXT, " + COLUMN_ref + " TEXT ,"  +  REG_NO + " TEXT ) ";;
+                "CREATE TABLE " + TABLE_NAME3 +
+                        "(" + COLUMN_ID2 + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                        + COLUMN_name2 + " TEXT, " +
+                         COLUMN_mc + " TEXT, "
+                        + COLUMN_cr + " TEXT, "
+                        + COLUMN_ca + " TEXT, " +
+                        COLUMN_fn + " TEXT, "
+                        + COLUMN_ref + " TEXT ,"
+                        +  REG_NO + " TEXT ) ";;
 
         DB.execSQL(query4);
         DB.execSQL(query3);
 }
-
     @Override
     public void onUpgrade(SQLiteDatabase DB, int i, int i1) {
         DB.execSQL("drop Table if exists Student");
@@ -340,6 +345,8 @@ public class DBHelper extends SQLiteOpenHelper {
         }
     }
 
+
+
     public void  deleteAllData(){
         SQLiteDatabase db = this.getWritableDatabase();
         db.execSQL("DELETE FROM " + TABLE_NAME);
@@ -474,7 +481,7 @@ public class DBHelper extends SQLiteOpenHelper {
         Cursor cursor = null;
 
         if(db != null){
-            cursor = db.query( "ModuleDetails", new String[]{"id2,name,code,cr,ca,fn,ref,RegNo"}, "RegNo = ? ",new String[]{String.valueOf(RegNo)},null, null, null, null);
+            cursor = db.query( "ModuleDetails", new String[]{"id2,mcode,moduleName,credit,ca,final,reference,RegNo"}, "RegNo = ? ",new String[]{String.valueOf(RegNo)},null, null, null, null);
         }
         return cursor;
     }
@@ -486,7 +493,7 @@ public class DBHelper extends SQLiteOpenHelper {
         cv.put(COLUMN_no, no);
 
 
-        long result = db.update(TABLE_NAME2, cv, "id=?", new String[] {row_id});
+        long result = db.update(TABLE_NAME2, cv, "id = ?", new String[] {row_id});
 
         if(result == -1){
          return  false;
@@ -495,7 +502,7 @@ public class DBHelper extends SQLiteOpenHelper {
             return true;
         }
    }
-    public void updateDetails4(String row_id, String name, String code, String cr, String ca, String fn, String ref){
+    public boolean updateDetails4(String row_id, String name, String code, String cr, String ca, String fn, String ref){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put(COLUMN_name2, name);
@@ -505,13 +512,13 @@ public class DBHelper extends SQLiteOpenHelper {
         cv.put(COLUMN_fn, fn);
         cv.put(COLUMN_ref, ref);
 
-        long result = db.update(TABLE_NAME3, cv, "id=?", new String[] {row_id});
+        long result = db.update(TABLE_NAME3, cv, "id2 = ?", new String[] {row_id});
 
         if(result == -1){
-            Toast.makeText(context, "Failed to Update!", Toast.LENGTH_SHORT).show();
+            return false;
         }else{
 
-            Toast.makeText(context, "Successfully Updated!", Toast.LENGTH_SHORT).show();
+            return true;
         }
     }
 ////////////////
@@ -527,6 +534,16 @@ public Boolean deleteOneRow4(String row_id){
 
 }
 
+    public Boolean deleteOneRow5(String row_id){
 
+        SQLiteDatabase db = this.getWritableDatabase();
+        long result = db.delete(TABLE_NAME3, "id2 = ?",new String[] {row_id});
+        if(result == -1){
+            return  false;
+        }else{
+            return true;
+        }
+
+    }
 }
 

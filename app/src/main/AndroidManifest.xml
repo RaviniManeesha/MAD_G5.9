@@ -11,14 +11,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".updateattendance"></activity>
+        <activity android:name=".exten"></activity>
+        <activity android:name=".Events" />
+        <activity android:name=".updateattendance" />
         <activity android:name=".attendance_home" />
         <activity android:name=".add_attendance" />
-        <activity android:name=".exten" />
         <activity android:name=".UpdateDetails" />
         <activity android:name=".gpa" />
-        <activity android:name=".campusInfo" />
-        <activity android:name=".Events" />
+        <activity android:name=".campusInfo" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".Map" />
         <activity android:name=".Caf" />
         <activity android:name=".activity_showprofee2" />
@@ -59,11 +65,7 @@
         <activity android:name=".profile" />
         <activity android:name=".editprofile" />
         <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 

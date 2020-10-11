@@ -63,7 +63,7 @@ public class MDetailsAdapter extends RecyclerView.Adapter<MDetailsAdapter.newVie
                     Intent intent = new Intent (context, UpdateDetails.class);
                     intent.putExtra("no", String.valueOf(modID.get(position)));
                     intent.putExtra("name", String.valueOf(modName.get(position)));
-                    intent.putExtra("code", String.valueOf(modCode.get(position)));
+                    intent.putExtra("mcode", String.valueOf(modCode.get(position)));
                     intent.putExtra("cr", String.valueOf(noOfCredits.get(position)));
                     intent.putExtra("ca", String.valueOf(caMarks.get(position)));
                     intent.putExtra("fm", String.valueOf(fMarks.get(position)));
@@ -94,7 +94,7 @@ public class MDetailsAdapter extends RecyclerView.Adapter<MDetailsAdapter.newVie
                 fMarks = itemView.findViewById(R.id.modFn2);
                 ref = itemView.findViewById(R.id.modRef2);
                 RegNo = itemView.findViewById(R.id.reg);
-                mainLayout = itemView.findViewById(R.id.mainLayout1);
+                mainLayout = itemView.findViewById(R.id.mainLayout);
             }
         }
 }

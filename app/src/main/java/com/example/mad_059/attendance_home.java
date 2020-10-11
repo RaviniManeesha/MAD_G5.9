@@ -79,7 +79,7 @@ public class attendance_home extends AppCompatActivity {
         }
     }
     public void goMain(View view){
-        Intent intent1 = new Intent(this,profile.class);
+        Intent intent1 = new Intent(this,attendance_main.class);
         intent1.putExtra("RegNo", txtRegNo.getText().toString());
         startActivity(intent1);
     }

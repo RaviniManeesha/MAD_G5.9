@@ -93,5 +93,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.163"
-        app:srcCompat="@drawable/mod2" />
+        app:srcCompat="@drawable/whatsapp_image_2020_10_10_at_3_21_23_pm_removebg_preview" />
 </androidx.constraintlayout.widget.ConstraintLayout>

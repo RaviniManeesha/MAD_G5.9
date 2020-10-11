@@ -43,9 +43,9 @@
         android:layout_height="146dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="280dp"
         android:background="?android:attr/colorBackground"
         android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.097"
         app:layout_constraintStart_toStartOf="parent"
@@ -58,10 +58,10 @@
             android:onClick="openExten"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/textView"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.76"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.202"
+            app:layout_constraintVertical_bias="0.253"
             app:srcCompat="@drawable/profile" />
 
         <TextView
@@ -127,7 +127,6 @@
         android:id="@+id/btn4"
         android:layout_width="157dp"
         android:layout_height="146dp"
-        android:layout_marginBottom="84dp"
         android:background="?android:attr/colorBackground"
         android:clickable="true"
         android:onClick="openMap"
@@ -136,7 +135,7 @@
         app:layout_constraintHorizontal_bias="0.353"
         app:layout_constraintStart_toEndOf="@+id/btn3"
         app:layout_constraintTop_toBottomOf="@+id/btn2"
-        app:layout_constraintVertical_bias="0.698">
+        app:layout_constraintVertical_bias="0.301">
 
         <ImageView
             android:id="@+id/imageView4"
@@ -169,26 +168,27 @@
         android:id="@+id/btn2"
         android:layout_width="156dp"
         android:layout_height="146dp"
-        android:layout_marginTop="52dp"
         android:background="?android:attr/colorBackground"
         android:clickable="true"
         android:onClick="openEvent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.348"
         app:layout_constraintStart_toEndOf="@+id/btn1"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.177">
 
         <ImageView
             android:id="@+id/imageView2"
             android:layout_width="92dp"
             android:layout_height="79dp"
-            android:layout_marginStart="40dp"
-            android:layout_marginLeft="40dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
             android:onClick="openEvent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.197"
+            app:layout_constraintVertical_bias="0.238"
             app:srcCompat="@drawable/event3" />
 
         <TextView
