@@ -19,11 +19,7 @@
         <activity android:name=".UpdateDetails" />
         <activity android:name=".gpa" />
         <activity android:name=".campusInfo" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".Map" />
         <activity android:name=".Caf" />
@@ -65,7 +61,11 @@
         <activity android:name=".profile" />
         <activity android:name=".editprofile" />
         <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 
